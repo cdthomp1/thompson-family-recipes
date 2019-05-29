@@ -24,6 +24,9 @@
   "dependencies": {
     "@google-cloud/firestore": "^2.1.0",
     "firebase-admin": "^8.0.0",
-    "inquirer": "^6.3.1"
+    "i": "^0.3.6",
+    "inquirer": "^6.3.1",
+    "npm": "^6.9.0",
+    "q-io": "^1.13.6"
   }
 }
