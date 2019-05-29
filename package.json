@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/cdthomp1/what-can-I-make/issues"
   },
-  "homepage": "https://github.com/cdthomp1/what-can-I-make#readme"
+  "homepage": "https://github.com/cdthomp1/what-can-I-make#readme",
+  "dependencies": {
+    "inquirer": "^6.3.1"
+  }
 }
