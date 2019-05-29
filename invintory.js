@@ -3,7 +3,7 @@ module.exports = {
         pasta: [],
         cans: [],
         dried: [],
-        
+        snacks:[]
     },
     fridge: {
 
