@@ -24,21 +24,21 @@ function ccbs(){
 
 
 function cc(){
-    var url = "https://cdthomp1.github.io/what-can-I-make/baked-cream-cheese-spaghetti-r.json"
+    let url = "https://cdthomp1.github.io/what-can-I-make/crockpot-chili-r.json"
     
     var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          var recipe = JSON.parse(this.responseText)
+          let recipe = JSON.parse(this.responseText)
     
-          document.getElementById(`recipe-name`).innerHTML = recipe.title;
+          document.getElementById(`recipe-namea`).innerHTML = recipe.title;
     
             recipe.ingredients.forEach(ingredient =>{
-                addItem(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-list')
+                addItems(`${ingredient.amount}   ${ingredient.ingredient}`, `recipe-ingredient-list${recipe.title}`)
             })
     
             recipe.directions.forEach(direction =>{
-                addItem(direction.process, 'recipe-direction-list')
+                addItems(direction.process, `recipe-direction-list${recipe.title}`)
             })  
         }
       };
@@ -57,4 +57,15 @@ function cc(){
     
   }
 
+  function addItems(item,list){
+    
+    var ul = document.createElement(list);
+    var li = document.createElement("li");
+    li.setAttribute('id',item);
+    li.appendChild(document.createTextNode(item));
+    ul.appendChild(li);
+    
+  }
+
   ccbs()
+  cc()
