@@ -150,6 +150,23 @@
     padding: 1.5rem 2rem;
     box-shadow: var(--shadow);
   }
+
+  .recipe {
+    background: var(--primary);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  #recipe-ingredient-list {
+    list-style-type: none;
+    text-align: left;
+  }
+
+  #recipe-direction-list {
+    list-style-type: decimal;
+    text-align: left;
+  }
   
   .info {
     background: var(--primary);

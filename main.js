@@ -1,9 +1,60 @@
-var qhttp = require('q-io/http');
 
-qhttp.read("https://cdthomp1.github.io/what-can-I-make/baked-cream-cheese-spaghetti-r.json")
-.then(function (json) {
-    console.log(JSON.parse(json))
-        
-        
-    })
-    .then(null, console.error)
+function ccbs(){
+    var url = "https://cdthomp1.github.io/what-can-I-make/baked-cream-cheese-spaghetti-r.json"
+    
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var recipe = JSON.parse(this.responseText)
+    
+          document.getElementById(`recipe-name`).innerHTML = recipe.title;
+    
+            recipe.ingredients.forEach(ingredient =>{
+                addItem(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-list')
+            })
+    
+            recipe.directions.forEach(direction =>{
+                addItem(direction.process, 'recipe-direction-list')
+            })  
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+}
+
+
+function cc(){
+    var url = "https://cdthomp1.github.io/what-can-I-make/baked-cream-cheese-spaghetti-r.json"
+    
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var recipe = JSON.parse(this.responseText)
+    
+          document.getElementById(`recipe-name`).innerHTML = recipe.title;
+    
+            recipe.ingredients.forEach(ingredient =>{
+                addItem(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-list')
+            })
+    
+            recipe.directions.forEach(direction =>{
+                addItem(direction.process, 'recipe-direction-list')
+            })  
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+}
+
+
+  function addItem(item,list){
+    
+    var ul = document.getElementById(list);
+    var li = document.createElement("li");
+    li.setAttribute('id',item);
+    li.appendChild(document.createTextNode(item));
+    ul.appendChild(li);
+    
+  }
+
+  ccbs()
