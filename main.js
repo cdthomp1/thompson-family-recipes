@@ -34,11 +34,11 @@ function cc(){
           document.getElementById(`recipe-namea`).innerHTML = recipe.title;
     
             recipe.ingredients.forEach(ingredient =>{
-                addItems(`${ingredient.amount}   ${ingredient.ingredient}`, `recipe-ingredient-list${recipe.title}`)
+                addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-lista')
             })
     
             recipe.directions.forEach(direction =>{
-                addItems(direction.process, `recipe-direction-list${recipe.title}`)
+                addItems(direction.process, 'recipe-direction-lista')
             })  
         }
       };
@@ -57,9 +57,9 @@ function cc(){
     
   }
 
-  function addItems(item,list){
+    function addItems(item,list){
     
-    var ul = document.createElement(list);
+    var ul = document.getElementById(list);
     var li = document.createElement("li");
     li.setAttribute('id',item);
     li.appendChild(document.createTextNode(item));
