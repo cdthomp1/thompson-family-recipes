@@ -18,98 +18,98 @@
             "amount": "1 small"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "spice",
+            "ingredient": "oregano, dried",
+            "amount": "1/2 tsp"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "spice",
+            "ingredient": "parsley, dried",
+            "amount": "1/2 tsp"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "produce",
+            "ingredient": "chopped parsley, fresh leaves",
+            "amount": "2 tbsp"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "can",
+            "ingredient": "tomatoes",
+            "amount": "1 28oz can"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "pasta",
+            "ingredient": "spaghetti",
+            "amount": "1 lbs"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "spice",
+            "ingredient": "Salt and Pepper",
+            "amount": "n/a"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "spice",
+            "ingredient": "red pepper flakes",
+            "amount": "1/2 tsp"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "oil",
+            "ingredient": "Olive Oil",
+            "amount": "1 tbsp"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "dairy",
+            "ingredient": "Cheddar Cheese",
+            "amount": "1/2 cup"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "dairy",
+            "ingredient": "Monterey Jack",
+            "amount": "1/2 cup"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "dairy",
+            "ingredient": "Sour Cream",
+            "amount": "1/2 cup"
         },
         {   
-            "type": "",
-            "ingredient": "",
-            "amount": ""
+            "type": "dairy",
+            "ingredient": "Whipped Cream Cheese",
+            "amount": "1/2 cup"
         }
     ],
     "directions": [
         {
-            "step": "",
-            "process": ""
+            "step": "1",
+            "process": "Preheat oven to 350℉. Lightly oil a 9x13 baking dish or coat with nonstick spray."
         },
         {
-            "step": "",
-            "process": ""
+            "step": "2",
+            "process": "In a large pot of boiling salted water, cook pasta according to package instructions; drain well. "
         },
         {
-            "step": "",
-            "process": ""
+            "step": "3",
+            "process": "Heat olive oil in a large skillet over medium-high heat. Add ground beef and onion and cook until beef has browned, about 3-5 minutes, making sure to crumble the beef as it cooks; season with salt and pepper, to taste. Drain excess fat."
         },
         {
-            "step": "",
-            "process": ""
+            "step": "4",
+            "process": "Stir in crushed tomatoes, basil, oregano, parsley and red pepper flakes; season with salt and pepper, to taste."
         },
         {
-            "step": "",
-            "process": ""
+            "step": "5",
+            "process": "In a small bowl, whisk together cream cheese and sour cream."
         },
         {
-            "step": "",
-            "process": ""
+            "step": "6",
+            "process": "Add pasta to the prepared baking dish and layer with cream cheese and beef mixture; sprinkle with cheese. "
         },
         {
-            "step": "",
-            "process": ""
+            "step": "7",
+            "process": "Place into oven and bake until bubbly and heated through, about 15-20 minutes."
         },
         {
-            "step": "",
-            "process": ""
+            "step": "8",
+            "process": "Serve, garnished with parsley."
         }
     ]
 }
