@@ -1,0 +1,30 @@
+{
+    "pantry": {
+        "pasta": [],
+        "cans": [],
+        "dried": [],
+        "snacks":[],
+        "spices": [],
+        "boxed": [],
+        "bread": [],
+        "breakfast": [],
+        "root": [],
+        "condiments": [],
+        "coffee": [],
+        "suaces": [],
+        "mixes": [],
+        "grains": [] 
+
+    },
+    "fridge": {
+        "fruit": [],
+        "vegtables": [],
+        "meat": [],
+        "condiments": [],
+        "dairy": [],
+        "drinks": [],
+        "leftovers": []
+
+
+    }
+}

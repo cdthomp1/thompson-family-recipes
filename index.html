@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cameron Thompson: Contact</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <img id="logo" src="./images/header.jpg" width="100%">
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li>
+          <a href="./index.html">Home</a>
+        </li>
+        <li>
+          <a href="./about.html">About</a>
+        </li>
+        <li>
+          <a href="./projects.html">Projects</a>
+        </li>
+        <li>
+          <a href="./contact.html" style="background-color: grey">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Info Section -->
+    <section class="info">
+      <div>
+        <h2>Want to Chat</h2>
+        <p>Send me an Email!
+        </p>
+      </div>
+
+
+      <div>
+        <?=$thankYou ?>
+        <form method="post">
+          <input type="text" name="first_name" placeholder="First name">
+          <input type="text" name="last_name" placeholder="Last name">
+          <input type="text" name="email" id="Email" placeholder="Email" />
+
+
+          <textarea name="message" rows="20" cols="20" id="Message" placeholder="Message"></textarea>
+
+          <input type="submit" name="submit" value="Submit" class="submit-button" />
+        </form>
+      </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+      <p>Cameron Thompson &copy; 2018</p>
+    </footer>
+
+  </div>
+  <!-- Wrapper Ends -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/6.1.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#reserved-urls -->
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+  <script src="./scripts.js"></script>
+
+</body>
+
+</html>
