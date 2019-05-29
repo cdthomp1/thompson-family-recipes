@@ -1,0 +1,24 @@
+{
+  "name": "what-can-i-make",
+  "version": "1.0.0",
+  "description": "An app that will tell you the recipies based on what you have in your pantry/fridge.",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdthomp1/what-can-I-make.git"
+  },
+  "keywords": [
+    "food",
+    "recipe",
+    "pantry"
+  ],
+  "author": "Cameron Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdthomp1/what-can-I-make/issues"
+  },
+  "homepage": "https://github.com/cdthomp1/what-can-I-make#readme"
+}
