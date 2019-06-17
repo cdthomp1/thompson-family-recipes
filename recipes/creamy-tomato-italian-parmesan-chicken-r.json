@@ -1,0 +1,70 @@
+{
+    "title": "Creamy Tomato Italian Parmesan Chicken",
+    "bake": "",
+    "ingredients": [
+        {   
+            "type": "meat",
+            "ingredient": "Chicken breasts, cut into strips",
+            "amount": "1 lb"
+        },
+        {   
+            "type": "produce",
+            "ingredient": "Garlic",
+            "amount": "2 cloves"
+        },
+        {   
+            "type": "produce",
+            "ingredient": "Onion",
+            "amount": "1 small"
+        },
+        {   
+            "type": "can",
+            "ingredient": "Tomato sauce",
+            "amount": "1 can"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "Black pepper",
+            "amount": "1/4 tsp"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "Salt",
+            "amount": "1/2 tsp"
+        },
+        {   
+            "type": "oil",
+            "ingredient": "Olive oil",
+            "amount": "2 tbsp"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Heavy whipping cream",
+            "amount": "1/2 cup"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Parmesan cheese, grated",
+            "amount": "1/4 cup"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Parmesan cheese, shredded",
+            "amount": "1/2 cup"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1.",
+            "process": "Season chicken with salt, pepper, and Italian blend herb grinder. Heat 1 tbsp of the oil in large skillet on medium-high heat. Cook ½ of the chicken pieces 3-5 minutes per side or until golden brown. Remove chicken from skillet."
+        },
+        {
+            "step": "2.",
+            "process": "Heat remaining 1 tbsp oil in skillet on medium-high heat. Add onion and garlic; cook and stir 2 minutes or until tender. Stir in the tomato sauce, heavy cream, grated Parmesan cheese and desired amount of Italian herb blend; bring to simmer."
+        },
+        {
+            "step": "3.",
+            "process": "Return chicken to skillet; cook until heated through. Top with shredded Parmesan cheese. Season to taste with additional Italian herb blend. Serve cooked pasta."
+        }
+    ]
+}

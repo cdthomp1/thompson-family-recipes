@@ -7,7 +7,7 @@ function ccbs(){
         if (this.readyState == 4 && this.status == 200) {
           var recipe = JSON.parse(this.responseText)
     
-          document.getElementById(`recipe-name`).innerHTML = recipe.title;
+          /* document.getElementById(`recipe-name`).innerHTML = recipe.title;
     
             recipe.ingredients.forEach(ingredient =>{
                 addItem(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-list')
@@ -15,7 +15,9 @@ function ccbs(){
     
             recipe.directions.forEach(direction =>{
                 addItem(direction.process, 'recipe-direction-list')
-            })  
+            })   */
+
+        console.log(recipe)
         }
       };
       xhttp.open("GET", url, true);

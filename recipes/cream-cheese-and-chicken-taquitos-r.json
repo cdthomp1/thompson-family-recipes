@@ -1,0 +1,72 @@
+{
+    "title": "Cream Cheese and Chicken Taquitos",
+    "bake": "",
+    "ingredients": [
+        {   
+            "type": "Meat",
+            "ingredient": "Chicken, cooked and shredded",
+            "amount": "3 cups"
+        },
+        {   
+            "type": "condiments",
+            "ingredient": "Salsa",
+            "amount": "1/2 cup"
+        },
+        {   
+            "type": "Oil",
+            "ingredient": "Vegetable Oil",
+            "amount": "-"
+        },
+        {   
+            "type": "bread",
+            "ingredient": "Tortillas (corn or flour)",
+            "amount": "-"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Colby Jack Cheese",
+            "amount": "1 1/2 cups"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Cream Cheese",
+            "amount": "6 oz"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Sour Cream",
+            "amount": "1/3 cup"
+        },
+        {   
+            "type": "produce",
+            "ingredient": "Spinach",
+            "amount": "1 1/2 cups"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1.",
+            "process": "Heat ½ inch oil in a sauce pan on medium heat."
+        },
+        {
+            "step": "2.",
+            "process": "In a large bowl, mix together the chicken, cream cheese, sour cream, salsa, co-jack and spinach. Add salt and pepper to taste."
+        },
+        {
+            "step": "3.",
+            "process": "Once oil is hot enough (place hand over pan, above oil, to feel heat), add a few tablespoons of chicken/cream cheese mixture to the center of a tortilla and spread out. Roll up and set seam side down in oil using tongs. Cook until golden brown on both sides."
+        },
+        {
+            "step": "4.",
+            "process": "Repeat until all the tortillas are filled, rolled, and fried."
+        },
+        {
+            "step": "5.",
+            "process": "Set on paper towels to drain."
+        },
+        {
+            "step": "6.",
+            "process": "Serve warm and enjoy."
+        }
+    ]
+}

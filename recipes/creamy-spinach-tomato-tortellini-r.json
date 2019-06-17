@@ -1,0 +1,85 @@
+{
+    "title": "Creamy Spinach Tomato Tortellini",
+    "bake": "",
+    "ingredients": [
+        {   
+            "type": "Pasta",
+            "ingredient": "Tortellini",
+            "amount": "1 (20 oz) package"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "butter",
+            "amount": "2 Tbsp"
+        },
+        {   
+            "type": "produce",
+            "ingredient": "Garlic",
+            "amount": "2 cloves"
+        },
+        {   
+            "type": "Baking",
+            "ingredient": "Flour",
+            "amount": "3 Tbsp"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "Onion powder",
+            "amount": "1 tsp"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Milk",
+            "amount": "1 1/4 cups"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Heavy Whipping Cream",
+            "amount": "1/2 cup"
+        },
+        {   
+            "type": "can",
+            "ingredient": "Petite Diced Tomatoes (undrained)",
+            "amount": "1 (14.5 oz) can"
+        },
+        {   
+            "type": "Produce",
+            "ingredient": "Fresh chopped spinach",
+            "amount": "1 1/2 cups"
+        },
+        {   
+            "type": "produce",
+            "ingredient": "Fresh basil",
+            "amount": "3 Tbsp"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "Dried Oregano",
+            "amount": "1/2 tsp"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Parmesan cheese (finely shredded",
+            "amount": "6 Tbsp"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "Salt and pepper",
+            "amount": "-"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1.",
+            "process": "Cook tortellini according to directions listed on package."
+        },
+        {
+            "step": "2.",
+            "process": "Meanwhile, in a large and deep skillet or saucepan, melt butter over medium heat. Add garlic and saute 30 seconds, then add flour and onion powder and cook, stirring constantly, 1 minute. While whisking, slowly pour in milk and cream, then whisk until smooth. Cook, stirring constantly, until mixture begins to simmer, then add tomatoes, spinach, basil, and oregano. Season with salt and pepper to taste. Cook several minutes longer until melted. Remove from heat."
+        },
+        {
+            "step": "3.",
+            "process": "Toss prepared and drained tortellini into sauce mixture."
+        }
+    ]
+}

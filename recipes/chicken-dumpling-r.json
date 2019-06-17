@@ -1,0 +1,80 @@
+{
+    "title": "",
+    "bake": "",
+    "ingredients": [
+        {   
+            "type": "dairy",
+            "ingredient": "Butter",
+            "amount": "1/4 cup"
+        },
+        {   
+            "type": "vegetables",
+            "ingredient": "Chopped Onion",
+            "amount": "1/2 cup"
+        },
+        {   
+            "type": "baking",
+            "ingredient": "Flour",
+            "amount": "2/3 cups"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "Salt",
+            "amount": "1/2 tsp"
+        },
+        {   
+            "type": "liquids",
+            "ingredient": "Condensed chicken broth",
+            "amount": "1 can"
+        },
+        {   
+            "type": "liquids",
+            "ingredient": "Water",
+            "amount": "1 cup"
+        },
+        {   
+            "type": "meat",
+            "ingredient": "Chicken, cubed",
+            "amount": "2 1/2 cups"
+        },
+        {   
+            "type": "Frozen",
+            "ingredient": "Mixed Vegetables (thawed)",
+            "amount": "1 1/2 cups"
+        },
+        {   
+            "type": "dairy",
+            "ingredient": "Sour Cream",
+            "amount": "1 cup"
+        },
+        {   
+            "type": "bread",
+            "ingredient": "Pillsbury Grands Southern Style Biscuits",
+            "amount": "1 can"
+        },
+        {   
+            "type": "produce",
+            "ingredient": "chopped parsley",
+            "amount": "-"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "Paprika",
+            "amount": "-"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1.",
+            "process": "Melt butter in large heavy skillet. Add onion; cook and stir until tender. Lightly spoon flour into measuring cup; level off. Add flour and salt to pot; stir until smooth. Add broth and water; cook until bubbly and thickened, stirring constantly. Stir in chicken, mixed vegetables and sour cream. Simmer over low heat until thoroughly heated."
+        },
+        {
+            "step": "2.",
+            "process": "Separate dough into 8 biscuits; cut each in half. Place biscuit halves on top of hot chicken mixture. Simmer, uncovered, 10 minutes."
+        },
+        {
+            "step": "3.",
+            "process": "over; simmer an additional 15-20 minutes or until biscuits are no longer doughy. Sprinkle with parsley and paprika. "
+        }
+    ]
+}
