@@ -1,0 +1,120 @@
+{
+    "title": "Chicken Lo Mein",
+    "bake": "n/a",
+    "ingredients": [
+        {
+            "type": "pasta",
+            "ingredient": "Chinese egg noodles",
+            "amount": "10 ounces "
+        },
+        {
+            "type": "oil",
+            "ingredient": "sesame oil",
+            "amount": "1 teaspoon "
+        },
+        {
+            "type": "oil",
+            "ingredient": "canola oil",
+            "amount": "2 tablespoons "
+        },
+        {
+            "type": "meat",
+            "ingredient": "chicken breasts sliced thinly",
+            "amount": "2"
+        },
+        {
+            "type": "produce",
+            "ingredient": "red bell pepper thinly sliced",
+            "amount": "1"
+        },
+        {
+            "type": "spice",
+            "ingredient": "minced ginger",
+            "amount": "1 teaspoon "
+        },
+        {
+            "type": "spice",
+            "ingredient": "garlic minced",
+            "amount": "2 cloves "
+        },
+        {
+            "type": "water",
+            "ingredient": "water",
+            "amount": "3/4 cup"
+        },
+        {
+            "type": "sauce",
+            "ingredient": "lite soy sauce",
+            "amount": "1/4 cup "
+        },
+        {
+            "type": "spice",
+            "ingredient": "cornstarch",
+            "amount": "2 tablespoons"
+        },
+        {
+            "type": "sauce",
+            "ingredient": "Oyster sauce",
+            "amount": "1 tablespoon oyster sauce"
+        },
+        {
+            "type": "oil",
+            "ingredient": "Vegtable oil",
+            "amount": "1 tablespoon "
+        },
+        {
+            "type": "produce",
+            "ingredient": "Carrot thinly sliced",
+            "amount": "1"
+        },
+        {
+            "type": "produce",
+            "ingredient": "onion slices",
+            "amount": "1/2 cup "
+        },
+        {
+            "type": "produce",
+            "ingredient": "bean sprouts",
+            "amount": "1 cup"
+        },
+        {
+            "type": "produce",
+            "ingredient": "shredded cabbage",
+            "amount": "1/2 cup "
+        }
+    ],
+    "directions": [
+        {
+            "step": "1",
+            "process": "Cook the egg noodles one minute shy of the directions."
+        },
+        {
+            "step": "2",
+            "process": "Drain and toss with sesame oil in a bowl to coat."
+        },
+        {
+            "step": "3",
+            "process": "Heat canola oil in a large skillet or wok over medium-high heat."
+        },
+        {
+            "step": "4",
+            "process": "Cook the chicken 3-4 minutes on each side until cooked through."
+        },
+        {
+            "step": "5",
+            "process": "Remove from the pan and add in the red bell peppers, ginger and garlic and cook them for 1-2 minutes, stirring frequently until just softened."
+        },
+        {
+            "step": "6",
+            "process": "Add in the water, soy sauce, cornstarch, vegetable oil and oyster sauce into the skillet."
+        },
+        {
+            "step": "7",
+            "process": "Add in the carrot, onion and cabbage and cook for 1-2 minutes before adding back in the chicken and egg noodles."
+        },
+        {
+            "step": "8",
+            "process": "Add in the bean sprouts, toss all the ingredients together well and serve."
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "title": "Slow Cooker Mongolian Beef",
+    "bake": "n/a",
+    "ingredients": [
+        {   
+            "type": "meat",
+            "ingredient": "Flank Steak",
+            "amount": "1 1/2 pounds"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "cornstarch",
+            "amount": "1/4 cup"
+        },
+        {   
+            "type": "oil",
+            "ingredient": "Olive Oil",
+            "amount": "2 tablespoons"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "mince Garlic, Cloves",
+            "amount": "1/2 teaspons"
+        },
+        {   
+            "type": "sauce",
+            "ingredient": "Soy Sauce",
+            "amount": "3/4 cups"
+        },
+        {   
+            "type": "water",
+            "ingredient": "Water",
+            "amount": "3/4 cups"
+        },
+        {   
+            "type": "baking",
+            "ingredient": "Brown Sugar",
+            "amount": "3/4 cups"
+        },
+        {   
+            "type": "produce",
+            "ingredient": "grated carrots",
+            "amount": "1 cup"
+        },
+        {   
+            "type": "produce",
+            "ingredient": "green onions",
+            "amount": "garnish"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1",
+            "process": "Cut flank steak into thin strips. In a ziplock bag add flank steak pieces and cornstarch. Shake to coat."
+        },
+        {
+            "step": "2",
+            "process": "Add olive oil, minced garlic, soy sauce, water, brown sugar and carrots to slow cooker. Stir ingredients. Add coated flank steak and stir again until coated in the sauce."
+        },
+        {
+            "step": "3",
+            "process": "Cook for high 2-3 hours or on low 4-5 hours until cooked throughout and tender. Can serve over rice and garnish with green onions."
+        }
+    ]
+}

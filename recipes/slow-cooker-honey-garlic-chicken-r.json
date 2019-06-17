@@ -1,0 +1,106 @@
+{
+    "title": "Sow Cooker Honey Garlic Chicken",
+    "bake": "n/a",
+    "ingredients": [
+        {   
+            "type": "meat",
+            "ingredient": "boneless skinless chicken breasts",
+            "amount": "4 or 2 pounds"
+        },
+        {   
+            "type": "sauce",
+            "ingredient": "low sodium soy sauce",
+            "amount": "1/2 cup "
+        },
+        {   
+            "type": "bake",
+            "ingredient": "honey",
+            "amount": "1/2 cup "
+        },
+        {   
+            "type": "sauce",
+            "ingredient": "hoisin sauce",
+            "amount": "1/4 cup "
+        },
+        {   
+            "type": "sauce",
+            "ingredient": "rice wine vinegar",
+            "amount": "1 tablespoon "
+        },
+        {   
+            "type": "oil",
+            "ingredient": "sesame oil",
+            "amount": "1 teaspoon"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "ginger grated",
+            "amount": "1 teaspoon"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "garlic minced",
+            "amount": "4 cloves"
+        },
+        {   
+            "type": "sauce",
+            "ingredient": "sriracha depending on how spicy you would like this",
+            "amount": "1-2 teaspoons "
+        },
+        {   
+            "type": "produce",
+            "ingredient": "scallions sliced thin, divided (white parts for cooking, green for serving)",
+            "amount": "2"
+        },
+        {   
+            "type": "water",
+            "ingredient": "water",
+            "amount": "2 tablespoons"
+        },
+        {   
+            "type": "spice",
+            "ingredient": "cornstarch",
+            "amount": "1 tablespoon"
+        },
+        {   
+            "type": "grain",
+            "ingredient": "sesame seeds for garnish",
+            "amount": "if desired"
+        }
+
+    ],
+    "directions": [
+        {
+            "step": "1",
+            "process": "Place chicken in the bottom of the slow cooker."
+        },
+        {
+            "step": "2",
+            "process": "In a medium bowl whisk together soy sauce, honey, hoisin, vinegar, sesame oil, ginger, garlic, sriracha and the white parts only of the scallions."
+        },
+        {
+            "step": "3",
+            "process": "Pour the sauce mixture ontop of the chicken and cook for 2-3 hours on low. (Cooking time depends on the thickness of your chicken. My chicken breasts were pretty small and took 2 1/2 hours.)"
+        },
+        {
+            "step": "4",
+            "process": "Remove the chicken from the liquid and place on a plate or cutting board. Allow the chicken to rest for a couple of minutes and then shred with two forks or slice it up with a knife."
+        },
+        {
+            "step": "5",
+            "process": "Transfer the liquid from the slow cooker to a small saucepan."
+        },
+        {
+            "step": "6",
+            "process": "Whisk 2 tablespoons of water with 1 tablespoon of cornstarch. Slowly add the cornstarch mixture to the sauce."
+        },
+        {
+            "step": "7",
+            "process": "Cook on high until bubbly and thickened, whisking constantly. Pour the sauce back in the slow cooker along with the shredded chicken and toss to coat."
+        },
+        {
+            "step": "8",
+            "process": "Serve immediately with sesame seeds and green onions for garnish."
+        }
+    ]
+}
