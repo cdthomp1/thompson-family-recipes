@@ -94,6 +94,28 @@ function bakedGarlicCheddarChicken() {
       xhttp.send();
 }
 
+function blackednChickenandAvocadoSalad() {
+  let url = "https://cdthomp1.github.io/what-can-I-make/recipes/blackened-chicken-and-avocado-salad-r.json"
+    
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let recipe = JSON.parse(this.responseText)
+    
+          document.getElementById(`recipe-name`).innerHTML = recipe.title;
+    
+            recipe.ingredients.forEach(ingredient =>{
+                addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-list')
+            })
+    
+            recipe.directions.forEach(direction =>{
+                addItems(direction.process, 'recipe-direction-list')
+            })  
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+}
 
     function addItems(item,list){
     
@@ -104,3 +126,6 @@ function bakedGarlicCheddarChicken() {
     ul.appendChild(li);
     
   }
+
+
+  

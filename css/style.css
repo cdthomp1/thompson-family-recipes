@@ -302,4 +302,13 @@
         'top-box-a'
         'top-box-b';
     }
+
+    .main-nav a {
+
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+    }
+
+
   }
