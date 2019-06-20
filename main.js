@@ -1,5 +1,5 @@
 
-function ccbs(){
+function bakedCreanCheeseSpaghetti(){
     var url = "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json"
     
     var xhttp = new XMLHttpRequest();
@@ -25,7 +25,7 @@ function ccbs(){
 }
 
 
-function cc(){
+function crockpotChili(){
     let url = "https://cdthomp1.github.io/what-can-I-make/recipes/crockpot-chili-r.json"
     
     var xhttp = new XMLHttpRequest();
@@ -91,6 +91,3 @@ function macCheese() {
     ul.appendChild(li);
     
   }
-
- ccbs()
- cc()
