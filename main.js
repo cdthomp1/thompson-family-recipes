@@ -7,15 +7,15 @@ function bakedCreanCheeseSpaghetti(){
         if (this.readyState == 4 && this.status == 200) {
           var recipe = JSON.parse(this.responseText)
     
-          /* document.getElementById(`recipe-name`).innerHTML = recipe.title;
+          document.getElementById(`recipe-name`).innerHTML = recipe.title;
     
             recipe.ingredients.forEach(ingredient =>{
-                addItem(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-list')
+                addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-list')
             })
     
             recipe.directions.forEach(direction =>{
-                addItem(direction.process, 'recipe-direction-list')
-            })   */
+                addItems(direction.process, 'recipe-direction-list')
+            })
 
         console.log(recipe)
         }
@@ -33,14 +33,14 @@ function crockpotChili(){
         if (this.readyState == 4 && this.status == 200) {
           let recipe = JSON.parse(this.responseText)
     
-          document.getElementById(`recipe-namea`).innerHTML = recipe.title;
+          document.getElementById(`recipe-name`).innerHTML = recipe.title;
     
             recipe.ingredients.forEach(ingredient =>{
-                addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-lista')
+                addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'recipe-ingredient-list')
             })
     
             recipe.directions.forEach(direction =>{
-                addItems(direction.process, 'recipe-direction-lista')
+                addItems(direction.process, 'recipe-direction-list')
             })  
         }
       };
@@ -71,16 +71,6 @@ function macCheese() {
       xhttp.send();
 }
 
-
-  function addItem(item,list){
-    
-    var ul = document.getElementById(list);
-    var li = document.createElement("li");
-    li.setAttribute('id',item);
-    li.appendChild(document.createTextNode(item));
-    ul.appendChild(li);
-    
-  }
 
     function addItems(item,list){
     
