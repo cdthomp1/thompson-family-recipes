@@ -1,67 +1,95 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <title>Thompson Family Recipes</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./css/newMain.css">
+<head>
+  <!-- Required meta tags -->
+  <title>Thompson Family Recipes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/newMain.css">
 
+</head>
 
-  </head>
-  <body>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Thompson Family Recipes</a>
 
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#">Thompson Family Recipes</a>
-      
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    
-    <section class="boxes">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Appetizers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Breakfast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Beverages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lunch</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Soups</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Salads</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Main Dishes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Beef</a>
+            <a class="dropdown-item" href="#">Poultry</a>
+            <a class="dropdown-item" href="#">Pork</a>
+            <a class="dropdown-item" href="#">Seafood</a>
+            <a class="dropdown-item" href="#">Vegetarian</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Side Dishes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Vegetables</a>
+            <a class="dropdown-item" href="#">Rice</a>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" id="searchbar" type="search" onkeyup="search_animal()" placeholder="Search" aria-label="Search">
+  </form> 
+  <section class="boxes">
 
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h5 class="card-title">Apple Crisp</h5>
+        <p class="card-text">This dutch oven classic is great!</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h5 class="card-title">Apple Pie</h5>
+        <p class="card-text">Make a fresh apple pie</p>
         <a href="./testRecipe.html" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
@@ -69,60 +97,218 @@
       <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
+    </div>
   </section>
 
   <section class="boxes">
 
-      <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-      <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-    </section>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Enchilada</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  <section class="boxes">
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="./testRecipe.html" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Tacos</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="boxes">
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Blueberry</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="./testRecipe.html" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="boxes">
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="./testRecipe.html" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Apple</h5>
+        <p class="card-text">Some Nice Apples</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+</body>
+
+<script>
+function search_animal() { 
+    let input = document.getElementById('searchbar').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('card-title'); 
+    let y = document.getElementsByClassName('card'); 
+    let z = document.getElementsByClassName('card-text'); 
+      
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            y[i].style.display="none"; 
+        }
+        if(!z[i].innerHTML.toLowerCase().includes(input)){
+          y[i].style.display="none";
+        } 
+        else { 
+            y[i].style.display="block";                  
+        } 
+    } 
+} 
+
+</script>
+
 </html>
