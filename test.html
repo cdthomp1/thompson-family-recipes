@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="./test.html">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Appetizers</a>
@@ -80,9 +80,9 @@
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Turkey</h5>
-        <p class="card-text">This dutch oven classic is great!</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Dill Oyster Crakers</h5>
+        <p class="card-text">Shari Thompson Lyons</p>
+        <a href="./testRecipe.html" class="btn btn-primary">Make It!</a>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -297,15 +297,12 @@ function search_recipe() {
     let z = document.getElementsByClassName('card-text'); 
       
     for (i = 0; i < x.length; i++) {  
-      console.log(x[i].innerHTML)
+      
         if (!x[i].innerHTML.toLowerCase().includes(input)) { 
             y[i].style.display="none"; 
         }
-        if(!z[i].innerHTML.toLowerCase().includes(input)){
-          y[i].style.display="none";
-        } 
         else { 
-            y[i].style.display="block";                  
+            y[i].style.display="";                  
         } 
     } 
 } 
