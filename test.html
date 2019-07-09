@@ -11,10 +11,45 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./css/newMain.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #fff;
+      --dark: #004f99;
+      --light: #ddd;
+      --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: var(--dark);
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      vertical-align: middle;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 1
+    }
+
+     a:hover {
+      color: #FFF;
+    }
+
+    .my-float {
+      margin-top: 30%;
+    }
+  </style>
 </head>
 
-<body>
+<body id="top">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
       aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,13 +103,23 @@
             <a class="dropdown-item" href="#">Rice</a>
           </div>
         </li>
-        
+
       </ul>
     </div>
   </nav>
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" id="searchbar" type="search" onkeyup="search_recipe()" placeholder="Search" aria-label="Search">
-  </form> 
+
+  <a href="#top" class="float">
+    <i class="material-icons my-float">
+      arrow_upward
+    </i>
+  </a>
+
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" id="searchbar" type="search" onkeyup="search_recipe()" placeholder="Search"
+      aria-label="Search">
+  </form>
+
+
   <section class="boxes">
 
     <div class="card" style="width: 18rem;">
@@ -289,24 +334,22 @@
 </body>
 
 <script>
-function search_recipe() { 
-    let input = document.getElementById('searchbar').value 
-    input=input.toLowerCase(); 
-    let x = document.getElementsByClassName('card-title'); 
-    let y = document.getElementsByClassName('card'); 
-    let z = document.getElementsByClassName('card-text'); 
-      
-    for (i = 0; i < x.length; i++) {  
-      
-        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
-            y[i].style.display="none"; 
-        }
-        else { 
-            y[i].style.display="";                  
-        } 
-    } 
-} 
+  function search_recipe() {
+    let input = document.getElementById('searchbar').value
+    input = input.toLowerCase();
+    let x = document.getElementsByClassName('card-title');
+    let y = document.getElementsByClassName('card');
+    let z = document.getElementsByClassName('card-text');
 
+    for (i = 0; i < x.length; i++) {
+
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        y[i].style.display = "none";
+      } else {
+        y[i].style.display = "";
+      }
+    }
+  }
 </script>
 
 </html>
