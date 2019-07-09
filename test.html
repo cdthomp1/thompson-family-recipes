@@ -73,14 +73,14 @@
     </div>
   </nav>
   <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" id="searchbar" type="search" onkeyup="search_animal()" placeholder="Search" aria-label="Search">
+    <input class="form-control mr-sm-2" id="searchbar" type="search" onkeyup="search_recipe()" placeholder="Search" aria-label="Search">
   </form> 
   <section class="boxes">
 
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Apple Crisp</h5>
+        <h5 class="card-title">Turkey</h5>
         <p class="card-text">This dutch oven classic is great!</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
@@ -96,7 +96,7 @@
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Turkey Dinner</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -289,7 +289,7 @@
 </body>
 
 <script>
-function search_animal() { 
+function search_recipe() { 
     let input = document.getElementById('searchbar').value 
     input=input.toLowerCase(); 
     let x = document.getElementsByClassName('card-title'); 
@@ -297,6 +297,7 @@ function search_animal() {
     let z = document.getElementsByClassName('card-text'); 
       
     for (i = 0; i < x.length; i++) {  
+      console.log(x[i].innerHTML)
         if (!x[i].innerHTML.toLowerCase().includes(input)) { 
             y[i].style.display="none"; 
         }
