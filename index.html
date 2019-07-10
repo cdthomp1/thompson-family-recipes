@@ -1,115 +1,293 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thompson Recipes</title>
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- Required meta tags -->
+  <title>Thompson Family Recipes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/newMain.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #fff;
+      --dark: #004f99;
+      --light: #ddd;
+      --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    }
+  </style>
 </head>
 
+<body id="top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Thompson Family Recipes</a>
 
-<body>
-  <div class="wrapper">
-    <div class="header">
-      <h1>Thompson Family Recipes</h1>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="./test.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Appetizers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Breakfast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Beverages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lunch</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Soups</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Salads</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Main Dishes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Beef</a>
+            <a class="dropdown-item" href="#">Poultry</a>
+            <a class="dropdown-item" href="#">Pork</a>
+            <a class="dropdown-item" href="#">Seafood</a>
+            <a class="dropdown-item" href="#">Vegetarian</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Side Dishes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Vegetables</a>
+            <a class="dropdown-item" href="#">Rice</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <a href="#top" class="float">
+    <i class="material-icons my-float">
+      arrow_upward
+    </i>
+  </a>
+
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" id="searchbar" type="search" onkeyup="search_recipe()" placeholder="Search"
+      aria-label="Search">
+  </form>
+
+
+  <section class="boxes">
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://joliveco.com/wp-content/uploads/2016/03/IMG_9809.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Dill Oyster Crakers</h5>
+        <p class="card-text">Shari Thompson Lyons</p>
+        <a href="./dill-oyster-crackers.html" class="btn btn-primary">Make It!</a>
+      </div>
     </div>
 
-    </nav>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top"
+        src="https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Mac and Cheese</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./mac-and-cheese.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top"
+        src="https://images-gmi-pmc.edge-generalmills.com/791ff4ac-77a5-4c4d-92d4-4e76e9524439.jpg"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Chicken Ranch Wraps</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./chicken-ranch-wraps.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://cdn.pixabay.com/photo/2014/06/28/14/14/chili-con-carne-378952_960_720.jpg"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Crockpot Chili</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./crockpot-chili.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+  </section>
 
 
 
-    <!-- Info Section -->
-    <section class="boxes">
+  <section class="boxes">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://farm7.staticflickr.com/6162/6193972000_d97afabe58_b.jpg"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Baked Cream Cheese Spaghetti</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./baked-cream-cheese-spaghetti.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://images.media-allrecipes.com/userphotos/560x315/226552.jpg"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Baked Garlic Cheddar Chicken</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./baked-garlic-cheddar-chicken.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://www.eatwell101.com/wp-content/uploads/2019/04/Blackened-Chicken-and-Avocado-Salad-recipe-1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Blakend Chicken and Avocado Salad</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./blackend-chicken-and-avocado-salad.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://images-gmi-pmc.edge-generalmills.com/a2e175f4-6645-44a9-b963-c25a767371a8.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Chicken Dumpling</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./chicken-dumpling.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
 
-      <a href="mac-and-cheese.html" style="text-decoration: none">
-        <div >
-          <h3>Mac and Cheese</h3>
-          <img
-            src="https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+  </section>
+
+  <section class="boxes">
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://www.jocooks.com/wp-content/uploads/2016/02/chicken-lo-mein-1-8.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Chicken Low Mein</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./chicken-lo-mein.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://easypeasypleasy.com/wp-content/uploads/2017/01/Buffalo-Chicken-Taquitos-for-the-win-The-perfect-handheld-appetizer-for-any-party.-Transform-the-classic-Buffalo-Chicken-Dip-with-this-recipe..jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Cream Cheese and Chicken Taquitos</h5>
+        <p class="card-text">Cameron Thompson</p>
+        <a href="./cream-cheese-and-chicken-taquitos.html" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary">Make It!</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="boxes">
+
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">Make It!</a>
         </div>
-      </a>
-
-      <a href="crockpot-chili.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Crockpot Chili</h3>
-          <img src="https://cdn.pixabay.com/photo/2014/06/28/14/14/chili-con-carne-378952_960_720.jpg">
+      </div>
+  
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">Make It!</a>
         </div>
-      </a>
-
-      <a href="baked-cream-cheese-spaghetti.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Baked Cream Cheese Spaghetti</h3>
-          <img src="https://farm7.staticflickr.com/6162/6193972000_d97afabe58_b.jpg">
+      </div>
+  
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">Make It!</a>
         </div>
-      </a>
-
-      <a href="baked-garlic-cheddar-chicken.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Baked Garlic Cheddar Chicken</h3>
-          <img src="https://images.media-allrecipes.com/userphotos/560x315/226552.jpg">
+      </div>
+  
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">Make It!</a>
         </div>
-      </a>
-
-      <a href="blackend-chicken-and-avocado-salad.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Blackend Chicken and Avocado Salad</h3>
-          <img
-            src="https://www.eatwell101.com/wp-content/uploads/2019/04/Blackened-Chicken-and-Avocado-Salad-recipe-1.jpg">
-        </div>
-      </a>
-
-      <a href="chicken-dumpling.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Chicken Dumpling</h3>
-          <img src="https://images-gmi-pmc.edge-generalmills.com/a2e175f4-6645-44a9-b963-c25a767371a8.jpg">
-        </div>
-      </a>
-
-      <a href="chicken-lo-mein.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Chicken Low Mein</h3>
-          <img src="https://www.jocooks.com/wp-content/uploads/2016/02/chicken-lo-mein-1-8.jpg">
-        </div>
-      </a>
-
-      <a href="chicken-ranch-wraps.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Chicken Ranch Wraps</h3>
-          <img src="https://images-gmi-pmc.edge-generalmills.com/791ff4ac-77a5-4c4d-92d4-4e76e9524439.jpg">
-        </div>
-      </a>
-
-      <a href="cream-cheese-and-chicken-taquitos.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Cream Cheese and Chicken Taquitos</h3>
-          <img src="https://easypeasypleasy.com/wp-content/uploads/2017/01/Buffalo-Chicken-Taquitos-for-the-win-The-perfect-handheld-appetizer-for-any-party.-Transform-the-classic-Buffalo-Chicken-Dip-with-this-recipe..jpg">
-        </div>
-      </a>
-
-      <a href="chicken-lo-mein.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Chicken Low Mein</h3>
-          <img src="https://www.jocooks.com/wp-content/uploads/2016/02/chicken-lo-mein-1-8.jpg">
-        </div>
-      </a>
-
-      <a href="chicken-lo-mein.html" style="text-decoration: none">
-        <div id="box">
-          <h3>Chicken Low Mein</h3>
-          <img src="https://www.jocooks.com/wp-content/uploads/2016/02/chicken-lo-mein-1-8.jpg">
-        </div>
-      </a>
-
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>Cameron Thompson &copy; 2018</p>
-    </footer>
 
-  </div>
-  <script src="./main.js"></script>
 
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </body>
+
+<script>
+  function search_recipe() {
+    let input = document.getElementById('searchbar').value
+    input = input.toLowerCase();
+    let x = document.getElementsByClassName('card-title');
+    let y = document.getElementsByClassName('card');
+    let z = document.getElementsByClassName('card-text');
+
+    for (i = 0; i < x.length; i++) {
+
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        y[i].style.display = "none";
+      } else {
+        y[i].style.display = "";
+      }
+    }
+  }
+</script>
 
 </html>
