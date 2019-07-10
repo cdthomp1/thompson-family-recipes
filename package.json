@@ -23,6 +23,7 @@
   "homepage": "https://github.com/cdthomp1/what-can-I-make#readme",
   "dependencies": {
     "@google-cloud/firestore": "^2.1.0",
+    "firebase": "^6.2.4",
     "firebase-admin": "^8.0.0",
     "i": "^0.3.6",
     "inquirer": "^6.4.1",

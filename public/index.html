@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./css/newMain.css">
+  
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     :root {
@@ -63,7 +64,7 @@
     }
 
 
-    #loginb {
+    #btnlogin {
       background-color: var(--dark);
       color: var(--primary);
     }
@@ -161,6 +162,9 @@
       <div class="card-body">
         <h5 class="card-title">Dill Oyster Crakers</h5>
         <p class="card-text">Shari Thompson Lyons</p>
+        <span id="add" style="display: none"><i class="material-icons">
+            alarm_add
+            </i></span>
         <a href="./dill-oyster-crackers.html" class="btn btn-primary">Make It!</a>
       </div>
     </div>
@@ -287,7 +291,7 @@
                     data-dismiss="modal" id="signup">Sign Up</button>
                 </div>
                 <div class="align-right">
-                  <button class="btn btn-default" id="loginb" onclick="login()">Login</button>
+                  <button type="submit" class="btn btn-default" id="btnlogin" onclick="login()">Login</button>
                 </div>
               </form>
             </div>
@@ -309,10 +313,10 @@
                   <h2 class="text-center">Sign Up</h2>
                   <br />
                   <div class="form-group">
-                    <input type="email" class="form-control" id="fname" placeholder="First Name">
+                    <input type="email" class="form-control" id="fnames" placeholder="First Name">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="lname" placeholder="Last Name">
+                    <input type="email" class="form-control" id="lnames" placeholder="Last Name">
                   </div>
                   <div class="form-group">
                     <input type="email" class="form-control" id="emails" placeholder="Email">
@@ -334,7 +338,7 @@
     </div>
   </div>
   <!-- [ Modal #1 ] -->
-<p id="hi" style="display: none">Hello</p>
+  <p id="hi" style="display: none">Hello</p>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
@@ -343,22 +347,6 @@
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
-
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyDW0cOSK0scpvqGQYbUcDm9b3dgB50iISM",
-      authDomain: "thompson-recipes-246300.firebaseapp.com",
-      databaseURL: "https://thompson-recipes-246300.firebaseio.com",
-      projectId: "thompson-recipes-246300",
-      storageBucket: "",
-      messagingSenderId: "556667094869",
-      appId: "1:556667094869:web:1837fc0766c6286a"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
-
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -374,7 +362,6 @@
 </body>
 
 <script>
-
   function search_recipe() {
     let input = document.getElementById('searchbar').value
     input = input.toLowerCase();
@@ -392,35 +379,16 @@
     }
   }
 
-  function login() {
-    
-    var login = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+  function login(){
+    var user = document.getElementById('email').value;
+    var pass = document.getElementById('password').value;
 
-    console.log(login + password)
-    firebase.auth().signInWithEmailAndPassword(login, password)
-        .then(function () {
-          console.log("REDIRECT ME")
-            //document.location.replace("https://www.apple.com");
-            document.getElementById('hi').style.display='block'
-        })
-        .catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            alert('Please, check information provided and try again.');
-            // ...
-        });
-};
-
-firebase.auth().onAuthStateChanged(function(user) {
-      window.user = user;
-      // Step 1:
-      //  If no user, sign in anonymously with firebase.auth().signInAnonymously()
-      //  If there is a user, log out out user details for debugging purposes.
-    });
-
+    console.log(user + pass)
+  }
 
 </script>
+
+<!--<script src="main.js"></script>-->
+<!--<script src="index.js"></script>-->
 
 </html>
