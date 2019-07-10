@@ -12,6 +12,33 @@
     box-shadow: var(--shadow);
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
+  .float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--dark);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1
+  }
+
+  a:hover {
+    color: #FFF;
+  }
+
+  .my-float {
+    margin-top: 30%;
+  }
+
 hr {
     color: var(--dark);
 }
