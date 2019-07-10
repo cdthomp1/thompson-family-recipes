@@ -3,19 +3,21 @@
     --dark: #004f99;
     --light: #ddd;
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-  }
+}
 
-.boxes {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .card {
-    margin:0 auto;
+.card {
+    margin: 0 auto;
     margin-top: 20px;
     padding: 1.5rem 2rem;
     box-shadow: var(--shadow);
+}
+
+hr {
+    color: var(--dark);
+}
+
+h6 {
+    padding: 5px;
 }
   
   @media (max-width: 700px) {
@@ -29,6 +31,8 @@
   }
   
   @media (max-width: 500px) {
-
+    .card {
+        width: 18rem;
+    }
 
   }
