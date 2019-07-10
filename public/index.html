@@ -12,8 +12,6 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./css/newMain.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <style>
     :root {
       --primary: #fff;
@@ -317,10 +315,10 @@
                     <input type="email" class="form-control" id="lname" placeholder="Last Name">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <input type="email" class="form-control" id="emails" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="passwords" placeholder="Password">
                   </div>
                   <br />
                   <div class="align-right">
@@ -336,7 +334,7 @@
     </div>
   </div>
   <!-- [ Modal #1 ] -->
-
+<p id="hi" style="display: none">Hello</p>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
@@ -376,48 +374,6 @@
 </body>
 
 <script>
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-  var uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      return true;
-    },
-    uiShown: function() {
-      // The widget is rendered.
-      // Hide the loader.
-      document.getElementById('loader').style.display = 'none';
-    }
-  },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-  signInFlow: 'popup',
-  signInSuccessUrl: 'https://www.apple.com/',
-  redirectURL: 'https://www.apple.com/',
-  signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-    //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-  ],
-  // Terms of service url.
-  tosUrl: 'https://www.apple.com/',
-  // Privacy policy url.
-  privacyPolicyUrl: 'https://www.apple.com/'
-};
-
-
-ui.start('#firebaseui-auth-container', {
-  signInOptions: [
-    firebase.auth.EmailAuthProvider.PROVIDER_ID
-  ],
-  // Other config options...
-});
 
   function search_recipe() {
     let input = document.getElementById('searchbar').value
@@ -444,7 +400,9 @@ ui.start('#firebaseui-auth-container', {
     console.log(login + password)
     firebase.auth().signInWithEmailAndPassword(login, password)
         .then(function () {
-            window.location.replace('testLogin.html');
+          console.log("REDIRECT ME")
+            //document.location.replace("https://www.apple.com");
+            document.getElementById('hi').style.display='block'
         })
         .catch(function (error) {
             // Handle Errors here.
@@ -454,6 +412,13 @@ ui.start('#firebaseui-auth-container', {
             // ...
         });
 };
+
+firebase.auth().onAuthStateChanged(function(user) {
+      window.user = user;
+      // Step 1:
+      //  If no user, sign in anonymously with firebase.auth().signInAnonymously()
+      //  If there is a user, log out out user details for debugging purposes.
+    });
 
 
 </script>
