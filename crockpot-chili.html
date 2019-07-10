@@ -1,42 +1,125 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crockpot Chili</title>
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- Required meta tags -->
+    <title>Thompson Family Recipes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/newMain.css">
+    <style>
+#bannerimage {
+  width: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2014/06/28/14/14/chili-con-carne-378952_960_720.jpg);
+  height: 205px;
+  background-position: center;
+}
+    </style>
+
 </head>
 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Thompson Family Recipes</a>
 
-<body onload="crockpotChili()">
-  <div class="wrapper">
-    <div class="header">
-        
-    </div>
-    <nav class="main-nav">
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="./test.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Appetizers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Breakfast</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Beverages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lunch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Soups</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Salads</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Main Dishes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Beef</a>
+                        <a class="dropdown-item" href="#">Poultry</a>
+                        <a class="dropdown-item" href="#">Pork</a>
+                        <a class="dropdown-item" href="#">Seafood</a>
+                        <a class="dropdown-item" href="#">Vegetarian</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Side Dishes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Vegetables</a>
+                        <a class="dropdown-item" href="#">Rice</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
     </nav>
 
+    <div id="bannerimage"></div>
+    <div>
+        <div>
+            <h5>Crockpot Chili</h5>
+            <p>Cameron Thompson</p>
+        </div>
+        <h6>Ingredients</h6>
+        <ul class="list-group">
+            <li class="list-group-item">1 15oz can black beans</li>
+            <li class="list-group-item">1 15.25oz can corn, undrained</li>
+            <li class="list-group-item">1 10oz can Rotel tomatoes, undrained</li>
+            <li class="list-group-item">1 pkg ranch dressing mix</li>
+            <li class="list-group-item">1 tsp Cumin</li>
+            <li class="list-group-item">1 tbsp Chili powder</li>
+            <li class="list-group-item">1 tsp Onion powder</li>
+            <li class="list-group-item">1 8oz pkg light cream cheese</li>
+            <li class="list-group-item">2 chicken breasts</li>
+        </ul>
+        <p>&NonBreakingSpace;</p>
+        <h6>Directions</h6>
+        <ul class="list-group">
+            <li class="list-group-item">Drain and rinse the black beans. Place chicken at the bottom of the crock pot, then pour out the whole can of corn (undrained), Rotel tomatoes, and black beans on top of chicken.</li>
+            <li class="list-group-item">Top with seasonings and ranch dressing mix. Stir together.</li>
+            <li class="list-group-item">Place cream cheese block on top. Cover with lid and cook on low for 6-8 hours.</li>
+            <li class="list-group-item">After the cooking time is over, take chicken breasts from crock pot and shred and add back to the chilli. Stir together and enjoy!</li>
+        </ul>
+    </div>
 
-    <!-- Info Section -->
-    <section class="boxes">
-      <div class="recipe">
-        <h3 id="recipe-name"></h3>
-        <ul id="recipe-ingredient-list"></ul>
-        <hr>
-        <ul id="recipe-direction-list"></ul>
-      </div>
-    </section>
-    <!-- Footer -->
-    <footer>
-      <p>Cameron Thompson &copy; 2018</p>
-    </footer>
-
-  </div>
-  <script src="./main.js"></script>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
