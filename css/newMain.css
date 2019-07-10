@@ -16,6 +16,10 @@ html {
     scroll-behavior: smooth;
   }
 
+  #searchbar {
+      width: 100%;
+  }
+
   .float {
     position: fixed;
     width: 60px;
