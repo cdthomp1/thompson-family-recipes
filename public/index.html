@@ -37,6 +37,24 @@
       height: 280px;
     }
 
+    .profile {
+      background-color: #eee;
+      color: #666;
+      padding: 20px;
+      border-radius: 5px;
+      position: absolute;
+      border: 1px solid #fff;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 320px;
+      min-height: 280px;
+      height: auto;
+      overflow:auto;
+    }
+
     .form_bg_sign {
       background-color: #eee;
       color: #666;
@@ -180,7 +198,7 @@
         <h5 class="card-title">Dill Oyster Crakers</h5>
         <p class="card-text">Shari Thompson Lyons</p>
         <a href="./dill-oyster-crackers.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Dill Oyster Crakers')">Add It!</button></span>
       </div>
     </div>
 
@@ -192,7 +210,7 @@
         <h5 class="card-title">Mac and Cheese</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./mac-and-cheese.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Mac and Cheese')">Add It!</button></span>
       </div>
     </div>
 
@@ -204,7 +222,7 @@
         <h5 class="card-title">Chicken Ranch Wraps</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./chicken-ranch-wraps.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Chicken Ranch Wraps')">Add It!</button></span>
       </div>
     </div>
 
@@ -215,7 +233,7 @@
         <h5 class="card-title">Crockpot Chili</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./crockpot-chili.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Crockpot Chili')">Add It!</button></span>
       </div>
     </div>
   </section>
@@ -230,7 +248,7 @@
         <h5 class="card-title">Baked Cream Cheese Spaghetti</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./baked-cream-cheese-spaghetti.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Baked Cream Cheese Spaghetti')">Add It!</button></span>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -240,7 +258,7 @@
         <h5 class="card-title">Baked Garlic Cheddar Chicken</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./baked-garlic-cheddar-chicken.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Baked Garlic Cheddar Chicken')">Add It!</button></span>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -248,10 +266,10 @@
         src="https://www.eatwell101.com/wp-content/uploads/2019/04/Blackened-Chicken-and-Avocado-Salad-recipe-1.jpg"
         alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Blakend Chicken and Avocado Salad</h5>
+        <h5 class="card-title">Blackend Chicken and Avocado Salad</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./blackend-chicken-and-avocado-salad.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Blackend Chicken and Avocado Salad')">Add It!</button></span>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -262,7 +280,7 @@
         <h5 class="card-title">Chicken Dumpling</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./chicken-dumpling.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Chicken Dumpling')">Add It!</button></span>
       </div>
     </div>
 
@@ -289,7 +307,7 @@
         <h5 class="card-title">Cream Cheese and Chicken Taquitos</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./cream-cheese-and-chicken-taquitos.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Cream Cheese and Chicken Taquitos')">Add It!</button></span>
       </div>
     </div>
   </section>
@@ -331,12 +349,12 @@
       <div class="modal-content">
         <div class="form-group">
           <div class="input-group">
-            <div class="form_bg">
+            <div class="profile">
 
               <p>Welcome<span id="username"></span></p>
 
               <p>Recipe Book</p>
-              <span id="recipeBook"></span>
+              <ul id="recipeBook"></ul>
 
             </div>
           </div>
@@ -381,7 +399,6 @@
         </div>
       </div>
     </div>
-
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
@@ -447,7 +464,9 @@
   }
 
 
-  window.onscroll = function() {scrollFunction()};
+  window.onscroll = function () {
+    scrollFunction()
+  };
 
   function scrollFunction() {
     if (document.body.scrollTop > 380 || document.documentElement.scrollTop > 380) {
@@ -458,13 +477,16 @@
   }
 
 
-
   var userRecipes = [];
 
   function addIt(recipe) {
     userRecipes.push(recipe)
-    console.log(userRecipes)
-    document.getElementById('recipeBook').innerHTML = userRecipes;
+
+    var node = document.createElement("LI"); // Create a <li> node
+    var textnode = document.createTextNode(recipe); // Create a text node
+    node.appendChild(textnode); // Append the text to <li>
+    document.getElementById("recipeBook").appendChild(node); // Append <li> to <ul> with id="myList"
+
   }
 </script>
 
