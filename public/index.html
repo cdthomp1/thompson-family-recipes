@@ -69,6 +69,10 @@
       color: var(--primary);
     }
 
+    #topbtn {
+      display: none;
+    }
+
     .align-left {
       text-align: left;
       display: inline;
@@ -156,7 +160,7 @@
     </div>
   </nav>
 
-  <a href="#top" class="float">
+  <a href="#top" id="topbtn" class="float">
     <i class="material-icons my-float">
       arrow_upward
     </i>
@@ -270,10 +274,10 @@
       <img class="card-img-top" src="https://www.jocooks.com/wp-content/uploads/2016/02/chicken-lo-mein-1-8.jpg"
         alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Chicken Low Mein</h5>
+        <h5 class="card-title">Chicken Lo Mein</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./chicken-lo-mein.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Chicken Lo Mein')">Add It!</button></span>
       </div>
     </div>
 
@@ -330,6 +334,9 @@
             <div class="form_bg">
 
               <p>Welcome<span id="username"></span></p>
+
+              <p>Recipe Book</p>
+              <span id="recipeBook"></span>
 
             </div>
           </div>
@@ -388,13 +395,13 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-      </script>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-      </script>
+    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-      </script>
+    </script>
 </body>
 
 <script>
@@ -428,7 +435,7 @@
       document.getElementById('masterLogIn').style.display = "none";
       document.getElementById('user').style.display = "block";
       var adds = document.getElementsByClassName('add');
-      document.getElementById('username').innerHTML = " " +username;
+      document.getElementById('username').innerHTML = " " + username;
 
       for (var i = 0; i < adds.length; i++) {
         adds[i].style.display = "inline";
@@ -439,6 +446,26 @@
 
   }
 
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 380 || document.documentElement.scrollTop > 380) {
+      document.getElementById("topbtn").style.display = "block";
+    } else {
+      document.getElementById("topbtn").style.display = "none";
+    }
+  }
+
+
+
+  var userRecipes = [];
+
+  function addIt(recipe) {
+    userRecipes.push(recipe)
+    console.log(userRecipes)
+    document.getElementById('recipeBook').innerHTML = userRecipes;
+  }
 </script>
 
 <!--<script src="main.js"></script>-->
