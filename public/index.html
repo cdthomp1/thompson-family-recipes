@@ -121,7 +121,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="./test.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Appetizers</a>
@@ -505,7 +505,7 @@ function login() {
     var htmlLink = getHTMLlink(recipe);
 
     //Set the href attribute
-    a.setAttribute('href', "../" + htmlLink);
+    a.setAttribute('href', htmlLink);
 
     //add the text for the link
     a.textContent = textnode.textContent;

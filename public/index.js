@@ -27,7 +27,6 @@ function login() {
     console.log("TACO BELL")
     firebase.auth().signInWithEmailAndPassword(login, password)
         .then(function () {
-            console.log("REDIRECT")
             apple();
         })
         .catch(function (error) {
