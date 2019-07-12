@@ -52,7 +52,7 @@
       width: 320px;
       min-height: 280px;
       height: auto;
-      overflow:auto;
+      overflow: auto;
     }
 
     .form_bg_sign {
@@ -190,7 +190,7 @@
   </form>
 
 
-  <section class="boxes">
+
 
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://joliveco.com/wp-content/uploads/2016/03/IMG_9809.jpg" alt="Card image cap">
@@ -236,11 +236,7 @@
         <span class="add"><button class="btn btn-success" onclick="addIt('Crockpot Chili')">Add It!</button></span>
       </div>
     </div>
-  </section>
 
-
-
-  <section class="boxes">
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://farm7.staticflickr.com/6162/6193972000_d97afabe58_b.jpg"
         alt="Card image cap">
@@ -248,7 +244,8 @@
         <h5 class="card-title">Baked Cream Cheese Spaghetti</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./baked-cream-cheese-spaghetti.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success" onclick="addIt('Baked Cream Cheese Spaghetti')">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Baked Cream Cheese Spaghetti')">Add
+            It!</button></span>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -258,7 +255,8 @@
         <h5 class="card-title">Baked Garlic Cheddar Chicken</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./baked-garlic-cheddar-chicken.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success" onclick="addIt('Baked Garlic Cheddar Chicken')">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Baked Garlic Cheddar Chicken')">Add
+            It!</button></span>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -269,7 +267,8 @@
         <h5 class="card-title">Blackend Chicken and Avocado Salad</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./blackend-chicken-and-avocado-salad.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success" onclick="addIt('Blackend Chicken and Avocado Salad')">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Blackend Chicken and Avocado Salad')">Add
+            It!</button></span>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -284,9 +283,9 @@
       </div>
     </div>
 
-  </section>
 
-  <section class="boxes">
+
+
 
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://www.jocooks.com/wp-content/uploads/2016/02/chicken-lo-mein-1-8.jpg"
@@ -307,10 +306,11 @@
         <h5 class="card-title">Cream Cheese and Chicken Taquitos</h5>
         <p class="card-text">Cameron Thompson</p>
         <a href="./cream-cheese-and-chicken-taquitos.html" class="btn btn-primary">Make It!</a>
-        <span class="add"><button class="btn btn-success" onclick="addIt('Cream Cheese and Chicken Taquitos')">Add It!</button></span>
+        <span class="add"><button class="btn btn-success" onclick="addIt('Cream Cheese and Chicken Taquitos')">Add
+            It!</button></span>
       </div>
     </div>
-  </section>
+
 
   <div class="modal fade" id="login" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
@@ -329,8 +329,8 @@
               </div>
               <br />
               <div class="align-left">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUP"
-                  data-dismiss="modal" id="signup">Sign Up</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup"
+                  data-dismiss="modal" id="signUP">Sign Up</button>
               </div>
               <div class="align-right">
                 <button id="btnlogin" class="btn btn-default" data-dismiss="modal" onclick="login()">Login</button>
@@ -364,7 +364,7 @@
 
 
 
-    <div class="modal fade" id="signUP" tabindex="-1">
+    <div class="modal fade" id="signup" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
@@ -439,15 +439,15 @@
     }
   }
 
-  function login() {
-    console.log("HELOO")
+function login() {
+    //console.log("HELOO")
     var userl = document.getElementById('email').value;
     var passl = document.getElementById('password').value;
     var user = 'camthomp96@gmail.com';
-    var pass = '1a2s3d';
+    var pass = 'a';
     var username = "Cameron"
-    console.log(userl)
-    console.log(passl)
+    //console.log(userl)
+    //console.log(passl)
     if (user === userl && pass === passl) {
       document.getElementById('masterLogIn').style.display = "none";
       document.getElementById('user').style.display = "block";
@@ -456,7 +456,7 @@
 
       for (var i = 0; i < adds.length; i++) {
         adds[i].style.display = "inline";
-        console.log("HEY")
+        //console.log("HEY")
       }
 
     }
@@ -479,18 +479,47 @@
 
   var userRecipes = [];
 
+  function getHTMLlink(recipe) {
+
+    var newRec = recipe.toLowerCase().replace(/\s/g, "-")
+    return newRec + ".html"
+  }
+
   function addIt(recipe) {
+    // Add the recipe to the recipe array
     userRecipes.push(recipe)
 
-    var node = document.createElement("LI"); // Create a <li> node
-    var textnode = document.createTextNode(recipe); // Create a text node
-    node.appendChild(textnode); // Append the text to <li>
-    document.getElementById("recipeBook").appendChild(node); // Append <li> to <ul> with id="myList"
+    //Create a new list item
+    var listItem = document.createElement("li");
+
+    //Create a new link
+    var a = document.createElement("a");
+
+    //Create the text for the link bassed on the recipe
+    var textnode = document.createTextNode(recipe);
+
+    //Grab the existing list
+    var list = document.getElementById("recipeBook");
+
+    //Create a link based on the recipe
+    var htmlLink = getHTMLlink(recipe);
+
+    //Set the href attribute
+    a.setAttribute('href', "../" + htmlLink);
+
+    //add the text for the link
+    a.textContent = textnode.textContent;
+
+    //Add the link to the list item
+    listItem.appendChild(a);
+
+    //Add the list item to the list
+    list.appendChild(listItem)
 
   }
 </script>
 
-<!--<script src="main.js"></script>-->
-<!--<script src="index.js"></script>-->
+<script src="main.js"></script>
+<script src="index.js"></script>
 
 </html>

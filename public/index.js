@@ -1,17 +1,34 @@
-//const signupBtn = document.getElementById("btnsignup");
+
 const loginBtn = document.getElementById("btnlogin");
-//const nameBox = document.getElementById("namebox");
-//var signingIn = false;
+
+
+function apple() {
+
+      document.getElementById('masterLogIn').style.display = "none";
+      document.getElementById('user').style.display = "block";
+      var adds = document.getElementsByClassName('add');
+      document.getElementById('username').innerHTML = " " + username;
+
+      for (var i = 0; i < adds.length; i++) {
+        adds[i].style.display = "inline";
+        //console.log("HEY")
+      }
+
+    
+
+  }
+
 
 function loadPage() {};
 
 function login() {
     var login = document.getElementById('email').value;
     var password = document.getElementById('password').value;
+    console.log("TACO BELL")
     firebase.auth().signInWithEmailAndPassword(login, password)
         .then(function () {
             console.log("REDIRECT")
-            window.location.replace('testRecipe.html');
+            apple();
         })
         .catch(function (error) {
             // Handle Errors here.
