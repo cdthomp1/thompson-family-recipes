@@ -5,11 +5,7 @@
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
-.card {
-    margin: 5px 0px 5px 0px;
-    padding: 1.5rem 2rem;
-    box-shadow: var(--shadow);
-}
+
 
 html {
     scroll-behavior: smooth;
@@ -69,11 +65,15 @@ h6 {
   @media (max-width: 500px) {
     .card {
         width: 18rem;
-        margin: 5px 0px 25px 45px;
+        margin: 5px 0px 45px 45px;
     }
     
     #searchbar {
       margin: 5px 0px 5px 5px;
+    }
+
+    .float {
+      bottom: 50px;
     }
 
   }
