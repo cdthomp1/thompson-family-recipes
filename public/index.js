@@ -14,6 +14,9 @@ function apple() {
         //console.log("HEY")
       }
 
+      var user = firebase.auth().currentUser;
+      document.getElementById('username').innerHTML = " " + user.displayName;
+
     
 
   }
