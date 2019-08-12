@@ -14,13 +14,10 @@ function apple() {
     }
 
 
-<<<<<<< HEAD
-=======
       var user = firebase.auth().currentUser;
       document.getElementById('username').innerHTML = " " + user.displayName;
 
     
->>>>>>> 6912f298b40aaccda4287e9d533215a189a7a404
 
 }
 
