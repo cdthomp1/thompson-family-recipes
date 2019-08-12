@@ -15,12 +15,3 @@ var firebaseConfig = {
   };
 firebase.initializeApp(firebaseConfig);
 // Initialize Cloud Firestore through Firebase
-
-var auth = firebase.auth();
-
-
-auth.onAuthStateChanged((firebaseUser) => {
-    //checks if the user is already logged in to the system
-console.log("AUTHED")
-});
-

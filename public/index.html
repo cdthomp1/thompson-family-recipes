@@ -109,19 +109,18 @@
     }
 
     .card {
+      width: 18rem;
       display: inline-block;
-      margin: 5px;
+      margin: 1% 1% 1% 1%;
       min-height: 380px;
       max-height: 380px;
       overflow: auto;
     }
 
     .card-img-top {
-      width: 222px;
+      width: 100%;
       height: 148px;
     }
-
-
   </style>
 </head>
 
@@ -207,7 +206,7 @@
 
 
 
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top" src="https://joliveco.com/wp-content/uploads/2016/03/IMG_9809.jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Dill Oyster Crakers</h5>
@@ -217,7 +216,7 @@
       </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top"
         src="https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
         alt="Card image cap">
@@ -229,7 +228,7 @@
       </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top"
         src="https://images-gmi-pmc.edge-generalmills.com/791ff4ac-77a5-4c4d-92d4-4e76e9524439.jpg"
         alt="Card image cap">
@@ -241,7 +240,7 @@
       </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top" src="https://cdn.pixabay.com/photo/2014/06/28/14/14/chili-con-carne-378952_960_720.jpg"
         alt="Card image cap">
       <div class="card-body">
@@ -252,7 +251,7 @@
       </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top" src="https://farm7.staticflickr.com/6162/6193972000_d97afabe58_b.jpg"
         alt="Card image cap">
       <div class="card-body">
@@ -263,7 +262,7 @@
             It!</button></span>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top" src="https://images.media-allrecipes.com/userphotos/560x315/226552.jpg"
         alt="Card image cap">
       <div class="card-body">
@@ -274,7 +273,7 @@
             It!</button></span>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top"
         src="https://www.eatwell101.com/wp-content/uploads/2019/04/Blackened-Chicken-and-Avocado-Salad-recipe-1.jpg"
         alt="Card image cap">
@@ -286,7 +285,7 @@
             It!</button></span>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top"
         src="https://images-gmi-pmc.edge-generalmills.com/a2e175f4-6645-44a9-b963-c25a767371a8.jpg"
         alt="Card image cap">
@@ -298,11 +297,7 @@
       </div>
     </div>
 
-
-
-
-
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top" src="https://www.jocooks.com/wp-content/uploads/2016/02/chicken-lo-mein-1-8.jpg"
         alt="Card image cap">
       <div class="card-body">
@@ -313,7 +308,7 @@
       </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top"
         src="https://easypeasypleasy.com/wp-content/uploads/2017/01/Buffalo-Chicken-Taquitos-for-the-win-The-perfect-handheld-appetizer-for-any-party.-Transform-the-classic-Buffalo-Chicken-Dip-with-this-recipe..jpg"
         alt="Card image cap">
@@ -325,6 +320,7 @@
             It!</button></span>
       </div>
     </div>
+    <button onclick="testAddRecipee()">TEST</button>
 
 
   <div class="modal fade" id="login" tabindex="-1">
@@ -454,7 +450,7 @@
     }
   }
 
-function login() {
+  function login() {
     //console.log("HELOO")
     var userl = document.getElementById('email').value;
     var passl = document.getElementById('password').value;
@@ -531,6 +527,40 @@ function login() {
     //Add the list item to the list
     list.appendChild(listItem)
 
+  }
+
+  function testAddRecipee() {
+    var card = document.createElement("div");
+    card.classList.add("card")
+
+    var x = document.createElement("IMG");
+    x.setAttribute("src", "https://homepages.cae.wisc.edu/~ece533/images/fruits.png");
+    x.classList.add("card-img-top");
+    x.setAttribute("alt", "The Pulpit Rock");
+    
+
+    var cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    var cardTitle = document.createElement("h5");
+    cardTitle.classList.add("card-title");
+
+    var cardName = document.createTextNode("TEST CARD NAME");
+    cardTitle.appendChild(cardName);
+
+    var cardAuthor = document.createElement("p");
+    cardAuthor.classList.add("card-text");
+
+    var cardAuthorName = document.createTextNode("TEST AUTHOR NAME");
+    cardAuthor.appendChild(cardAuthorName);
+
+    card.appendChild(x);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardAuthor);
+
+    card.appendChild(cardBody);
+
+    document.body.appendChild(card);
   }
 </script>
 
