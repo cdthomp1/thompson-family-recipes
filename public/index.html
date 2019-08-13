@@ -121,6 +121,30 @@
       width: 100%;
       height: 148px;
     }
+
+    @media (max-width: 700px) {
+    .card {
+      margin: 2% 0% 2% 13%;
+    }
+    form{
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .card {
+      margin: 2% 0% 2% 13%;
+    }
+    
+    #searchbar {
+      margin: 5px 0px 5px 5px;
+    }
+
+    .float {
+      bottom: 50px;
+    }
+  }
   </style>
 </head>
 
@@ -320,7 +344,7 @@
             It!</button></span>
       </div>
     </div>
-    <button onclick="testAddRecipee()">TEST</button>
+    <button onclick="recCardTemplate()">TEST</button>
 
 
   <div class="modal fade" id="login" tabindex="-1">
@@ -529,14 +553,14 @@
 
   }
 
-  function testAddRecipee() {
+  function recCardTemplate() {
     var card = document.createElement("div");
     card.classList.add("card")
 
-    var x = document.createElement("IMG");
-    x.setAttribute("src", "https://homepages.cae.wisc.edu/~ece533/images/fruits.png");
-    x.classList.add("card-img-top");
-    x.setAttribute("alt", "The Pulpit Rock");
+    var img = document.createElement("IMG");
+    img.setAttribute("src", "https://homepages.cae.wisc.edu/~ece533/images/fruits.png");
+    img.classList.add("card-img-top");
+    img.setAttribute("alt", "The Pulpit Rock");
     
 
     var cardBody = document.createElement("div");
@@ -554,14 +578,22 @@
     var cardAuthorName = document.createTextNode("TEST AUTHOR NAME");
     cardAuthor.appendChild(cardAuthorName);
 
-    card.appendChild(x);
+    var makeIt = document.createElement("a");
+    makeIt.href = "apple.com";
+    makeIt.classList.add("btn");
+    makeIt.classList.add("btn-primary");
+    var makeItName = document.createTextNode("Make It!");
+    makeIt.appendChild(makeItName);
+
+    card.appendChild(img);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardAuthor);
-
+    cardBody.appendChild(makeIt);
     card.appendChild(cardBody);
 
     document.body.appendChild(card);
   }
+
 </script>
 
 <script src="main.js"></script>
