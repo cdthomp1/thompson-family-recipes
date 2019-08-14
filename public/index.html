@@ -552,11 +552,12 @@
   }
 
   function recCardTemplate(recipe) {
-    console.log(recipe.title)
+
     var card = document.createElement("div");
     card.classList.add("card")
 
     var img = document.createElement("IMG");
+    console.log(recipe);
     img.setAttribute("src", recipe.image);
     img.classList.add("card-img-top");
     img.setAttribute("alt", "The Pulpit Rock");
@@ -595,14 +596,14 @@
 
   function getRecs() {
     let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
-     /*  "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
+      "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
       "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
       "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
       "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-low-mein-r.json",
       "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-dumpling-r.json",
       "https://cdthomp1.github.io/what-can-I-make/recipes/blackened-chicken-and-avocado-salad-r.json",
       "https://cdthomp1.github.io/what-can-I-make/recipes/crockpot-chili-r.json",
-      "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json" */
+      "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json"
     ];
 
     urls.forEach(url => {
