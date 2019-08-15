@@ -91,7 +91,10 @@ html {
   .align-right {
     float: right;
   }
-
+  
+  #btnCancel {
+    margin-right: 14px;
+  }
   .add {
     display: none;
   }
