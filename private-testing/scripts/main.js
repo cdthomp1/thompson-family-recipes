@@ -105,7 +105,6 @@ function search_recipe() {
     img.classList.add("card-img-top");
     img.setAttribute("alt", "The Pulpit Rock");
 
-
     var cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
 
@@ -124,7 +123,7 @@ function search_recipe() {
     var makeIt = document.createElement("button");
     makeIt.classList.add("btn");
     makeIt.classList.add("btn-primary");
-    makeIt.setAttribute("id", url);
+    makeIt.setAttribute("onclick", "getRec(" + "\"" + url + "\"" +")");
     makeIt.dataset.toggle = "modal"
     makeIt.dataset.target = "#currentRec";
     var makeItName = document.createTextNode("Make It!");
@@ -168,6 +167,38 @@ function search_recipe() {
   }
 
   getRecs();
+
+  function getRec(url) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        let recipe = JSON.parse(this.responseText)
+  
+        document.getElementById(`recipe-name`).innerHTML = recipe.title;
+  
+          recipe.ingredients.forEach(ingredient =>{
+              addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'ingredients')
+          })
+  
+          recipe.directions.forEach(direction =>{
+              addItems(direction.process, 'directions')
+          })  
+      }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  }
+
+
+  function addItems(item,list){
+    
+    var ul = document.getElementById(list);
+    var li = document.createElement("li");
+    li.setAttribute('id',item);
+    li.appendChild(document.createTextNode(item));
+    ul.appendChild(li);
+    
+  }
 
   const backToTopButton = document.querySelector("#back-to-top-btn");
 

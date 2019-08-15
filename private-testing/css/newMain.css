@@ -8,6 +8,10 @@ html {
     scroll-behavior: smooth;
   }
 
+  .recipeContent {
+    background-color: #eee;
+    height: auto;
+  }
   .form_bg {
     background-color: #eee;
     color: #666;
