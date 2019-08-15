@@ -1,0 +1,55 @@
+{
+    "title": "Dill Oyster Crackers",
+    "author": "Shari Thompson Lyons",
+    "image": "https://joliveco.com/wp-content/uploads/2016/03/IMG_9809.jpg",
+    "bake": "n/a",
+    "ingredients": [
+        {   
+            "type": "cracker",
+            "ingredient": "Oysterettes",
+            "amount": "1 12oz. pkg."
+        },
+        {   
+            "type": "mix",
+            "ingredient": "Hidden Valley Original Ranch Dressing Mix",
+            "amount": "1 10oz. pkg. "
+        },
+        {   
+            "type": "spice",
+            "ingredient": "Garlic Powder",
+            "amount": "1/8 tsp. "
+        },
+        {   
+            "type": "herb",
+            "ingredient": "Dill",
+            "amount": "2 tsp."
+        },
+        {   
+            "type": "oil",
+            "ingredient": "Oil",
+            "amount": "1/2 c."
+        }
+    ],
+    "directions": [
+        {
+            "step": "1",
+            "process": "In a large bowl, mix garlic powder with ranch mix, then add oil."
+        },
+        {
+            "step": "2",
+            "process": "Mix well with whisk"
+        },
+        {
+            "step": "3",
+            "process": "Stir in dill then oysterettes"
+        },
+        {
+            "step": "4",
+            "process": "Mix well with wooden spoon"
+        },
+        {
+            "step": "5",
+            "process": "When all covered, store overnight in refrigerator"
+        }
+    ]
+}
