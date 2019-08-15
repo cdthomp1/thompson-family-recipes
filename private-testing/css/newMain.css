@@ -100,7 +100,9 @@ html {
     width: 17rem;
     display: inline-block;
     margin: 1% 1% 1% 1%;
-    height: 350px;
+    min-height: 350px;
+    max-height: 350px;
+    overflow: auto;
   }
 
   .card-img-top {

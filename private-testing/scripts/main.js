@@ -94,7 +94,7 @@ function search_recipe() {
 
   }
 
-  function recCardTemplate(recipe) {
+  function recCardTemplate(recipe, url) {
 
     var card = document.createElement("div");
     card.classList.add("card")
@@ -121,10 +121,12 @@ function search_recipe() {
     var cardAuthorName = document.createTextNode(recipe.author);
     cardAuthor.appendChild(cardAuthorName);
 
-    var makeIt = document.createElement("a");
-    makeIt.href = "apple.com";
+    var makeIt = document.createElement("button");
     makeIt.classList.add("btn");
     makeIt.classList.add("btn-primary");
+    makeIt.setAttribute("id", url);
+    makeIt.dataset.toggle = "modal"
+    makeIt.dataset.target = "#currentRec";
     var makeItName = document.createTextNode("Make It!");
     makeIt.appendChild(makeItName);
 
@@ -134,7 +136,9 @@ function search_recipe() {
     cardBody.appendChild(makeIt);
     card.appendChild(cardBody);
 
-    document.body.appendChild(card);
+    //document.body.appendChild(card);
+
+    document.getElementById("allRecs").appendChild(card)
   }
 
   function getRecs() {
@@ -155,7 +159,7 @@ function search_recipe() {
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
           let recipe = JSON.parse(this.responseText)
-          recCardTemplate(recipe)
+          recCardTemplate(recipe, url)
         }
       };
       xhttp.open("GET", url, true);
@@ -164,11 +168,6 @@ function search_recipe() {
   }
 
   getRecs();
-
-
-
-
-
 
   const backToTopButton = document.querySelector("#back-to-top-btn");
 
