@@ -94,6 +94,7 @@ html {
   
   #btnCancel {
     margin-right: 14px;
+    margin-top: 10px;
   }
   .add {
     display: none;
