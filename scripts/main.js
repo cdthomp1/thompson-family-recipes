@@ -250,3 +250,8 @@ function search_recipe() {
     t -= 2;
     return c / 2 * (t * t * t + 2) + b;
   };
+
+  function clearData() {
+    document.getElementById("ingredients").innerHTML = "";
+    document.getElementById("directions").innerHTML = "";
+  }
