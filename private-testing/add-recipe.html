@@ -295,6 +295,9 @@
     function addImage() {
         var img = document.getElementById("headerImage");
         var src = document.getElementById("image").value;
+        if (src === undefined) {
+            
+        }
         img.setAttribute("src", src);
         img.classList.add("card-img-top");
         img.setAttribute("alt", "The Pulpit Rock");
