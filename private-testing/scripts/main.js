@@ -100,7 +100,7 @@ function search_recipe() {
     card.classList.add("card")
 
     var img = document.createElement("IMG");
-    console.log(recipe);
+
     img.setAttribute("src", recipe.image);
     img.classList.add("card-img-top");
     img.setAttribute("alt", "The Pulpit Rock");

@@ -114,7 +114,8 @@
         <h1>Lets add a Recipe!</h1>
         <input id="recName" placeholder="Name of Recipe" onchange="addTitle()"><br>
         <input id="authorInput" placeholder="Author of Recipe" onchange="addAuthor()"><br>
-        <input id="iamge" placeholder="Link to an Image"><br>
+        <input id="categoryInput" placeholder="Category EX. Breakfast"><br>
+        <input id="image" placeholder="Link to an Image" onchange="addImage()"><br>
         Add an Ingredient!<br>
         <div id="ingredientInput">
             <input id="quantity" placeholder="Quantity"><input id="name" placeholder="Name"><br>
@@ -126,6 +127,7 @@
 
         <h3 id="title"></h3>
         <h5 id="author"></h5>
+        <img id="headerImage">
         <ul id="ingredientList">
         </ul>
         <ol id="directionList">
@@ -243,6 +245,7 @@
 <script>
     var recIngredients = [];
     var recDirections = [];
+
     function addIngredientInput() {
         var ingredient = {
             "ammount": "",
@@ -287,6 +290,14 @@
     function addAuthor() {
         var author = document.getElementById("authorInput").value;
         document.getElementById("author").innerHTML = `By: ${author}!`;
+    }
+
+    function addImage() {
+        var img = document.getElementById("headerImage");
+        var src = document.getElementById("image").value;
+        img.setAttribute("src", src);
+        img.classList.add("card-img-top");
+        img.setAttribute("alt", "The Pulpit Rock");
     }
 </script>
 
