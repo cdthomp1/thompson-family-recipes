@@ -22,7 +22,6 @@
             margin: 0 auto;
         }
 
-
         @media (max-width: 500px) {
             .card {
                 margin: 2% 0% 2% 13%;
@@ -38,7 +37,7 @@
 
             #addRecContainer {
                 width: 100%;
-
+                margin: 0 auto;
             }
         }
     </style>
@@ -123,7 +122,7 @@
         </div>
         Add a Direction!<br>
         <input id="step" placeholder="Number"><input id="direction" placeholder="Direction"><br>
-        <button onclick="addDirectionInput()">Add Another Ingredient!</button><br>
+        <button onclick="addDirectionInput()">Add Another Direction!</button><br>
 
         <h3 id="title"></h3>
         <h5 id="author"></h5>
@@ -242,7 +241,13 @@
 </body>
 
 <script>
+    var recIngredients = [];
+    var recDirections = [];
     function addIngredientInput() {
+        var ingredient = {
+            "ammount": "",
+            "name": ""
+        }
         var quantity = document.getElementById("quantity").value;
         var name = document.getElementById("name").value;
 
@@ -253,6 +258,12 @@
 
         document.getElementById("quantity").value = "";
         document.getElementById("name").value = "";
+
+        ingredient.ammount = quantity;
+        ingredient.name = name;
+        recIngredients.push(ingredient)
+        console.log(ingredient)
+        console.log(recIngredients)
     }
 
     function addDirectionInput() {
