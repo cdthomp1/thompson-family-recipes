@@ -1,0 +1,50 @@
+{
+    "title": "Fluffy Peanut Butter Dip",
+    "bake": "",
+    "image": "",
+    "ingredients": [
+        {   
+            "type": "Condiment",
+            "ingredient": "Peanut Butter",
+            "amount": "1/2 cup"
+        },
+        {   
+            "type": "Spice",
+            "ingredient": "Cinnamon",
+            "amount": "1/8 tsp"
+        },
+        {   
+            "type": "Dairy",
+            "ingredient": "Cool Whip, thawed",
+            "amount": "1/2 cup"
+        },
+        {   
+            "type": "Dairy",
+            "ingredient": "Vanilla yogart",
+            "amount": "1 (8 oz) container"
+        },
+        {   
+            "type": "Produce",
+            "ingredient": "Apples, pears, or bananas",
+            "amount": ""
+        }
+    ],
+    "directions": [
+        {
+            "step": "1.",
+            "process": "Stir peanut butter, yogart, and cinnamon with a whisk until well blended."
+        },
+        {
+            "step": "2.",
+            "process": "Using whisk, gently stir in Cool Whip."
+        },
+        {
+            "step": "3.",
+            "process": "Chill before serving."
+        },
+        {
+            "step": "4.",
+            "process": "Cut fruit for dipping."
+        }
+    ]
+}

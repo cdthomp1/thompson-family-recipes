@@ -1,0 +1,40 @@
+{
+    "title": "Peanut Butter Dip",
+    "bake": "",
+    "image": "",
+    "ingredients": [
+        {   
+            "type": "Dairy",
+            "ingredient": "Vanilla Greek Yogart",
+            "amount": "2 (5.3 oz) containers"
+        },
+        {   
+            "type": "Condiment",
+            "ingredient": "Honey",
+            "amount": "1 Tbsp"
+        },
+        {   
+            "type": "Condiment",
+            "ingredient": "Creamy Peanut Butter",
+            "amount": "1/3 cup"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1.",
+            "process": "Add all ingredients in a bowl. Whisk to blend until smooth."
+        },
+        {
+            "step": "2.",
+            "process": "Serve with fruit."
+        },
+        {
+            "step": "3.",
+            "process": "Store in refrigerator in airtight container."
+        },
+        {
+            "step": "Optional",
+            "process": "Sprinkle chopped up toffee on top."
+        }
+    ]
+}
