@@ -166,8 +166,6 @@ function getRecs() {
     "https://cdthomp1.github.io/what-can-I-make/recipes/sausage-pepper-and-rice-skillet-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
-    //"https://cdthomp1.github.io/what-can-I-make/recipes/-r.json",
-    //"https://cdthomp1.github.io/what-can-I-make/recipes/-r.json",
   ];
 
   urls.forEach(url => {
