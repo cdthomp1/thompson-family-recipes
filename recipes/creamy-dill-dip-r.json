@@ -5,27 +5,27 @@
     "ingredients": [
         {
             "ammount": "8 oz. pkg.",
-            "name": "cream cheese, softened"
+            "ingredient": "cream cheese, softened"
         },
         {
             "ammount": "8 oz. carton",
-            "name": "sour cream"
+            "ingredient": "sour cream"
         },
         {
             "ammount": "2 Tbsp.",
-            "name": "finely chopped green onions"
+            "ingredient": "finely chopped green onions"
         },
         {
             "ammount": "2 Tbsp.",
-            "name": "dried dill weed"
+            "ingredient": "dried dill weed"
         },
         {
             "ammount": "1-2 Tbsp.",
-            "name": "milk (optional)"
+            "ingredient": "milk (optional)"
         },
         {
             "ammount": "-",
-            "name": "fresh dill (optional)"
+            "ingredient": "fresh dill (optional)"
         }
     ],
     "directions": [
