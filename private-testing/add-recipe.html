@@ -335,6 +335,7 @@
     function confirmRec() {
         recObj.ingredients = recIngredients;
         recObj.directions = recDirections;
+        recObj.category = document.getElementById("categoryInput").value;
         console.log(recObj);
 
         var title = recObj.title.replace(/\s+/g, '-').toLowerCase()
