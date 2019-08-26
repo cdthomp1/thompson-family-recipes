@@ -1,0 +1,54 @@
+{
+    "title": "Creamy Dill Dip",
+    "author": "Allison Dahl Thompson",
+    "image": "https://media.istockphoto.com/photos/health-food-for-fitness-picture-id855098134?k=6&m=855098134&s=612x612&w=0&h=eIWWpYWKTz_z2ryYAo0Dd97igUZVExzl4AKRIhUrFj4=",
+    "ingredients": [
+        {
+            "ammount": "8 oz. pkg.",
+            "name": "cream cheese, softened"
+        },
+        {
+            "ammount": "8 oz. carton",
+            "name": "sour cream"
+        },
+        {
+            "ammount": "2 Tbsp.",
+            "name": "finely chopped green onions"
+        },
+        {
+            "ammount": "2 Tbsp.",
+            "name": "dried dill weed"
+        },
+        {
+            "ammount": "1-2 Tbsp.",
+            "name": "milk (optional)"
+        },
+        {
+            "ammount": "-",
+            "name": "fresh dill (optional)"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1",
+            "process": "In a medium mixing bowl beat the cream cheese, sour cream, green onion, and dill weed until mixture is fluffy."
+        },
+        {
+            "step": "2",
+            "process": "Cover and chill for 24 hrs."
+        },
+        {
+            "step": "3",
+            "process": "If desired before serving stir the milk into the dip to make the desire consistency."
+        },
+        {
+            "step": "4",
+            "process": "If desired garnish with fresh sprig of dill."
+        },
+        {
+            "step": "4",
+            "process": "Serve with assorted vegetables."
+        }
+    ],
+    "category": "Dip"
+}

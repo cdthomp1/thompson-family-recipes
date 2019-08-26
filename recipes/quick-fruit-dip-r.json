@@ -1,0 +1,27 @@
+{
+    "title": "Quick Fruit Dip",
+    "bake": "",
+    "image": "",
+    "ingredients": [
+        {   
+            "type": "Dairy",
+            "ingredient": "Cream Cheese, softened",
+            "amount": "8 oz"
+        },
+        {   
+            "type": "Condiment",
+            "ingredient": "Marshmellow Cream",
+            "amount": "7 oz jar"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1.",
+            "process": "Combine ingredients, then chill."
+        },
+        {
+            "step": "2.",
+            "process": "Serve with fruit."
+        }
+    ]
+}

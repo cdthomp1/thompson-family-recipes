@@ -1,0 +1,53 @@
+{
+    "title": "Carmel for Dipping Apples",
+    "bake": "",
+    "image": "",
+    "ingredients": [
+        {   
+            "type": "Sugar",
+            "ingredient": "Brown Sugar",
+            "amount": "2 cups"
+        },
+        {   
+            "type": "Butter",
+            "ingredient": "Butter",
+            "amount": "1 cube"
+        },
+        {   
+            "type": "S",
+            "ingredient": "Karo ",
+            "amount": ""
+        },
+        {   
+            "type": "",
+            "ingredient": "",
+            "amount": ""
+        },
+        {   
+            "type": "",
+            "ingredient": "",
+            "amount": ""
+        },
+        {   
+            "type": "",
+            "ingredient": "",
+            "amount": ""
+        },
+        {   
+            "type": "",
+            "ingredient": "",
+            "amount": ""
+        },
+        {   
+            "type": "",
+            "ingredient": "",
+            "amount": ""
+        }
+    ],
+    "directions": [
+        {
+            "step": "",
+            "process": ""
+        }
+    ]
+}
