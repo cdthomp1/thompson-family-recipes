@@ -144,6 +144,11 @@ function recCardTemplate(recipe, url) {
   document.getElementById("allRecs").appendChild(card)
 }
 
+$('#currentRec').on('hidden.bs.modal', function (e) {
+  // do something...
+  clearData();
+})
+
 function getRecs() {
   let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
