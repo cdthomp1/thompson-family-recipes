@@ -144,8 +144,27 @@ function recCardTemplate(recipe, url) {
   document.getElementById("allRecs").appendChild(card)
 }
 
-function getRecs() {
-  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
+function getAllRecs() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      let recipes = JSON.parse(this.responseText)
+      recipes.forEach(rec => {
+        var url = makePath(rec.name)
+        getRecs(url);
+      })
+    }
+  };
+  xhttp.open("GET", "https://api.github.com/repos/cdthomp1/what-can-I-make/contents/recipes", true);
+  xhttp.send();
+}
+function makePath(name){
+  return "https://cdthomp1.github.io/what-can-I-make/recipes/" + name;
+}
+getAllRecs();
+
+function getRecs(url) {
+ /*  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
@@ -167,9 +186,9 @@ function getRecs() {
     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json",
-  ];
+  ]; */
 
-  urls.forEach(url => {
+ 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -179,10 +198,10 @@ function getRecs() {
     };
     xhttp.open("GET", url, true);
     xhttp.send();
-  });
+
 }
 
-getRecs();
+
 
 function getRec(url) {
   var xhttp = new XMLHttpRequest();
