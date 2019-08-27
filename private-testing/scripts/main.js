@@ -100,14 +100,10 @@ function recCardTemplate(recipe, url) {
   card.classList.add("card")
 
   var img = document.createElement("IMG");
-  console.log(recipe);
-  if (recipe.image === "") {
-    img.setAttribute("src", "https://media.istockphoto.com/photos/health-food-for-fitness-picture-id855098134?k=6&m=855098134&s=612x612&w=0&h=eIWWpYWKTz_z2ryYAo0Dd97igUZVExzl4AKRIhUrFj4=");
-  } else {
-    img.setAttribute("src", recipe.image);
-  }
+
+  img.setAttribute("src", recipe.image);
   img.classList.add("card-img-top");
-  img.setAttribute("alt", "food picture here");
+  img.setAttribute("alt", "The Pulpit Rock");
 
   var cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
@@ -144,10 +140,6 @@ function recCardTemplate(recipe, url) {
   document.getElementById("allRecs").appendChild(card)
 }
 
-$('#currentRec').on('hidden.bs.modal', function (e) {
-  // do something...
-  clearData();
-})
 
 function getRecs() {
   let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
@@ -159,19 +151,10 @@ function getRecs() {
     "https://cdthomp1.github.io/what-can-I-make/recipes/blackened-chicken-and-avocado-salad-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/crockpot-chili-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/cheese-ball-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-dill-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/fluffy-peanut-butter-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/peanut-butter-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/quick-fruit-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-spinach-tomato-tortellini-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-tomato-italian-parmesan-chicken-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/fettuccine-alfredo-with-chicken-broccoli-bacon-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/mexican-casserole-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/sausage-pepper-and-rice-skillet-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/dill-oyster-crackers-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json"
   ];
+  
 
   urls.forEach(url => {
     var xhttp = new XMLHttpRequest();
@@ -185,6 +168,10 @@ function getRecs() {
     xhttp.send();
   });
 }
+
+getRecs();
+
+
 
 getRecs();
 
@@ -208,7 +195,6 @@ function getRec(url) {
   xhttp.open("GET", url, true);
   xhttp.send();
 }
-
 
 function addItems(item, list) {
 
@@ -270,8 +256,3 @@ function easeInOutCubic(t, b, c, d) {
   t -= 2;
   return c / 2 * (t * t * t + 2) + b;
 };
-
-function clearData() {
-  document.getElementById("ingredients").innerHTML = "";
-  document.getElementById("directions").innerHTML = "";
-}
