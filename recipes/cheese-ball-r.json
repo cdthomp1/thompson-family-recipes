@@ -1,7 +1,8 @@
 {
     "title": "Cheese Ball",
     "bake": "",
-    "image": "",
+    "author": "Allison Dahl Thompson",
+    "image": "https://www.cookingclassy.com/wp-content/uploads/2018/12/cheese-ball-25.jpg",
     "ingredients": [
         {   
             "type": "Dairy",
