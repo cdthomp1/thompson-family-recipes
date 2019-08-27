@@ -189,7 +189,6 @@ function search_recipe() {
     xhttp.send();
   }
 
-
   function addItems(item,list){
     
     var ul = document.getElementById(list);

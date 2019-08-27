@@ -27,7 +27,7 @@
         }
 
         #save:hover {
-            color:black;
+            color: black;
             text-decoration: none;
         }
 
@@ -123,7 +123,22 @@
         <h1>Lets add a Recipe!</h1>
         <input id="recName" placeholder="Name of Recipe" onchange="addTitle()"><br>
         <input id="authorInput" placeholder="Author of Recipe" onchange="addAuthor()"><br>
-        <input id="categoryInput" placeholder="Category EX. Breakfast"><br>
+        <select id="category">
+            <option value="Appetizers">Appetizers</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Soups">Soups</option>
+            <option value="Salads">Salads</option>
+            <option value="Beef">Main Dish - Beef</option>
+            <option value="Poultry">Main Dish - Poultry</option>
+            <option value="Pork">Main Dish - Pork</option>
+            <option value="Seafood">Main Dish - Seafood</option>
+            <option value="Vegetarian">Main Dish - Vegetarian</option>
+            <option value="Vegetables">Side Dish - Vegetables</option>
+            <option value="Rice">Side Dish - Rice</option>
+        </select><br>
+        <span>If no image of food, enter "none" all lower case.</span><br>
         <input id="image" placeholder="Link to an Image" onchange="addImage()"><br>
         Add an Ingredient!<br>
         <div id="ingredientInput">
@@ -335,15 +350,18 @@
     function confirmRec() {
         recObj.ingredients = recIngredients;
         recObj.directions = recDirections;
-        recObj.category = document.getElementById("categoryInput").value;
-        console.log(recObj);
+        
+        var e = document.getElementById("category");
+        var category = e.options[e.selectedIndex].value;
+      
+        recObj.category = category;
 
         var title = recObj.title.replace(/\s+/g, '-').toLowerCase()
 
         var obj = { a: 123, b: "4 5 6" };
         var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(recObj));
 
-        $('<a id="save" href="data:' + data + '" download="'+ title  + "-r" + '.json' +'">Save Recipe</a>').appendTo('#confirm');
+        $('<a id="save" href="data:' + data + '" download="' + title + "-r" + '.json' + '">Save Recipe</a>').appendTo('#confirm');
     }
 </script>
 
