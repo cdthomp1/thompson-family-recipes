@@ -201,8 +201,6 @@ function getRecs(url) {
 
 }
 
-
-
 function getRec(url) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -223,7 +221,6 @@ function getRec(url) {
   xhttp.open("GET", url, true);
   xhttp.send();
 }
-
 
 function addItems(item, list) {
 
@@ -256,11 +253,8 @@ function scrollFunction() {
     }
   }
 }
-backToTopButton.addEventListener("click", smoothScrollBackToTop);
 
-// function backToTop() {
-//   window.scrollTo(0, 0);
-// }
+backToTopButton.addEventListener("click", smoothScrollBackToTop);
 
 function smoothScrollBackToTop() {
   const targetPosition = 0;
