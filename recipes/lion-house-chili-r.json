@@ -1,0 +1,62 @@
+{
+    "title": "Lion House Chili",
+    "author": "Shari Thompson Lyons",
+    "image": "https://www.iheartnaptime.net/wp-content/uploads/2018/03/taco-soup.jpg",
+    "ingredients": [
+        {
+            "amount": "2 Cup",
+            "ingredient": "dry red beans"
+        },
+        {
+            "amount": "2 cans (8 oz)",
+            "ingredient": "tomato sauce "
+        },
+        {
+            "amount": "2 Cup",
+            "ingredient": "tomato juice"
+        },
+        {
+            "amount": "1 tsp.",
+            "ingredient": "chili powder"
+        },
+        {
+            "amount": "1/2 tsp.",
+            "ingredient": "cumin"
+        },
+        {
+            "amount": "2 tsp.",
+            "ingredient": "Salt"
+        },
+        {
+            "amount": "1/2 tsp.",
+            "ingredient": "Pepper"
+        },
+        {
+            "amount": "1 lb.",
+            "ingredient": "Beef"
+        },
+        {
+            "amount": "1 Cup",
+            "ingredient": "Chopped Onion"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1",
+            "process": "Rinse beans, cover with water in crock-pot. Cook until tender."
+        },
+        {
+            "step": "2",
+            "process": "Add tomato sauce, tomato juice, and seasonings."
+        },
+        {
+            "step": "3",
+            "process": "Brown meat and onion in fry pan until lightly browned. add to cooked bean mixture."
+        },
+        {
+            "step": "4",
+            "process": "Simmer for 1 hour or longer, stirring occasionally."
+        }
+    ],
+    "category": "Beef"
+}
