@@ -169,6 +169,7 @@ function getRecs() {
   });
 }
 
+getRecs();
 
 
 
