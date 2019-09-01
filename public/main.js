@@ -15,3 +15,10 @@ var firebaseConfig = {
   };
 firebase.initializeApp(firebaseConfig);
 // Initialize Cloud Firestore through Firebase
+
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ],
+  // Other config options...
+});

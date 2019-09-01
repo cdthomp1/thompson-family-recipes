@@ -15,14 +15,14 @@ function search_recipe() {
   }
 }
 
-function login() {
+/* function login() {
   //console.log("HELOO")
   var userl = document.getElementById('email').value;
   var passl = document.getElementById('password').value;
   var user = 'camthomp96@gmail.com';
   var pass = 'a';
   var username = "Cameron"
-  //console.log(userl)
+  console.log(userl)
   //console.log(passl)
   if (user === userl && pass === passl) {
     document.getElementById('masterLogIn').style.display = "none";
@@ -37,7 +37,7 @@ function login() {
 
   }
 
-}
+} */
 
 
 window.onscroll = function () {
@@ -61,15 +61,15 @@ function getHTMLlink(recipe) {
   return newRec + ".html"
 }
 
-function addIt(recipe) {
+function addIt(url, recipe) {
   // Add the recipe to the recipe array
   userRecipes.push(recipe)
 
   //Create a new list item
-  var listItem = document.createElement("li");
+  var button = document.createElement("button");
 
   //Create a new link
-  var a = document.createElement("a");
+
 
   //Create the text for the link bassed on the recipe
   var textnode = document.createTextNode(recipe);
@@ -81,16 +81,21 @@ function addIt(recipe) {
   var htmlLink = getHTMLlink(recipe);
 
   //Set the href attribute
-  a.setAttribute('href', htmlLink);
+  button.classList.add("btn");
+  button.classList.add("btn-primary");
+  button.setAttribute('onclick', "getRec(" + "\"" + url + "\"" + ")");
+  button.setAttribute('data-dismiss', "modal");
+  button.dataset.toggle = "modal"
+  button.dataset.target = "#currentRec";
 
   //add the text for the link
-  a.textContent = textnode.textContent;
+  button.textContent = textnode.textContent;
 
   //Add the link to the list item
-  listItem.appendChild(a);
+
 
   //Add the list item to the list
-  list.appendChild(listItem)
+  list.appendChild(button)
 
 }
 
@@ -133,10 +138,22 @@ function recCardTemplate(recipe, url) {
   var makeItName = document.createTextNode("Make It!");
   makeIt.appendChild(makeItName);
 
+  var additSpan = document.createElement("span");
+  additSpan.classList.add("add");
+
+  var addIt = document.createElement("button");
+  addIt.classList.add("btn")
+  addIt.classList.add("btn-success")
+  addIt.setAttribute("onclick", "addIt(" + "\"" + url + "\"" + "," + "\"" + recipe.title + "\"" + ")");
+  var addItName = document.createTextNode("Add It!");
+  addIt.appendChild(addItName);
+  additSpan.appendChild(addIt);
+
   card.appendChild(img);
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardAuthor);
   cardBody.appendChild(makeIt);
+  cardBody.appendChild(additSpan);
   card.appendChild(cardBody);
 
   //document.body.appendChild(card);
@@ -158,46 +175,47 @@ function getAllRecs() {
   xhttp.open("GET", "https://api.github.com/repos/cdthomp1/what-can-I-make/contents/recipes", true);
   xhttp.send();
 }
-function makePath(name){
+
+function makePath(name) {
   return "https://cdthomp1.github.io/what-can-I-make/recipes/" + name;
 }
 getAllRecs();
 
 function getRecs(url) {
- /*  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-low-mein-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-dumpling-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/blackened-chicken-and-avocado-salad-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/crockpot-chili-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/cheese-ball-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-dill-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/fluffy-peanut-butter-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/peanut-butter-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/quick-fruit-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-spinach-tomato-tortellini-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-tomato-italian-parmesan-chicken-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/fettuccine-alfredo-with-chicken-broccoli-bacon-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/mexican-casserole-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/sausage-pepper-and-rice-skillet-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json",
-  ]; */
+  /*  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-low-mein-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-dumpling-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/blackened-chicken-and-avocado-salad-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/crockpot-chili-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/cheese-ball-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-dill-dip-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/fluffy-peanut-butter-dip-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/peanut-butter-dip-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/quick-fruit-dip-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-spinach-tomato-tortellini-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-tomato-italian-parmesan-chicken-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/fettuccine-alfredo-with-chicken-broccoli-bacon-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/mexican-casserole-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/sausage-pepper-and-rice-skillet-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
+     "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json",
+   ]; */
 
- 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        let recipe = JSON.parse(this.responseText)
-        recCardTemplate(recipe, url)
-      }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      let recipe = JSON.parse(this.responseText)
+      recCardTemplate(recipe, url)
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
 
 }
 

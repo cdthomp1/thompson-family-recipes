@@ -130,7 +130,7 @@
         <div class="form-group">
           <div class="input-group">
             <div class="form_bg">
-              <form>
+    
                 <h2 class="text-center">Login</h2>
                 <br />
                 <div class="form-group">
@@ -145,9 +145,9 @@
                     data-dismiss="modal" id="signup">Sign Up</button>
                 </div>
                 <div class="align-right">
-                  <button class="btn btn-default" id="loginb" onclick="login()">Login</button>
+                  <button class="btn btn-default" id="loginb" onclick="loginUser()" data-dismiss="modal">Login</button>
                 </div>
-              </form>
+          
             </div>
           </div>
         </div>
@@ -172,15 +172,15 @@
                     <input type="email" class="form-control" id="lname" placeholder="Last Name">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <input type="email" class="form-control" id="Semail" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="Spassword" placeholder="Password">
                   </div>
                   <br />
                   <div class="align-right">
                     <button class="btn btn-default" data-toggle="modal" data-target="#login" data-dismiss="modal"
-                      id="loginb">Sign Up</button>
+                      id="loginb" onclick="createUser()">Sign Up</button>
                   </div>
                 </form>
               </div>
@@ -201,7 +201,7 @@
               <p>Welcome<span id="username"></span></p>
 
               <p>Recipe Book</p>
-              <ul id="recipeBook"></ul>
+              <div id="recipeBook"></div>
 
             </div>
           </div>
@@ -239,6 +239,8 @@
 </script>
 
 
+<script src="public/index.js"></script>
+<script src="public/main.js"></script>
 <script src="scripts/main.js"></script>
 
 
