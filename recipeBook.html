@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <title>Thompson Family Recipes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/newMain.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        /*USE FOR TESTING NEW CSS*/
+    </style>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Thompson Family Recipes</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Appetizers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Breakfast</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Beverages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lunch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Soups</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Salads</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Main Dishes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Beef</a>
+                        <a class="dropdown-item" href="#">Poultry</a>
+                        <a class="dropdown-item" href="#">Pork</a>
+                        <a class="dropdown-item" href="#">Seafood</a>
+                        <a class="dropdown-item" href="#">Vegetarian</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Side Dishes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Vegetables</a>
+                        <a class="dropdown-item" href="#">Rice</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="./add-recipe.html" class="btn btn-success" id="addRec">
+                Add a Recipe
+            </a>
+            <button type="button" class="btn btn-primary" value="Log In" id="masterLogIn" data-toggle="modal"
+                data-target="#login">
+                Log In
+            </button>
+            <button type="button" class="btn btn-primary" id="user" data-toggle="modal" data-target="#profile"
+                data-dismiss="modal"><i class="material-icons" style="vertical-align: text-bottom;">
+                    person
+                </i><span style="vertical-align: text-bottom;">&nbsp;&nbsp;Profile</span></button>
+
+        </div>
+    </nav>
+
+    <button id="back-to-top-btn" class="float">
+        <i class="fas fa-angle-double-up"></i>
+    </button>
+
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" id="searchbar" type="search" onkeyup="search_recipe()" placeholder="Search"
+            aria-label="Search">
+    </form>
+
+    <div class="modal fade" id="currentRec" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="recipeContent">
+                            <button class="btn btn-primary align-right" id="btnCancel" value="" onclick="clearData()"
+                                data-dismiss="modal">
+                                X</button>
+
+                            <h2 id="recipe-name"></h2>
+
+                            <p>Ingredients</p>
+                            <ul id="ingredients"></ul>
+
+                            <p>Directions</p>
+                            <ol id="directions"></ol>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="profile" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="profile">
+
+                            <p>Welcome<span id="username"></span></p>
+
+                            <p>Recipe Book</p>
+                            <h3>Recently Added:</h3>
+                            <div id="recipeBook"></div>
+                            <a class="btn btn-success" href="./recipeBook.html">See All of My Book!</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="allRecs"></div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+</body>
+
+<script src="scripts/main.js"></script>
+<script>
+    loadUserRecs();
+</script>
+
+
+<script src="public/index.js"></script>
+<script src="public/main.js"></script>
+
+
+</html>

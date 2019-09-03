@@ -1,3 +1,5 @@
+import { recsFromFirebase } from "../public";
+
 function search_recipe() {
   let input = document.getElementById('searchbar').value
   input = input.toLowerCase();
@@ -14,6 +16,9 @@ function search_recipe() {
     }
   }
 }
+
+var database = firebase.database();
+var db = firebase.firestore();
 
 /* function login() {
   //console.log("HELOO")
@@ -61,45 +66,9 @@ function getHTMLlink(recipe) {
   return newRec + ".html"
 }
 
-function addIt(url, recipe) {
-  // Add the recipe to the recipe array
-  userRecipes.push(recipe)
-
-  //Create a new list item
-  var button = document.createElement("button");
-
-  //Create a new link
 
 
-  //Create the text for the link bassed on the recipe
-  var textnode = document.createTextNode(recipe);
-
-  //Grab the existing list
-  var list = document.getElementById("recipeBook");
-
-  //Create a link based on the recipe
-  var htmlLink = getHTMLlink(recipe);
-
-  //Set the href attribute
-  button.classList.add("btn");
-  button.classList.add("btn-primary");
-  button.setAttribute('onclick', "getRec(" + "\"" + url + "\"" + ")");
-  button.setAttribute('data-dismiss', "modal");
-  button.dataset.toggle = "modal"
-  button.dataset.target = "#currentRec";
-
-  //add the text for the link
-  button.textContent = textnode.textContent;
-
-  //Add the link to the list item
-
-
-  //Add the list item to the list
-  list.appendChild(button)
-
-}
-
-function recCardTemplate(recipe, url) {
+function recCardTemplate(recipe, url, currentDiv) {
 
   var card = document.createElement("div");
   card.classList.add("card")
@@ -144,7 +113,7 @@ function recCardTemplate(recipe, url) {
   var addIt = document.createElement("button");
   addIt.classList.add("btn")
   addIt.classList.add("btn-success")
-  addIt.setAttribute("onclick", "addIt(" + "\"" + url + "\"" + "," + "\"" + recipe.title + "\"" + ")");
+  addIt.setAttribute("onclick", "addIt(\"" + recipe.title + "\"" + ")");
   var addItName = document.createTextNode("Add It!");
   addIt.appendChild(addItName);
   additSpan.appendChild(addIt);
@@ -158,8 +127,10 @@ function recCardTemplate(recipe, url) {
 
   //document.body.appendChild(card);
 
-  document.getElementById("allRecs").appendChild(card)
+  document.getElementById(currentDiv).appendChild(card)
 }
+
+
 
 function getAllRecs() {
   var xhttp = new XMLHttpRequest();
@@ -168,7 +139,7 @@ function getAllRecs() {
       let recipes = JSON.parse(this.responseText)
       recipes.forEach(rec => {
         var url = makePath(rec.name)
-        getRecs(url);
+        getRecs(url, "allRecs");
       })
     }
   };
@@ -176,12 +147,26 @@ function getAllRecs() {
   xhttp.send();
 }
 
+function getFromFireBase(rec) {
+  var url = makePath(rec);
+  getRecs(url, "recipeBook");
+}
+
 function makePath(name) {
+  var rec = name.toString()
+  console.log(rec.includes(" "))
+  if (rec.includes(" ")) {
+    console.log("HELLO")
+    var recipe = rec.replace(/\s+/g, '-').toLowerCase()
+    var real = recipe + "-r.json"
+    console.log("======================="+real)
+    return "https://cdthomp1.github.io/what-can-I-make/recipes/" + real;
+  }
   return "https://cdthomp1.github.io/what-can-I-make/recipes/" + name;
 }
-getAllRecs();
 
-function getRecs(url) {
+
+function getRecs(url, currentDiv) {
   /*  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
      "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
      "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
@@ -211,7 +196,7 @@ function getRecs(url) {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       let recipe = JSON.parse(this.responseText)
-      recCardTemplate(recipe, url)
+      recCardTemplate(recipe, url, currentDiv)
     }
   };
   xhttp.open("GET", url, true);
@@ -301,4 +286,21 @@ function easeInOutCubic(t, b, c, d) {
 function clearData() {
   document.getElementById("ingredients").innerHTML = "";
   document.getElementById("directions").innerHTML = "";
+}
+
+function showBeef() {
+  console.log("SHOW BEEF");
+  document.getElementById("allRecs").style.display = "none";
+  document.getElementById("beefRecs").style.display = "block";
+  getRecs("https://cdthomp1.github.io/what-can-I-make/recipes/lion-house-chili-r.json", "beefRecs")
+}
+
+function seeMyBook() {
+  console.log("SHOW MY BOOK");
+  document.getElementById("allRecs").style.display = "none";
+  document.getElementById("recipeBook").style.display = "block";
+  recsFromFirebase.push(userRecipes)
+  recsFromFirebase.forEach(rec => {
+    getFromFireBase(rec);
+  })
 }
