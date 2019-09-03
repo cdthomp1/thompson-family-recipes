@@ -376,22 +376,27 @@ function writeRec() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       recipesss = JSON.parse(this.responseText)
-     
+      writeRecTwo(recipesss);
     }
   };
   xhttp.open("GET", url, true);
   xhttp.send()
 
-  db.collection("recipes").doc(recipesss.category).set({
-      breakfast: recipesss
-    })
-    .then(function () {
-      console.log("Document successfully written!");
-    })
-    .catch(function (error) {
-      console.error("Error writing document: ", error);
-    });
+ 
 
+}
+
+//TODO: Loop through all recipes with this to put in firebase
+function writeRecTwo(recipesss) {
+  db.collection("recipes").doc(recipesss.category).set({
+    breakfast: recipesss
+  })
+  .then(function () {
+    console.log("Document successfully written!");
+  })
+  .catch(function (error) {
+    console.error("Error writing document: ", error);
+  });
 }
 
 var recsFromFirebase = [];
