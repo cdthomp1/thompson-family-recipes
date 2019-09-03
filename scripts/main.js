@@ -1,4 +1,4 @@
-import { recsFromFirebase } from "../public";
+
 
 function search_recipe() {
   let input = document.getElementById('searchbar').value
@@ -146,7 +146,7 @@ function getAllRecs() {
   xhttp.open("GET", "https://api.github.com/repos/cdthomp1/what-can-I-make/contents/recipes", true);
   xhttp.send();
 }
-
+getAllRecs()
 function getFromFireBase(rec) {
   var url = makePath(rec);
   getRecs(url, "recipeBook");
@@ -303,4 +303,100 @@ function seeMyBook() {
   recsFromFirebase.forEach(rec => {
     getFromFireBase(rec);
   })
+}
+
+
+
+function addIt(recipe) {
+
+  console.log(typeof (recipe))
+  // Add the recipe to the recipe array
+  userRecipes.push(recipe)
+
+  //Create a new list item
+  var listItem = document.createElement("li");
+
+  //Create a new link
+
+
+  //Create the text for the link bassed on the recipe
+  var textnode = document.createTextNode(recipe.title);
+
+  //Grab the existing list
+  var list = document.getElementById("recipeBook");
+
+  listItem.textContent = textnode
+
+  //Create a link based on the recipe
+
+
+  //Set the href attribute
+
+  //Add the list item to the list
+  list.appendChild(listItem)
+
+  var user = firebase.auth().currentUser;
+  var name, email, photoUrl, uid, emailVerified;
+
+  if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    emailVerified = user.emailVerified;
+    uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
+    // this value to authenticate with your backend server, if
+    // you have one. Use User.getToken() instead.
+  }
+
+  writeUserData(uid, name, email, recipe);
+
+
+
+
+}
+
+function writeUserData(userId, name, email, rec) {
+  db.collection("users").doc(userId).set({
+      savedRecs: userRecipes
+    })
+    .then(function () {
+      console.log("Document successfully written!");
+    })
+    .catch(function (error) {
+      console.error("Error writing document: ", error);
+    });
+}
+
+var recsFromFirebase = [];
+
+function loadUserRecs() {
+  var user = firebase.auth().currentUser;
+  var name, email, photoUrl, uid, emailVerified;
+
+  if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    emailVerified = user.emailVerified;
+    uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
+    // this value to authenticate with your backend server, if
+    // you have one. Use User.getToken() instead.
+  }
+
+  var docRef = db.collection("users").doc(uid);
+
+  docRef.get().then(function (doc) {
+    if (doc.exists) {
+      console.log("Document data:", doc.data().savedRecs);
+      recsFromFirebase.push(doc.data().savedRecs);
+      console.log(userRecipes)
+
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  }).catch(function (error) {
+    console.log("Error getting document:", error);
+  });
+
 }
