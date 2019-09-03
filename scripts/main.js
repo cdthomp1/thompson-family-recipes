@@ -1,5 +1,3 @@
-
-
 function search_recipe() {
   let input = document.getElementById('searchbar').value
   input = input.toLowerCase();
@@ -147,6 +145,7 @@ function getAllRecs() {
   xhttp.send();
 }
 getAllRecs()
+
 function getFromFireBase(rec) {
   var url = makePath(rec);
   getRecs(url, "recipeBook");
@@ -159,7 +158,7 @@ function makePath(name) {
     console.log("HELLO")
     var recipe = rec.replace(/\s+/g, '-').toLowerCase()
     var real = recipe + "-r.json"
-    console.log("======================="+real)
+    console.log("=======================" + real)
     return "https://cdthomp1.github.io/what-can-I-make/recipes/" + real;
   }
   return "https://cdthomp1.github.io/what-can-I-make/recipes/" + name;
@@ -356,6 +355,7 @@ function addIt(recipe) {
 }
 
 function writeUserData(userId, name, email, rec) {
+  writeRec()
   db.collection("users").doc(userId).set({
       savedRecs: userRecipes
     })
@@ -365,6 +365,33 @@ function writeUserData(userId, name, email, rec) {
     .catch(function (error) {
       console.error("Error writing document: ", error);
     });
+}
+
+function writeRec() {
+  var recipesss = {}
+
+  var url = "https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json"
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      recipesss = JSON.parse(this.responseText)
+     
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send()
+
+  db.collection("recipes").doc(recipesss.category).set({
+      breakfast: recipesss
+    })
+    .then(function () {
+      console.log("Document successfully written!");
+    })
+    .catch(function (error) {
+      console.error("Error writing document: ", error);
+    });
+
 }
 
 var recsFromFirebase = [];

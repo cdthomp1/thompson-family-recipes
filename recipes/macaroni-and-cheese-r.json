@@ -1,6 +1,7 @@
 {
     "title": "Macaroni and Cheese",
     "author": "Cameron Thompson",
+    "category": "Pasta",
     "image": "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     "bake": "400 degrees for 25-30 minutes",
     "ingredients": [

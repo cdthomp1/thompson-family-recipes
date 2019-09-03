@@ -1,1 +1,58 @@
-{"author":"Shari Thompson Lyons","title":"Basic Crepes","image":"https://assets.marthastewart.com/styles/wmax-750/d39/crepes-recipe-0419-9085-lw-076-0746463d/crepes-recipe-0419-9085-lw-076-0746463d_horiz.jpg?itok=hz2JsqRE","ingredients":[{"amount":"1 Cup","ingredient":"all-purpose flour "},{"amount":"1/4 tsp.","ingredient":"salt"},{"amount":"1-1/4 Cup","ingredient":"Milk"},{"amount":"2","ingredient":"Eggs"},{"amount":"2 Tbsp.","ingredient":"Butter or Margarine, melted"},{"amount":"-","ingredient":"Vegetable Spray"}],"directions":[{"step":"1","process":"Combine flour, salt, and milk, beating at med. speed with electric mixer until smooth. "},{"step":"2","process":"Add eggs and beat well; stir in melted butter. Refrigerate batter 1 hour. (This allows flour particles to swell and soften so crepes will be light in texture). "},{"step":"3","process":"Spray bottom and sides of a 6’-7’ in. non-stick skillet with vegetable spray; place pan over med. heat until hot, but not smoking."},{"step":"4","process":"Pour 1/4 c. batter into pan; quickly tilt pan in all directions so batter covers pan with a thin film. Cook 1 min. "},{"step":"5","process":"Lift edge of crepe to test for doneness. Crepe is ready for flipping when it can be shaken loose from pan. Flip crepe, and cook about 30 sec. on other side. (This side of crepe is usually spotty brown and is the side on which the filling is placed). "},{"step":"7","process":"Place crepes on a towel, and allow to cool. Repeat until all batter is used. Stack crepes between layers of wax paper to prevent sticking. (May be placed in a freezer bag and frozen for up to 1 month)."}],"category":"Breakfast"}
+{
+    "author": "Shari Thompson Lyons",
+    "title": "Basic Crepes",
+    "image": "https://assets.marthastewart.com/styles/wmax-750/d39/crepes-recipe-0419-9085-lw-076-0746463d/crepes-recipe-0419-9085-lw-076-0746463d_horiz.jpg?itok=hz2JsqRE",
+    "ingredients": [
+        {
+            "amount": "1 Cup",
+            "ingredient": "all-purpose flour "
+        },
+        {
+            "amount": "1/4 tsp.",
+            "ingredient": "salt"
+        },
+        {
+            "amount": "1-1/4 Cup",
+            "ingredient": "Milk"
+        },
+        {
+            "amount": "2",
+            "ingredient": "Eggs"
+        },
+        {
+            "amount": "2 Tbsp.",
+            "ingredient": "Butter or Margarine, melted"
+        },
+        {
+            "amount": "-",
+            "ingredient": "Vegetable Spray"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1",
+            "process": "Combine flour, salt, and milk, beating at med. speed with electric mixer until smooth. "
+        },
+        {
+            "step": "2",
+            "process": "Add eggs and beat well; stir in melted butter. Refrigerate batter 1 hour. (This allows flour particles to swell and soften so crepes will be light in texture). "
+        },
+        {
+            "step": "3",
+            "process": "Spray bottom and sides of a 6’-7’ in. non-stick skillet with vegetable spray; place pan over med. heat until hot, but not smoking."
+        },
+        {
+            "step": "4",
+            "process": "Pour 1/4 c. batter into pan; quickly tilt pan in all directions so batter covers pan with a thin film. Cook 1 min. "
+        },
+        {
+            "step": "5",
+            "process": "Lift edge of crepe to test for doneness. Crepe is ready for flipping when it can be shaken loose from pan. Flip crepe, and cook about 30 sec. on other side. (This side of crepe is usually spotty brown and is the side on which the filling is placed). "
+        },
+        {
+            "step": "7",
+            "process": "Place crepes on a towel, and allow to cool. Repeat until all batter is used. Stack crepes between layers of wax paper to prevent sticking. (May be placed in a freezer bag and frozen for up to 1 month)."
+        }
+    ],
+    "category": "Breakfast"
+}
