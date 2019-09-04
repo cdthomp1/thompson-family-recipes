@@ -166,40 +166,45 @@ function makePath(name) {
 
 
 function getRecs(url, currentDiv) {
-  /*  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-low-mein-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-dumpling-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/blackened-chicken-and-avocado-salad-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/crockpot-chili-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/cheese-ball-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-dill-dip-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/fluffy-peanut-butter-dip-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/peanut-butter-dip-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/quick-fruit-dip-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-spinach-tomato-tortellini-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-tomato-italian-parmesan-chicken-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/fettuccine-alfredo-with-chicken-broccoli-bacon-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/mexican-casserole-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/sausage-pepper-and-rice-skillet-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
-     "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json",
-   ]; */
+  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-low-mein-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-dumpling-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/blackened-chicken-and-avocado-salad-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/crockpot-chili-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/cheese-ball-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-dill-dip-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/fluffy-peanut-butter-dip-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/peanut-butter-dip-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/quick-fruit-dip-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-spinach-tomato-tortellini-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-tomato-italian-parmesan-chicken-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/fettuccine-alfredo-with-chicken-broccoli-bacon-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/mexican-casserole-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/sausage-pepper-and-rice-skillet-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
+    "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json",
+  ];
+
+  urls.forEach(url => {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let recipe = JSON.parse(this.responseText)
+        //recCardTemplate(recipe, url, currentDiv)
+        writeRecTwo(recipe);
+      }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+
+  })
 
 
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let recipe = JSON.parse(this.responseText)
-      recCardTemplate(recipe, url, currentDiv)
-    }
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send();
 
 }
 
@@ -367,36 +372,19 @@ function writeUserData(userId, name, email, rec) {
     });
 }
 
-function writeRec() {
-  var recipesss = {}
 
-  var url = "https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json"
-
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      recipesss = JSON.parse(this.responseText)
-      writeRecTwo(recipesss);
-    }
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send()
-
- 
-
-}
 
 //TODO: Loop through all recipes with this to put in firebase
 function writeRecTwo(recipesss) {
   db.collection("recipes").doc(recipesss.category).set({
-    breakfast: recipesss
-  })
-  .then(function () {
-    console.log("Document successfully written!");
-  })
-  .catch(function (error) {
-    console.error("Error writing document: ", error);
-  });
+      breakfast: recipesss
+    })
+    .then(function () {
+      console.log("Document successfully written!");
+    })
+    .catch(function (error) {
+      console.error("Error writing document: ", error);
+    });
 }
 
 var recsFromFirebase = [];

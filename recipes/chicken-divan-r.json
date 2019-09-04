@@ -1,1 +1,62 @@
-{"title":"Chicken Divan","image":"https://images-gmi-pmc.edge-generalmills.com/63c052f9-6b0c-4291-9d4f-f0aa4cff4b0c.jpg","author":"Sariah Thompson","ingredients":[{"amount":"4 cups (approx)","ingredient":"Broccoli florets (enough to fill up bottom of casserole dish)"},{"amount":"2 cups (approx)","ingredient":"cooked chicken, cubed  (I use 3 chicken breasts)"},{"amount":"2 cans","ingredient":"Campbell’s Broccoli Cheese Soup"},{"amount":"1/2 cup","ingredient":"milk"},{"amount":"1/2 - 1 cup","ingredient":"hredded Cheddar Cheese"},{"amount":"1/2 - 1 cup","ingredient":"plain bread crumbs"},{"amount":"1 stick","ingredient":"butter"}],"directions":[{"step":"1","process":"Preheat oven to 425. While oven is heating, rinse, dry, and cut broccoli. Arrange broccoli in 9x13 casserole dish."},{"step":"2","process":"Cube the chicken, and cook until brown. Then spread chicken over broccoli."},{"step":"3","process":"In medium mixing bowl, mix soup and milk, until smooth. Pour over broccoli and chicken."},{"step":"4","process":" Spread cheese over soup mixture."},{"step":"5","process":"In a microwaveable bowl, melt butter. Once butter is melted, add bread crumbs and mix thoroughly. If there’s still melted  butter noticeable, add more bread crumbs. Spread bread crumb mix over cheese. "},{"step":"6","process":"Bake for 25 minutes or until its bubbly. Take out of the oven and let it cool for 5-10 minutes. Enjoy with rice and rolls!"}],"category":"Appetizers"}
+{
+    "title": "Chicken Divan",
+    "image": "https://images-gmi-pmc.edge-generalmills.com/63c052f9-6b0c-4291-9d4f-f0aa4cff4b0c.jpg",
+    "author": "Sariah Thompson",
+    "ingredients": [
+        {
+            "amount": "4 cups (approx)",
+            "ingredient": "Broccoli florets (enough to fill up bottom of casserole dish)"
+        },
+        {
+            "amount": "2 cups (approx)",
+            "ingredient": "cooked chicken, cubed  (I use 3 chicken breasts)"
+        },
+        {
+            "amount": "2 cans",
+            "ingredient": "Campbell’s Broccoli Cheese Soup"
+        },
+        {
+            "amount": "1/2 cup",
+            "ingredient": "milk"
+        },
+        {
+            "amount": "1/2 - 1 cup",
+            "ingredient": "hredded Cheddar Cheese"
+        },
+        {
+            "amount": "1/2 - 1 cup",
+            "ingredient": "plain bread crumbs"
+        },
+        {
+            "amount": "1 stick",
+            "ingredient": "butter"
+        }
+    ],
+    "directions": [
+        {
+            "step": "1",
+            "process": "Preheat oven to 425. While oven is heating, rinse, dry, and cut broccoli. Arrange broccoli in 9x13 casserole dish."
+        },
+        {
+            "step": "2",
+            "process": "Cube the chicken, and cook until brown. Then spread chicken over broccoli."
+        },
+        {
+            "step": "3",
+            "process": "In medium mixing bowl, mix soup and milk, until smooth. Pour over broccoli and chicken."
+        },
+        {
+            "step": "4",
+            "process": " Spread cheese over soup mixture."
+        },
+        {
+            "step": "5",
+            "process": "In a microwaveable bowl, melt butter. Once butter is melted, add bread crumbs and mix thoroughly. If there’s still melted  butter noticeable, add more bread crumbs. Spread bread crumb mix over cheese. "
+        },
+        {
+            "step": "6",
+            "process": "Bake for 25 minutes or until its bubbly. Take out of the oven and let it cool for 5-10 minutes. Enjoy with rice and rolls!"
+        }
+    ],
+    "category": "Chicken"
+}

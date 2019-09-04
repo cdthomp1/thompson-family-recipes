@@ -3,6 +3,7 @@
     "author": "Cameron Thompson",
     "image": "https://images.media-allrecipes.com/userphotos/560x315/226552.jpg",
     "bake": "350 degrees for approx. 30 minutes",
+    "category": "Chicken",
     "ingredients": [
         {   
             "type": "dairy",
