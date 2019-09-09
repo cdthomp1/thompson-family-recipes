@@ -144,7 +144,6 @@ function getAllRecs() {
   xhttp.open("GET", "https://api.github.com/repos/cdthomp1/what-can-I-make/contents/recipes", true);
   xhttp.send();
 }
-getAllRecs()
 
 function getFromFireBase(rec) {
   var url = makePath(rec);
@@ -153,6 +152,7 @@ function getFromFireBase(rec) {
 
 function makePath(name) {
   var rec = name.toString()
+  console.log(name)
   console.log(rec.includes(" "))
   if (rec.includes(" ")) {
     console.log("HELLO")
@@ -166,7 +166,7 @@ function makePath(name) {
 
 
 function getRecs(url, currentDiv) {
-  /* let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
+  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
@@ -188,18 +188,20 @@ function getRecs(url, currentDiv) {
     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json",
-  ]; */
+  ];
+urls.forEach(u => {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      let recipe = JSON.parse(this.responseText)
+      //recCardTemplate(recipe, url, currentDiv)
+      writeRecTwo(recipe);
+    }
+  };
+  xhttp.open("GET", u, true);
+  xhttp.send();
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        let recipe = JSON.parse(this.responseText)
-        recCardTemplate(recipe, url, currentDiv)
-        //writeRecTwo(recipe);
-      }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
+})
 
 
 }
@@ -372,9 +374,7 @@ function writeUserData(userId, name, email, rec) {
 
 //TODO: Loop through all recipes with this to put in firebase
 function writeRecTwo(recipesss) {
-  db.collection("recipes").doc(recipesss.category).set({
-      breakfast: recipesss
-    })
+db.collection("thompsonRecs").doc(recipesss.title).set(recipesss)
     .then(function () {
       console.log("Document successfully written!");
     })
@@ -415,4 +415,14 @@ function loadUserRecs() {
     console.log("Error getting document:", error);
   });
 
+}
+
+function getFirebaseRecs(){
+  db.collection("thompsonRecs").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        recCardTemplate(doc.data(), "#", "allRecs")
+        console.log(doc.id, " => ", doc.data());
+    });
+});
 }
