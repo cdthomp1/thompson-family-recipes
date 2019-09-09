@@ -58,11 +58,11 @@ function scrollFunction() {
 
 var userRecipes = [];
 
-function getHTMLlink(recipe) {
+/* function getHTMLlink(recipe) {
 
   var newRec = recipe.toLowerCase().replace(/\s/g, "-")
   return newRec + ".html"
-}
+} */
 
 
 
@@ -72,7 +72,7 @@ function recCardTemplate(recipe, url, currentDiv) {
   card.classList.add("card")
 
   var img = document.createElement("IMG");
-  console.log(recipe);
+  //console.log(recipe);
   if (recipe.image === "") {
     img.setAttribute("src", "https://media.istockphoto.com/photos/health-food-for-fitness-picture-id855098134?k=6&m=855098134&s=612x612&w=0&h=eIWWpYWKTz_z2ryYAo0Dd97igUZVExzl4AKRIhUrFj4=");
   } else {
@@ -99,7 +99,7 @@ function recCardTemplate(recipe, url, currentDiv) {
   var makeIt = document.createElement("button");
   makeIt.classList.add("btn");
   makeIt.classList.add("btn-primary");
-  makeIt.setAttribute("onclick", "getRec(" + "\"" + url + "\"" + ")");
+  makeIt.setAttribute("onclick", "getRec(" + "\"" + recipe.title + "\"" + ")");
   makeIt.dataset.toggle = "modal"
   makeIt.dataset.target = "#currentRec";
   var makeItName = document.createTextNode("Make It!");
@@ -130,7 +130,7 @@ function recCardTemplate(recipe, url, currentDiv) {
 
 
 
-function getAllRecs() {
+/* function getAllRecs() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -143,14 +143,14 @@ function getAllRecs() {
   };
   xhttp.open("GET", "https://api.github.com/repos/cdthomp1/what-can-I-make/contents/recipes", true);
   xhttp.send();
-}
+} */
 
 function getFromFireBase(rec) {
   var url = makePath(rec);
   getRecs(url, "recipeBook");
 }
 
-function makePath(name) {
+/* function makePath(name) {
   var rec = name.toString()
   console.log(name)
   console.log(rec.includes(" "))
@@ -162,10 +162,10 @@ function makePath(name) {
     return "https://cdthomp1.github.io/what-can-I-make/recipes/" + real;
   }
   return "https://cdthomp1.github.io/what-can-I-make/recipes/" + name;
-}
+} */
 
 
-function getRecs(url, currentDiv) {
+/* function getRecs(url, currentDiv) {
   let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
@@ -201,31 +201,28 @@ urls.forEach(u => {
   xhttp.open("GET", u, true);
   xhttp.send();
 
-})
+}) */
 
 
-}
 
-function getRec(url) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let recipe = JSON.parse(this.responseText)
+function getRec(recipe) {
 
-      document.getElementById(`recipe-name`).innerHTML = recipe.title;
+  allRecsFromFB.forEach(rec => {
+    if (rec.title === recipe){
 
-      recipe.ingredients.forEach(ingredient => {
+      document.getElementById(`recipe-name`).innerHTML = rec.title;
+    
+      rec.ingredients.forEach(ingredient => {
         addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'ingredients')
       })
-
-      recipe.directions.forEach(direction => {
+    
+      rec.directions.forEach(direction => {
         addItems(direction.process, 'directions')
       })
     }
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send();
+  })
 }
+
 
 function addItems(item, list) {
 
@@ -291,7 +288,7 @@ function clearData() {
 }
 
 function showBeef() {
-  console.log("SHOW BEEF");
+  //console.log("SHOW BEEF");
   document.getElementById("allRecs").style.display = "none";
   document.getElementById("beefRecs").style.display = "block";
   beefRecs.forEach(rec => {
@@ -300,7 +297,7 @@ function showBeef() {
 }
 
 function seeMyBook() {
-  console.log("SHOW MY BOOK");
+  //console.log("SHOW MY BOOK");
   document.getElementById("allRecs").style.display = "none";
   document.getElementById("recipeBook").style.display = "block";
   recsFromFirebase.push(userRecipes)
@@ -313,7 +310,7 @@ function seeMyBook() {
 
 function addIt(recipe) {
 
-  console.log(typeof (recipe))
+  //console.log(typeof (recipe))
   // Add the recipe to the recipe array
   userRecipes.push(recipe)
 
@@ -365,10 +362,10 @@ function writeUserData(userId, name, email, rec) {
       savedRecs: userRecipes
     })
     .then(function () {
-      console.log("Document successfully written!");
+     // console.log("Document successfully written!");
     })
     .catch(function (error) {
-      console.error("Error writing document: ", error);
+     alert("Error writing document: " +  error);
     });
 }
 
@@ -376,7 +373,7 @@ function writeUserData(userId, name, email, rec) {
 
 //TODO: Loop through all recipes with this to put in firebase
 function writeRecTwo(recipesss) {
-db.collection("thompsonRecs").doc(recipesss.title).set(recipesss)
+  db.collection("thompsonRecs").doc(recipesss.title).set(recipesss)
     .then(function () {
       console.log("Document successfully written!");
     })
@@ -405,31 +402,34 @@ function loadUserRecs() {
 
   docRef.get().then(function (doc) {
     if (doc.exists) {
-      console.log("Document data:", doc.data().savedRecs);
+     // console.log("Document data:", doc.data().savedRecs);
       recsFromFirebase.push(doc.data().savedRecs);
-      console.log(userRecipes)
+      //console.log(userRecipes)
 
     } else {
       // doc.data() will be undefined in this case
-      console.log("No such document!");
+      //console.log("No such document!");
     }
   }).catch(function (error) {
-    console.log("Error getting document:", error);
+    //console.log("Error getting document:", error);
   });
 
 }
 var beefRecs = [];
-function getFirebaseRecs(){
-  db.collection("thompsonRecs").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-        if(doc.data().category === "Beef") {
-          beefRecs.push(doc.data());
-        }
-        recCardTemplate(doc.data(), "#", "allRecs")
-        console.log(doc.id, " => ", doc.data());
+var allRecsFromFB = [];
+
+function getFirebaseRecs() {
+  db.collection("thompsonRecs").get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+      // doc.data() is never undefined for query doc snapshots
+      if (doc.data().category === "Beef") {
+        beefRecs.push(doc.data());
+      }
+      allRecsFromFB.push(doc.data())
+      recCardTemplate(doc.data(), "#", "allRecs")
+     // console.log(doc.id, " => ", doc.data());
     });
-});
+  });
 }
 
 
@@ -437,142 +437,142 @@ var recIngredients = [];
 var recDirections = [];
 
 var recObj = {
-    "title": "",
-    "author": "",
-    "image": "",
-    "category": "",
-    "tags": [],
-    "ingredients": [{
-        "type": "",
-        "amount": "",
-        "ingredient": ""
-    }],
-    "directions": [{
-        "step": "",
-        "direction": ""
-    }]
+  "title": "",
+  "author": "",
+  "image": "",
+  "category": "",
+  "tags": [],
+  "ingredients": [{
+    "type": "",
+    "amount": "",
+    "ingredient": ""
+  }],
+  "directions": [{
+    "step": "",
+    "direction": ""
+  }]
 };
 
 
 function addIngredientInput() {
-    var ingredient = {
-        "type": "",
-        "amount": "",
-        "ingredient": ""
-    };
-    var quantity = document.getElementById("quantity").value;
-    var name = document.getElementById("name").value;
+  var ingredient = {
+    "type": "",
+    "amount": "",
+    "ingredient": ""
+  };
+  var quantity = document.getElementById("quantity").value;
+  var name = document.getElementById("name").value;
 
-    var ul = document.getElementById("ingredientList");
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(quantity + " " + name));
-    ul.appendChild(li);
+  var ul = document.getElementById("ingredientList");
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode(quantity + " " + name));
+  ul.appendChild(li);
 
-    document.getElementById("quantity").value = "";
-    document.getElementById("name").value = "";
+  document.getElementById("quantity").value = "";
+  document.getElementById("name").value = "";
 
-    ingredient.amount = quantity;
-    ingredient.ingredient = name;
-    recIngredients.push(ingredient)
-   // console.log(ingredient)
-    //console.log(recIngredients)
+  ingredient.amount = quantity;
+  ingredient.ingredient = name;
+  recIngredients.push(ingredient)
+  // console.log(ingredient)
+  //console.log(recIngredients)
 }
 
 function addDirectionInput() {
-    var directionObj = {
-        "step": "",
-        "process": ""
-    }
-    var step = document.getElementById("step").value;
-    var direction = document.getElementById("direction").value;
+  var directionObj = {
+    "step": "",
+    "process": ""
+  }
+  var step = document.getElementById("step").value;
+  var direction = document.getElementById("direction").value;
 
-    directionObj.step = step;
-    directionObj.process = direction;
-    recDirections.push(directionObj);
+  directionObj.step = step;
+  directionObj.process = direction;
+  recDirections.push(directionObj);
 
 
-    var ol = document.getElementById("directionList");
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(direction));
-    ol.appendChild(li);
+  var ol = document.getElementById("directionList");
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode(direction));
+  ol.appendChild(li);
 
-    document.getElementById("step").value = "";
-    document.getElementById("direction").value = "";
+  document.getElementById("step").value = "";
+  document.getElementById("direction").value = "";
 }
 
 function addTitle() {
-    var recName = document.getElementById("recName").value;
-    recObj.title = recName;
-    document.getElementById("title").innerHTML = `Preview of ${recName}!`;
+  var recName = document.getElementById("recName").value;
+  recObj.title = recName;
+  document.getElementById("title").innerHTML = `Preview of ${recName}!`;
 }
 
 function addAuthor() {
-    var author = document.getElementById("authorInput").value;
-    recObj.author = author;
-    document.getElementById("author").innerHTML = `By: ${author}!`;
+  var author = document.getElementById("authorInput").value;
+  recObj.author = author;
+  document.getElementById("author").innerHTML = `By: ${author}!`;
 }
 
 function addImage() {
-    var img = document.getElementById("headerImage");
-    var src = document.getElementById("image2").value;
-    console.log(src)
-    
-    if (src === "none") {
-        src = "https://media.istockphoto.com/photos/health-food-for-fitness-picture-id855098134?k=6&m=855098134&s=612x612&w=0&h=eIWWpYWKTz_z2ryYAo0Dd97igUZVExzl4AKRIhUrFj4="
-    } 
-    console.log(src)
-    recObj.image = src;
-    img.setAttribute("src", src);
-    img.classList.add("card-img-top");
-    img.setAttribute("alt", "Header Image");
+  var img = document.getElementById("headerImage");
+  var src = document.getElementById("image2").value;
+  //console.log(src)
+
+  if (src === "none") {
+    src = "https://media.istockphoto.com/photos/health-food-for-fitness-picture-id855098134?k=6&m=855098134&s=612x612&w=0&h=eIWWpYWKTz_z2ryYAo0Dd97igUZVExzl4AKRIhUrFj4="
+  }
+  //console.log(src)
+  recObj.image = src;
+  img.setAttribute("src", src);
+  img.classList.add("card-img-top");
+  img.setAttribute("alt", "Header Image");
 }
 
 function readURL(input) {
-    console.log(input.files)
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+ // console.log(input.files)
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#headerImage')
-                    .attr('src', e.target.result)
-                    .width(150)
-                    .height(200);
-            };
+    reader.onload = function (e) {
+      $('#headerImage')
+        .attr('src', e.target.result)
+        .width(150)
+        .height(200);
+    };
 
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
 
 function addTag() {
-    var title = recObj.title.replace(/\s+/g, ',').toLowerCase()
-    var taggArr = title.split(',')
-    return taggArr
+  var title = recObj.title.replace(/\s+/g, ',').toLowerCase()
+  var taggArr = title.split(',')
+  return taggArr
 }
 
 function confirmRec() {
-    recObj.tags = addTag();
-    recObj.ingredients = recIngredients;
-    recObj.directions = recDirections;
-    
-    var e = document.getElementById("category");
-    var category = e.options[e.selectedIndex].value;
-  
-    recObj.category = category;
+  recObj.tags = addTag();
+  recObj.ingredients = recIngredients;
+  recObj.directions = recDirections;
 
-    var title = recObj.title.replace(/\s+/g, '-').toLowerCase()
+  var e = document.getElementById("category");
+  var category = e.options[e.selectedIndex].value;
 
-   
-    var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(recObj));
-    return recObj;
-    //$('<a id="save" href="data:' + data + '" download="' + title + "-r" + '.json' + '">Save Recipe</a>').appendTo('#confirm');
+  recObj.category = category;
+
+  var title = recObj.title.replace(/\s+/g, '-').toLowerCase()
+
+
+  var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(recObj));
+  return recObj;
+  //$('<a id="save" href="data:' + data + '" download="' + title + "-r" + '.json' + '">Save Recipe</a>').appendTo('#confirm');
 }
 
 function addToFirebase() {
-    var rec = confirmRec();
+  var rec = confirmRec();
 
   db.collection("thompsonRecs").doc(rec.title).set(rec)
     .then(function () {
-      console.log("Document successfully written!");
+      //console.log("Document successfully written!");
     })
     .catch(function (error) {
       var no = "You don't have permision to do that"
@@ -580,8 +580,8 @@ function addToFirebase() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // your code here
-  console.log("LOADED")
+  //console.log("LOADED")
   getFirebaseRecs()
 }, false);
