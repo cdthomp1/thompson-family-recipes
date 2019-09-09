@@ -9,7 +9,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#addRecContainer {
+.addRecContainer {
   width: 500px;
   margin: 0 auto;
 }
@@ -40,7 +40,7 @@ html {
     bottom: 50px;
   }
 
-  #addRecContainer {
+  .addRecContainer {
     width: 100%;
     margin: 0 auto;
   }
@@ -54,7 +54,7 @@ html {
   justify-content: center;
 }
 
-#allRecs {
+.recHolder {
   display: flex;
   justify-content: center; 
   flex-wrap: wrap;
