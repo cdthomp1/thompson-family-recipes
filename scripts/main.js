@@ -294,7 +294,9 @@ function showBeef() {
   console.log("SHOW BEEF");
   document.getElementById("allRecs").style.display = "none";
   document.getElementById("beefRecs").style.display = "block";
-  getRecs("https://cdthomp1.github.io/what-can-I-make/recipes/lion-house-chili-r.json", "beefRecs")
+  beefRecs.forEach(rec => {
+    recCardTemplate(rec, "#", "beefRecs");
+  })
 }
 
 function seeMyBook() {
@@ -416,11 +418,14 @@ function loadUserRecs() {
   });
 
 }
-
+var beefRecs = [];
 function getFirebaseRecs(){
   db.collection("thompsonRecs").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
+        if(doc.data().category === "Beef") {
+          beefRecs.push(doc.data());
+        }
         recCardTemplate(doc.data(), "#", "allRecs")
         console.log(doc.id, " => ", doc.data());
     });
