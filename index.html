@@ -82,8 +82,11 @@
           </div>
         </li>
       </ul>
-      <a href="./add-recipe.html" class="btn btn-success" id="addRec">Add a Recipe</a>
       
+      <button type="button" class="btn btn-primary" value="Add Rec" id="addRecBtn" data-toggle="modal"
+      data-target="#addRec">
+      Add Rec
+    </button>
       <button type="button" class="btn btn-primary" value="Log In" id="masterLogIn" data-toggle="modal"
         data-target="#login">
         Log In
@@ -218,11 +221,68 @@
     </div>
   </div>
 
+  <div class="modal fade" id="addRec" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="addRec">
+                <h1>Lets add a Recipe!</h1>
+                <input id="recName" placeholder="Name of Recipe" onchange="addTitle()"><br>
+                <input id="authorInput" placeholder="Author of Recipe" onchange="addAuthor()"><br>
+                <select id="category">
+                  <option value="Appetizers">Appetizers</option>
+                  <option value="Breakfast">Breakfast</option>
+                  <option value="Beverages">Beverages</option>
+                  <option value="Lunch">Lunch</option>
+                  <option value="Soups">Soups</option>
+                  <option value="Salads">Salads</option>
+                  <option value="Beef">Main Dish - Beef</option>
+                  <option value="Poultry">Main Dish - Poultry</option>
+                  <option value="Pork">Main Dish - Pork</option>
+                  <option value="Seafood">Main Dish - Seafood</option>
+                  <option value="Vegetarian">Main Dish - Vegetarian</option>
+                  <option value="Vegetables">Side Dish - Vegetables</option>
+                  <option value="Rice">Side Dish - Rice</option>
+                </select><br>
+                <span>If no image of food, enter "none" all lower case.</span><br>
+                <input id="image2" placeholder="Link to an Image" onchange="addImage()"><br>
+                <!--<input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)">-->
+                Add an Ingredient!<br>
+                <div id="ingredientInput">
+                  <input id="quantity" placeholder="Quantity"><input id="name" placeholder="Name"><br>
+                  <button onclick="addIngredientInput()">Add Another Ingredient!</button><br>
+                </div>
+                Add a Direction!<br>
+                <input id="step" placeholder="Number"><input id="direction" placeholder="Direction"><br>
+                <button onclick="addDirectionInput()">Add Another Direction!</button><br>
+
+                <h3 id="title"></h3>
+                <h5 id="author"></h5>
+                <img id="headerImage">
+                <ul id="ingredientList">
+                </ul>
+                <ol id="directionList">
+                </ol>
+                <div id="confirm">
+                  <button onclick="addToFirebase()">Confirm Recipe</button>
+
+                </div>
+
+                <button value="Refresh Page" onClick="window.location.reload();">Restart</button>
+              </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="allRecs"></div>
   <div id="beefRecs"></div>
   <div id="recipeBook"></div>
   <button onclick="loadUserRecs()">LOAD</button>
-  <button onclick="getFirebaseRecs()">LOAD from fire</button>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
