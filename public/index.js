@@ -1,6 +1,6 @@
 const loginBtn = document.getElementById("btnlogin");
-var database = firebase.database();
-var db = firebase.firestore();
+//var database = firebase.database();
+//var db = firebase.firestore();
 
 
 function createUser() {

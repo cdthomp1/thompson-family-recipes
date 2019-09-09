@@ -166,7 +166,7 @@ function makePath(name) {
 
 
 function getRecs(url, currentDiv) {
-  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
+  /* let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
@@ -188,22 +188,18 @@ function getRecs(url, currentDiv) {
     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
     "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json",
-  ];
+  ]; */
 
-  urls.forEach(url => {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         let recipe = JSON.parse(this.responseText)
-        //recCardTemplate(recipe, url, currentDiv)
-        writeRecTwo(recipe);
+        recCardTemplate(recipe, url, currentDiv)
+        //writeRecTwo(recipe);
       }
     };
     xhttp.open("GET", url, true);
     xhttp.send();
-
-  })
-
 
 
 }
