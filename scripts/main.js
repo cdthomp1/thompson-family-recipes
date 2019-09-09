@@ -18,31 +18,6 @@ function search_recipe() {
 var database = firebase.database();
 var db = firebase.firestore();
 
-/* function login() {
-  //console.log("HELOO")
-  var userl = document.getElementById('email').value;
-  var passl = document.getElementById('password').value;
-  var user = 'camthomp96@gmail.com';
-  var pass = 'a';
-  var username = "Cameron"
-  console.log(userl)
-  //console.log(passl)
-  if (user === userl && pass === passl) {
-    document.getElementById('masterLogIn').style.display = "none";
-    document.getElementById('user').style.display = "block";
-    var adds = document.getElementsByClassName('add');
-    document.getElementById('username').innerHTML = " " + username;
-
-    for (var i = 0; i < adds.length; i++) {
-      adds[i].style.display = "inline";
-      //console.log("HEY")
-    }
-
-  }
-
-} */
-
-
 window.onscroll = function () {
   scrollFunction()
 };
