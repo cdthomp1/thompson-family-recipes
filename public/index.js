@@ -33,23 +33,21 @@ function createUser() {
 
 function apple() {
 
-    console.log("APPLE CALLED")
-
     document.getElementById('masterLogIn').style.display = "none";
     document.getElementById('user').style.display = "block";
-    var adds = document.getElementsByClassName('add');
+    //var adds = document.getElementsByClassName('add');
     document.getElementById('username').innerHTML = " " + username;
 
-    for (var i = 0; i < adds.length; i++) {
+   /*  for (var i = 0; i < adds.length; i++) {
         adds[i].style.display = "inline";
         //console.log("HEY")
-    }
-
-
+    } */
     var user = firebase.auth().currentUser;
 
     document.getElementById('username').innerHTML = " " + user.displayName;
-
+    if (user.displayName === "Cameron Thompson" || user.displayName === "Sariah Luna"){
+        document.getElementById("addRecBtn").style.display = "block";
+    }
 
 
 }

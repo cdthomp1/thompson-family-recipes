@@ -1,9 +1,9 @@
 var searchBar = document.getElementById("searchBar");
 
-searchBar.addEventListener("keyup", function(event) {
+searchBar.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
-   event.preventDefault();
-   search();
+    event.preventDefault();
+    search();
   }
 });
 
@@ -39,7 +39,7 @@ function scrollFunction() {
   }
 }
 
-function recCardTemplate(recipe, url, currentDiv) {
+function recCardTemplate(recipe, currentDiv) {
 
   var card = document.createElement("div");
   card.classList.add("card")
@@ -78,17 +78,17 @@ function recCardTemplate(recipe, url, currentDiv) {
   var makeItName = document.createTextNode("Make It!");
   makeIt.appendChild(makeItName);
 
-/* BELOW IS SOME CODE FOR THE RECIPE BOOK OPTION */  
-/*   var additSpan = document.createElement("span");
-  additSpan.classList.add("add");
+  /* BELOW IS SOME CODE FOR THE RECIPE BOOK OPTION */
+  /*   var additSpan = document.createElement("span");
+    additSpan.classList.add("add");
 
-  var addIt = document.createElement("button");
-  addIt.classList.add("btn")
-  addIt.classList.add("btn-success")
-  addIt.setAttribute("onclick", "addIt(\"" + recipe.title + "\"" + ")");
-  var addItName = document.createTextNode("Add It!");
-  addIt.appendChild(addItName);
-  additSpan.appendChild(addIt); */
+    var addIt = document.createElement("button");
+    addIt.classList.add("btn")
+    addIt.classList.add("btn-success")
+    addIt.setAttribute("onclick", "addIt(\"" + recipe.title + "\"" + ")");
+    var addItName = document.createTextNode("Add It!");
+    addIt.appendChild(addItName);
+    additSpan.appendChild(addIt); */
 
   card.appendChild(img);
   cardBody.appendChild(cardTitle);
@@ -104,7 +104,7 @@ function recCardTemplate(recipe, url, currentDiv) {
 
 function getRec(recipe) {
   allRecsFromFB.forEach(rec => {
-    if (rec.title === recipe){
+    if (rec.title === recipe) {
       document.getElementById(`recipe-name`).innerHTML = rec.title;
       rec.ingredients.forEach(ingredient => {
         addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'ingredients')
@@ -179,93 +179,85 @@ function clearData() {
 }
 
 function showBeef() {
-  //console.log("SHOW BEEF");
   document.getElementById("allRecs").style.display = "none";
-  document.getElementById("beefRecs").style.display = "block";
+  document.getElementById("beefRecs").style.display = "flex";
+  document.getElementById("riceRecs").style.display = "none";
+  document.getElementById("appRecs").style.display = "none";
+  document.getElementById("breakfastRecs").style.display = "none";
+  document.getElementById("beverageRecs").style.display = "none";
+  document.getElementById("lunchRecs").style.display = "none";
+  document.getElementById("soupRecs").style.display = "none";
+  document.getElementById("saladRecs").style.display = "none";
+  document.getElementById("poultryRecs").style.display = "none";
+  document.getElementById("porkRecs").style.display = "none";
+  document.getElementById("seafodRecs").style.display = "none";
+  document.getElementById("vegetarianRecs").style.display = "none";
+  document.getElementById("vegtablesRecs").style.display = "none";
   beefRecs.forEach(rec => {
-    recCardTemplate(rec, "#", "beefRecs");
+    recCardTemplate(rec, "beefRecs");
   })
 }
 
-/* 
-
-function getFromFireBase(rec) {
-  var url = makePath(rec);
-  getRecs(url, "recipeBook");
-}
-
-function seeMyBook() {
-  //console.log("SHOW MY BOOK");
+function showApps() {
   document.getElementById("allRecs").style.display = "none";
-  document.getElementById("recipeBook").style.display = "block";
-  recsFromFirebase.push(userRecipes)
-  recsFromFirebase.forEach(rec => {
-    getFromFireBase(rec);
+  document.getElementById("beefRecs").style.display = "noe";
+  document.getElementById("riceRecs").style.display = "none";
+  document.getElementById("appRecs").style.display = "flex";
+  document.getElementById("breakfastRecs").style.display = "none";
+  document.getElementById("beverageRecs").style.display = "none";
+  document.getElementById("lunchRecs").style.display = "none";
+  document.getElementById("soupRecs").style.display = "none";
+  document.getElementById("saladRecs").style.display = "none";
+  document.getElementById("poultryRecs").style.display = "none";
+  document.getElementById("porkRecs").style.display = "none";
+  document.getElementById("seafodRecs").style.display = "none";
+  document.getElementById("vegetarianRecs").style.display = "none";
+  document.getElementById("vegtablesRecs").style.display = "none";
+  appRecs.forEach(rec => {
+    recCardTemplate(rec, "appRecs");
   })
 }
 
-var userRecipes = [];
-
-function addIt(recipe) {
-
-  //console.log(typeof (recipe))
-  // Add the recipe to the recipe array
-  userRecipes.push(recipe)
-
-  //Create a new list item
-  var listItem = document.createElement("li");
-
-  //Create a new link
-
-
-  //Create the text for the link bassed on the recipe
-  var textnode = document.createTextNode(recipe.title);
-
-  //Grab the existing list
-  var list = document.getElementById("recipeBook");
-
-  listItem.textContent = textnode
-
-  //Create a link based on the recipe
-
-
-  //Set the href attribute
-
-  //Add the list item to the list
-  list.appendChild(listItem)
-
-  var user = firebase.auth().currentUser;
-  var name, email, photoUrl, uid, emailVerified;
-
-  if (user != null) {
-    name = user.displayName;
-    email = user.email;
-    photoUrl = user.photoURL;
-    emailVerified = user.emailVerified;
-    uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
-    // this value to authenticate with your backend server, if
-    // you have one. Use User.getToken() instead.
-  }
-
-  writeUserData(uid, name, email, recipe);
-
+function showBreak() {
+  document.getElementById("allRecs").style.display = "none";
+  document.getElementById("beefRecs").style.display = "noe";
+  document.getElementById("riceRecs").style.display = "none";
+  document.getElementById("appRecs").style.display = "none";
+  document.getElementById("breakfastRecs").style.display = "flex";
+  document.getElementById("beverageRecs").style.display = "none";
+  document.getElementById("lunchRecs").style.display = "none";
+  document.getElementById("soupRecs").style.display = "none";
+  document.getElementById("saladRecs").style.display = "none";
+  document.getElementById("poultryRecs").style.display = "none";
+  document.getElementById("porkRecs").style.display = "none";
+  document.getElementById("seafodRecs").style.display = "none";
+  document.getElementById("vegetarianRecs").style.display = "none";
+  document.getElementById("vegtablesRecs").style.display = "none";
+  breakfastRecs.forEach(rec => {
+    recCardTemplate(rec, "breakfastRecs");
+  })
 }
 
-function writeUserData(userId, name, email, recipe) {
-  console.log(recipe)
-  allRecsFromFB.forEach(rec => {
-    if (rec.title === recipe){
-      db.collection("users").doc(userId).collection("userRecs").doc().set(rec
-        )
-        .then(function () {
-         // console.log("Document successfully written!");
-        })
-        .catch(function (error) {
-         alert("Error writing document: " +  error);
-        });
-    }
-  });
-} */
+function showAllRecs() {
+  console.log(document.getElementById("allRecs").style.display)
+  if (document.getElementById("allRecs").style.display === "none") {
+    document.getElementById("allRecs").style.display = "flex";
+    document.getElementById("beefRecs").style.display = "none";
+    document.getElementById("riceRecs").style.display = "none";
+    document.getElementById("appRecs").style.display = "none";
+    document.getElementById("breakfastRecs").style.display = "none";
+    document.getElementById("beverageRecs").style.display = "none";
+    document.getElementById("lunchRecs").style.display = "none";
+    document.getElementById("soupRecs").style.display = "none";
+    document.getElementById("saladRecs").style.display = "none";
+    document.getElementById("poultryRecs").style.display = "none";
+    document.getElementById("porkRecs").style.display = "none";
+    document.getElementById("seafodRecs").style.display = "none";
+    document.getElementById("vegetarianRecs").style.display = "none";
+    document.getElementById("vegtablesRecs").style.display = "none";
+  }
+}
+
 
 
 
@@ -276,45 +268,24 @@ function writeRec(recipesss) {
       console.log("Document successfully written!");
     })
     .catch(function (error) {
-      console.error("Error writing document: ", error);
+      alert("Error writing recipe: " + error);
     });
 }
 
-var recsFromFirebase = [];
-
-function loadUserRecs() {
-  var user = firebase.auth().currentUser;
-  var name, email, photoUrl, uid, emailVerified;
-
-  if (user != null) {
-    name = user.displayName;
-    email = user.email;
-    photoUrl = user.photoURL;
-    emailVerified = user.emailVerified;
-    uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
-    // this value to authenticate with your backend server, if
-    // you have one. Use User.getToken() instead.
-  }
-
-  var docRef = db.collection("users").doc(uid);
-
-  docRef.get().then(function (doc) {
-    if (doc.exists) {
-     // console.log("Document data:", doc.data().savedRecs);
-      recsFromFirebase.push(doc.data().savedRecs);
-      //console.log(userRecipes)
-
-    } else {
-      // doc.data() will be undefined in this case
-      //console.log("No such document!");
-    }
-  }).catch(function (error) {
-    //console.log("Error getting document:", error);
-  });
-
-}
-var beefRecs = [];
 var allRecsFromFB = [];
+var beefRecs = [];
+var appRecs = [];
+var breakfastRecs = [];
+var beverageRecs = [];
+var lunchRecs = [];
+var soupRecs = [];
+var saladRecs = [];
+var poultryRecs = [];
+var porkRecs = [];
+var seafodRecs = [];
+var vegetarianRecs = [];
+var vegtablesRecs = [];
+var riceRecs = [];
 
 function getFirebaseRecs() {
   db.collection("thompsonRecs").get().then(function (querySnapshot) {
@@ -323,9 +294,16 @@ function getFirebaseRecs() {
       if (doc.data().category === "Beef") {
         beefRecs.push(doc.data());
       }
+      if (doc.data().category === "Breakfast") {
+        breakfastRecs.push(doc.data());
+      }
+      if (doc.data().category === "Appetizers" || doc.data().category === "Appetizer"){ 
+        appRecs.push(doc.data())
+      }
+      
       allRecsFromFB.push(doc.data())
-      recCardTemplate(doc.data(), "#", "allRecs")
-     // console.log(doc.id, " => ", doc.data());
+      recCardTemplate(doc.data(),  "allRecs")
+      // console.log(doc.id, " => ", doc.data());
     });
   });
 }
@@ -426,7 +404,7 @@ function addImage() {
 }
 
 function readURL(input) {
- // console.log(input.files)
+  // console.log(input.files)
   if (input.files && input.files[0]) {
     var reader = new FileReader();
 
@@ -467,7 +445,7 @@ function confirmRec() {
 
 function addToFirebase() {
   var rec = confirmRec();
-  writeRecTwo(rec)
+  writeRec(rec)
 }
 
 document.addEventListener('DOMContentLoaded', function () {

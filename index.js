@@ -16,7 +16,10 @@ function apple() {
 
       var user = firebase.auth().currentUser;
       document.getElementById('username').innerHTML = " " + user.displayName;
-
+        console.log(user.displayName)
+      if (user.displayName === "Cameron Thompson" || user.displayName === "Sariah Luna"){
+          document.getElementById("addRecBtn").style.display = "block";
+      }
     
 
 }

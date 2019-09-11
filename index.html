@@ -26,18 +26,18 @@
       aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Thompson Family Recipes</a>
+    <a class="navbar-brand" href="index.html">Thompson Family Recipes</a>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" onclick="getAllRecs()">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" onclick="showAllRecs()">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Appetizers</a>
+          <a class="nav-link" onclick="showApps()">Appetizers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Breakfast</a>
+          <a class="nav-link" onclick="showBreak()">Breakfast</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Beverages</a>
@@ -96,8 +96,8 @@
     <i class="fas fa-angle-double-up"></i>
   </button>
 
-    <input class="form-control mr-sm-2" id="searchBar" type="search" onkeyup="search()" placeholder="Search"
-      aria-label="Search">
+  <input class="form-control mr-sm-2" id="searchBar" type="search" onkeyup="search()" placeholder="Search"
+    aria-label="Search">
 
 
   <div class="modal fade" id="currentRec" tabindex="-1">
@@ -201,10 +201,8 @@
 
               <p>Welcome<span id="username"></span></p>
 
-              <p>Recipe Book</p>
-              <h3>Recently Added:</h3>
-              <div id="recipeBooks"></div>
-              <button class="btn btn-success" onclick="seeMyBook()">See All of My Book!</button>
+              <p>More features coming soon!</p>
+
 
             </div>
           </div>
@@ -212,57 +210,77 @@
       </div>
     </div>
   </div>
+  <!-- THIS IS THE PROFILE MODAL FOR RECIPE BOOK FEATURE -->
+  <!--   <div class="modal fade" id="profile" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="profile">
+  
+                <p>Welcome<span id="username"></span></p>
+  
+                <p>Recipe Book</p>
+                <h3>Recently Added:</h3>
+                <div id="recipeBooks"></div>
+                <button class="btn btn-success" onclick="seeMyBook()">See All of My Book!</button>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
   <div class="modal fade" id="addRec" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="form-group">
           <div class="input-group">
-            <div class="container">
-              <div class="addRec">
-                <h1>Lets add a Recipe!</h1>
-                <input id="recName" placeholder="Name of Recipe" onchange="addTitle()"><br>
-                <input id="authorInput" placeholder="Author of Recipe" onchange="addAuthor()"><br>
-                <select id="category">
-                  <option value="Appetizers">Appetizers</option>
-                  <option value="Breakfast">Breakfast</option>
-                  <option value="Beverages">Beverages</option>
-                  <option value="Lunch">Lunch</option>
-                  <option value="Soups">Soups</option>
-                  <option value="Salads">Salads</option>
-                  <option value="Beef">Main Dish - Beef</option>
-                  <option value="Poultry">Main Dish - Poultry</option>
-                  <option value="Pork">Main Dish - Pork</option>
-                  <option value="Seafood">Main Dish - Seafood</option>
-                  <option value="Vegetarian">Main Dish - Vegetarian</option>
-                  <option value="Vegetables">Side Dish - Vegetables</option>
-                  <option value="Rice">Side Dish - Rice</option>
-                </select><br>
-                <span>If no image of food, enter "none" all lower case.</span><br>
-                <input id="image2" placeholder="Link to an Image" onchange="addImage()"><br>
-                <!--<input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)">-->
-                Add an Ingredient!<br>
-                <div id="ingredientInput">
-                  <input id="quantity" placeholder="Quantity"><input id="name" placeholder="Name"><br>
-                  <button onclick="addIngredientInput()">Add Another Ingredient!</button><br>
-                </div>
-                Add a Direction!<br>
-                <input id="step" placeholder="Number"><input id="direction" placeholder="Direction"><br>
-                <button onclick="addDirectionInput()">Add Another Direction!</button><br>
+
+            <div class="addRec">
+              <h1>Lets add a Recipe!</h1>
+              <input id="recName" placeholder="Name of Recipe" onchange="addTitle()"><br>
+              <input id="authorInput" placeholder="Author of Recipe" onchange="addAuthor()"><br>
+              <select id="category">
+                <option value="Appetizers">Appetizers</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Soups">Soups</option>
+                <option value="Salads">Salads</option>
+                <option value="Beef">Main Dish - Beef</option>
+                <option value="Poultry">Main Dish - Poultry</option>
+                <option value="Pork">Main Dish - Pork</option>
+                <option value="Seafood">Main Dish - Seafood</option>
+                <option value="Vegetarian">Main Dish - Vegetarian</option>
+                <option value="Vegetables">Side Dish - Vegetables</option>
+                <option value="Rice">Side Dish - Rice</option>
+              </select><br>
+              <span>If no image of food, enter "none" all lower case.</span><br>
+              <input id="image2" placeholder="Link to an Image" onchange="addImage()"><br>
+              <!--<input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)">-->
+              Add an Ingredient!<br>
+              <div id="ingredientInput">
+                <input id="quantity" placeholder="Quantity"><input id="name" placeholder="Name"><br>
+                <button onclick="addIngredientInput()">Add Another Ingredient!</button><br>
               </div>
-              <div class="previewRec">
-                <h3 id="title"></h3>
-                <h5 id="author"></h5>
-                <img id="headerImage">
-                <ul id="ingredientList">
-                </ul>
-                <ol id="directionList">
-                </ol>
-                <div id="confirm">
-                  <button onclick="addToFirebase()">Confirm Recipe</button>
-                </div>
-                <button value="Refresh Page" onClick="window.location.reload();">Restart</button>
+              Add a Direction!<br>
+              <input id="step" placeholder="Number"><input id="direction" placeholder="Direction"><br>
+              <button onclick="addDirectionInput()">Add Another Direction!</button><br>
+
+              <h3 id="title"></h3>
+              <h5 id="author"></h5>
+              <img id="headerImage">
+              <ul id="ingredientList">
+              </ul>
+              <ol id="directionList">
+              </ol>
+              <div id="confirm">
+                <button onclick="addToFirebase()">Confirm Recipe</button>
               </div>
+              <button value="Refresh Page" onClick="window.location.reload();">Restart</button>
+
             </div>
           </div>
         </div>
@@ -272,14 +290,51 @@
 
   <div class="recContainer">
     <div class="recHolder" id="allRecs">
-
     </div>
   </div>
   <div class="recContainer">
     <div class="recHolder" id="beefRecs"></div>
   </div>
-  <div id="recipeBook"></div>
 
+  <div class="recContainer">
+    <div class="recHolder" id="appRecs"></div>
+  </div>
+
+  <div class="recContainer">
+    <div class="recHolder" id="breakfastRecs"></div>
+  </div>
+
+  <div class="recContainer">
+    <div class="recHolder" id="beverageRecs"></div>
+  </div>
+  <div class="recContainer">
+    <div class="recHolder" id="lunchRecs"></div>
+  </div>
+
+  <div class="recContainer">
+    <div class="recHolder" id="soupRecs"></div>
+  </div>
+  <div class="recContainer">
+    <div class="recHolder" id="saladRecs"></div>
+  </div>
+  <div class="recContainer">
+    <div class="recHolder" id="poultryRecs"></div>
+  </div>
+  <div class="recContainer">
+    <div class="recHolder" id="porkRecs"></div>
+  </div>
+  <div class="recContainer">
+    <div class="recHolder" id="seafodRecs"></div>
+  </div>
+  <div class="recContainer">
+    <div class="recHolder" id="vegetarianRecs"></div>
+  </div>
+  <div class="recContainer">
+    <div class="recHolder" id="vegtablesRecs"></div>
+  </div>
+  <div class="recContainer">
+      <div class="recHolder" id="riceRecs"></div>
+    </div>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
