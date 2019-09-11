@@ -17,13 +17,6 @@
 
   <style>
     /*USE FOR TESTING NEW CSS*/
-    #beefRecs {
-      display: none;
-    }
-
-    #recipeBook {
-      display: none;
-    }
   </style>
 </head>
 
@@ -103,10 +96,9 @@
     <i class="fas fa-angle-double-up"></i>
   </button>
 
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" id="searchbar" type="search" onkeyup="search_recipe()" placeholder="Search"
+    <input class="form-control mr-sm-2" id="searchBar" type="search" onkeyup="search()" placeholder="Search"
       aria-label="Search">
-  </form>
+
 
   <div class="modal fade" id="currentRec" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -226,53 +218,52 @@
       <div class="modal-content">
         <div class="form-group">
           <div class="input-group">
-            <div class="addRec">
-              <h1>Lets add a Recipe!</h1>
-              <input id="recName" placeholder="Name of Recipe" onchange="addTitle()"><br>
-              <input id="authorInput" placeholder="Author of Recipe" onchange="addAuthor()"><br>
-              <select id="category">
-                <option value="Appetizers">Appetizers</option>
-                <option value="Breakfast">Breakfast</option>
-                <option value="Beverages">Beverages</option>
-                <option value="Lunch">Lunch</option>
-                <option value="Soups">Soups</option>
-                <option value="Salads">Salads</option>
-                <option value="Beef">Main Dish - Beef</option>
-                <option value="Poultry">Main Dish - Poultry</option>
-                <option value="Pork">Main Dish - Pork</option>
-                <option value="Seafood">Main Dish - Seafood</option>
-                <option value="Vegetarian">Main Dish - Vegetarian</option>
-                <option value="Vegetables">Side Dish - Vegetables</option>
-                <option value="Rice">Side Dish - Rice</option>
-              </select><br>
-              <span>If no image of food, enter "none" all lower case.</span><br>
-              <input id="image2" placeholder="Link to an Image" onchange="addImage()"><br>
-              <!--<input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)">-->
-              Add an Ingredient!<br>
-              <div id="ingredientInput">
-                <input id="quantity" placeholder="Quantity"><input id="name" placeholder="Name"><br>
-                <button onclick="addIngredientInput()">Add Another Ingredient!</button><br>
+            <div class="container">
+              <div class="addRec">
+                <h1>Lets add a Recipe!</h1>
+                <input id="recName" placeholder="Name of Recipe" onchange="addTitle()"><br>
+                <input id="authorInput" placeholder="Author of Recipe" onchange="addAuthor()"><br>
+                <select id="category">
+                  <option value="Appetizers">Appetizers</option>
+                  <option value="Breakfast">Breakfast</option>
+                  <option value="Beverages">Beverages</option>
+                  <option value="Lunch">Lunch</option>
+                  <option value="Soups">Soups</option>
+                  <option value="Salads">Salads</option>
+                  <option value="Beef">Main Dish - Beef</option>
+                  <option value="Poultry">Main Dish - Poultry</option>
+                  <option value="Pork">Main Dish - Pork</option>
+                  <option value="Seafood">Main Dish - Seafood</option>
+                  <option value="Vegetarian">Main Dish - Vegetarian</option>
+                  <option value="Vegetables">Side Dish - Vegetables</option>
+                  <option value="Rice">Side Dish - Rice</option>
+                </select><br>
+                <span>If no image of food, enter "none" all lower case.</span><br>
+                <input id="image2" placeholder="Link to an Image" onchange="addImage()"><br>
+                <!--<input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)">-->
+                Add an Ingredient!<br>
+                <div id="ingredientInput">
+                  <input id="quantity" placeholder="Quantity"><input id="name" placeholder="Name"><br>
+                  <button onclick="addIngredientInput()">Add Another Ingredient!</button><br>
+                </div>
+                Add a Direction!<br>
+                <input id="step" placeholder="Number"><input id="direction" placeholder="Direction"><br>
+                <button onclick="addDirectionInput()">Add Another Direction!</button><br>
               </div>
-              Add a Direction!<br>
-              <input id="step" placeholder="Number"><input id="direction" placeholder="Direction"><br>
-              <button onclick="addDirectionInput()">Add Another Direction!</button><br>
-
-              <h3 id="title"></h3>
-              <h5 id="author"></h5>
-              <img id="headerImage">
-              <ul id="ingredientList">
-              </ul>
-              <ol id="directionList">
-              </ol>
-              <div id="confirm">
-                <button onclick="addToFirebase()">Confirm Recipe</button>
-
+              <div class="previewRec">
+                <h3 id="title"></h3>
+                <h5 id="author"></h5>
+                <img id="headerImage">
+                <ul id="ingredientList">
+                </ul>
+                <ol id="directionList">
+                </ol>
+                <div id="confirm">
+                  <button onclick="addToFirebase()">Confirm Recipe</button>
+                </div>
+                <button value="Refresh Page" onClick="window.location.reload();">Restart</button>
               </div>
-
-              <button value="Refresh Page" onClick="window.location.reload();">Restart</button>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -288,7 +279,6 @@
     <div class="recHolder" id="beefRecs"></div>
   </div>
   <div id="recipeBook"></div>
-  <button onclick="loadUserRecs()">LOAD</button>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
@@ -303,13 +293,13 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-  </script>
+    </script>
 </body>
 
 

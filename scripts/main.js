@@ -1,5 +1,14 @@
-function search_recipe() {
-  let input = document.getElementById('searchbar').value
+var searchBar = document.getElementById("searchBar");
+
+searchBar.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   search();
+  }
+});
+
+var search = function search_recipe() {
+  let input = document.getElementById('searchBar').value
   input = input.toLowerCase();
   let x = document.getElementsByClassName('card-title');
   let y = document.getElementsByClassName('card');
@@ -29,17 +38,6 @@ function scrollFunction() {
     document.getElementById("topbtn").style.display = "none";
   }
 }
-
-
-var userRecipes = [];
-
-/* function getHTMLlink(recipe) {
-
-  var newRec = recipe.toLowerCase().replace(/\s/g, "-")
-  return newRec + ".html"
-} */
-
-
 
 function recCardTemplate(recipe, url, currentDiv) {
 
@@ -80,7 +78,8 @@ function recCardTemplate(recipe, url, currentDiv) {
   var makeItName = document.createTextNode("Make It!");
   makeIt.appendChild(makeItName);
 
-  var additSpan = document.createElement("span");
+/* BELOW IS SOME CODE FOR THE RECIPE BOOK OPTION */  
+/*   var additSpan = document.createElement("span");
   additSpan.classList.add("add");
 
   var addIt = document.createElement("button");
@@ -89,108 +88,27 @@ function recCardTemplate(recipe, url, currentDiv) {
   addIt.setAttribute("onclick", "addIt(\"" + recipe.title + "\"" + ")");
   var addItName = document.createTextNode("Add It!");
   addIt.appendChild(addItName);
-  additSpan.appendChild(addIt);
+  additSpan.appendChild(addIt); */
 
   card.appendChild(img);
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardAuthor);
   cardBody.appendChild(makeIt);
-  cardBody.appendChild(additSpan);
+
+  //BELOW IS SOME CODE FOR the RECIPE BOOK OPTION
+  //cardBody.appendChild(additSpan);
+
   card.appendChild(cardBody);
-
-  //document.body.appendChild(card);
-
   document.getElementById(currentDiv).appendChild(card)
 }
 
-
-
-/* function getAllRecs() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let recipes = JSON.parse(this.responseText)
-      recipes.forEach(rec => {
-        var url = makePath(rec.name)
-        getRecs(url, "allRecs");
-      })
-    }
-  };
-  xhttp.open("GET", "https://api.github.com/repos/cdthomp1/what-can-I-make/contents/recipes", true);
-  xhttp.send();
-} */
-
-function getFromFireBase(rec) {
-  var url = makePath(rec);
-  getRecs(url, "recipeBook");
-}
-
-/* function makePath(name) {
-  var rec = name.toString()
-  console.log(name)
-  console.log(rec.includes(" "))
-  if (rec.includes(" ")) {
-    console.log("HELLO")
-    var recipe = rec.replace(/\s+/g, '-').toLowerCase()
-    var real = recipe + "-r.json"
-    console.log("=======================" + real)
-    return "https://cdthomp1.github.io/what-can-I-make/recipes/" + real;
-  }
-  return "https://cdthomp1.github.io/what-can-I-make/recipes/" + name;
-} */
-
-
-/* function getRecs(url, currentDiv) {
-  let urls = ["https://cdthomp1.github.io/what-can-I-make/recipes/macaroni-and-cheese-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/baked-garlic-cheddar-chicken-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/cream-cheese-and-chicken-taquitos-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-ranch-wraps-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-low-mein-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/chicken-dumpling-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/blackened-chicken-and-avocado-salad-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/crockpot-chili-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/baked-cream-cheese-spaghetti-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/cheese-ball-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-dill-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/fluffy-peanut-butter-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/peanut-butter-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/quick-fruit-dip-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-spinach-tomato-tortellini-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/creamy-tomato-italian-parmesan-chicken-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/fettuccine-alfredo-with-chicken-broccoli-bacon-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/mexican-casserole-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/sausage-pepper-and-rice-skillet-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-honey-garlic-chicken-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/slow-cooker-mongolian-beef-r.json",
-    "https://cdthomp1.github.io/what-can-I-make/recipes/crusty-bread-r.json",
-  ];
-urls.forEach(u => {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let recipe = JSON.parse(this.responseText)
-      //recCardTemplate(recipe, url, currentDiv)
-      writeRecTwo(recipe);
-    }
-  };
-  xhttp.open("GET", u, true);
-  xhttp.send();
-
-}) */
-
-
-
 function getRec(recipe) {
-
   allRecsFromFB.forEach(rec => {
     if (rec.title === recipe){
-
       document.getElementById(`recipe-name`).innerHTML = rec.title;
-    
       rec.ingredients.forEach(ingredient => {
         addItems(`${ingredient.amount}   ${ingredient.ingredient}`, 'ingredients')
       })
-    
       rec.directions.forEach(direction => {
         addItems(direction.process, 'directions')
       })
@@ -200,13 +118,11 @@ function getRec(recipe) {
 
 
 function addItems(item, list) {
-
   var ul = document.getElementById(list);
   var li = document.createElement("li");
   li.setAttribute('id', item);
   li.appendChild(document.createTextNode(item));
   ul.appendChild(li);
-
 }
 
 const backToTopButton = document.querySelector("#back-to-top-btn");
@@ -271,6 +187,13 @@ function showBeef() {
   })
 }
 
+/* 
+
+function getFromFireBase(rec) {
+  var url = makePath(rec);
+  getRecs(url, "recipeBook");
+}
+
 function seeMyBook() {
   //console.log("SHOW MY BOOK");
   document.getElementById("allRecs").style.display = "none";
@@ -281,7 +204,7 @@ function seeMyBook() {
   })
 }
 
-
+var userRecipes = [];
 
 function addIt(recipe) {
 
@@ -326,28 +249,28 @@ function addIt(recipe) {
 
   writeUserData(uid, name, email, recipe);
 
-
-
-
 }
 
-function writeUserData(userId, name, email, rec) {
-  writeRec()
-  db.collection("users").doc(userId).set({
-      savedRecs: userRecipes
-    })
-    .then(function () {
-     // console.log("Document successfully written!");
-    })
-    .catch(function (error) {
-     alert("Error writing document: " +  error);
-    });
-}
+function writeUserData(userId, name, email, recipe) {
+  console.log(recipe)
+  allRecsFromFB.forEach(rec => {
+    if (rec.title === recipe){
+      db.collection("users").doc(userId).collection("userRecs").doc().set(rec
+        )
+        .then(function () {
+         // console.log("Document successfully written!");
+        })
+        .catch(function (error) {
+         alert("Error writing document: " +  error);
+        });
+    }
+  });
+} */
 
 
 
 //TODO: Loop through all recipes with this to put in firebase
-function writeRecTwo(recipesss) {
+function writeRec(recipesss) {
   db.collection("thompsonRecs").doc(recipesss.title).set(recipesss)
     .then(function () {
       console.log("Document successfully written!");
@@ -544,15 +467,7 @@ function confirmRec() {
 
 function addToFirebase() {
   var rec = confirmRec();
-
-  db.collection("thompsonRecs").doc(rec.title).set(rec)
-    .then(function () {
-      //console.log("Document successfully written!");
-    })
-    .catch(function (error) {
-      var no = "You don't have permision to do that"
-      alert("Error writing recipe: " + error);
-    });
+  writeRecTwo(rec)
 }
 
 document.addEventListener('DOMContentLoaded', function () {
