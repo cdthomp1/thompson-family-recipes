@@ -45,7 +45,7 @@ function apple() {
     var user = firebase.auth().currentUser;
 
     document.getElementById('username').innerHTML = " " + user.displayName;
-    if (user.displayName === "Cameron Thompson" || user.displayName === "Sariah Luna"){
+    if (user.displayName === "Cameron Thompson" || user.displayName === "Sariah Thompson"){
         document.getElementById("addRecBtn").style.display = "block";
     }
 
