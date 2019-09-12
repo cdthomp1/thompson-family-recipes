@@ -238,6 +238,86 @@ function showBreak() {
   })
 }
 
+function showBeverage() {
+  document.getElementById("allRecs").style.display = "none";
+  document.getElementById("beefRecs").style.display = "noe";
+  document.getElementById("riceRecs").style.display = "none";
+  document.getElementById("appRecs").style.display = "none";
+  document.getElementById("breakfastRecs").style.display = "none";
+  document.getElementById("beverageRecs").style.display = "flex";
+  document.getElementById("lunchRecs").style.display = "none";
+  document.getElementById("soupRecs").style.display = "none";
+  document.getElementById("saladRecs").style.display = "none";
+  document.getElementById("poultryRecs").style.display = "none";
+  document.getElementById("porkRecs").style.display = "none";
+  document.getElementById("seafodRecs").style.display = "none";
+  document.getElementById("vegetarianRecs").style.display = "none";
+  document.getElementById("vegtablesRecs").style.display = "none";
+  beverageRecs.forEach(rec => {
+    recCardTemplate(rec, "beverageRecs");
+  })
+}
+
+function showBeverage() {
+  document.getElementById("allRecs").style.display = "none";
+  document.getElementById("beefRecs").style.display = "noe";
+  document.getElementById("riceRecs").style.display = "none";
+  document.getElementById("appRecs").style.display = "none";
+  document.getElementById("breakfastRecs").style.display = "none";
+  document.getElementById("beverageRecs").style.display = "flex";
+  document.getElementById("lunchRecs").style.display = "none";
+  document.getElementById("soupRecs").style.display = "none";
+  document.getElementById("saladRecs").style.display = "none";
+  document.getElementById("poultryRecs").style.display = "none";
+  document.getElementById("porkRecs").style.display = "none";
+  document.getElementById("seafodRecs").style.display = "none";
+  document.getElementById("vegetarianRecs").style.display = "none";
+  document.getElementById("vegtablesRecs").style.display = "none";
+  beverageRecs.forEach(rec => {
+    recCardTemplate(rec, "beverageRecs");
+  })
+}
+
+function showLunch() {
+  document.getElementById("allRecs").style.display = "none";
+  document.getElementById("beefRecs").style.display = "noe";
+  document.getElementById("riceRecs").style.display = "none";
+  document.getElementById("appRecs").style.display = "none";
+  document.getElementById("breakfastRecs").style.display = "none";
+  document.getElementById("beverageRecs").style.display = "none";
+  document.getElementById("lunchRecs").style.display = "flex";
+  document.getElementById("soupRecs").style.display = "none";
+  document.getElementById("saladRecs").style.display = "none";
+  document.getElementById("poultryRecs").style.display = "none";
+  document.getElementById("porkRecs").style.display = "none";
+  document.getElementById("seafodRecs").style.display = "none";
+  document.getElementById("vegetarianRecs").style.display = "none";
+  document.getElementById("vegtablesRecs").style.display = "none";
+  beverageRecs.forEach(rec => {
+    recCardTemplate(rec, "beverageRecs");
+  })
+}
+
+function showSoups() {
+  document.getElementById("allRecs").style.display = "none";
+  document.getElementById("beefRecs").style.display = "noe";
+  document.getElementById("riceRecs").style.display = "none";
+  document.getElementById("appRecs").style.display = "none";
+  document.getElementById("breakfastRecs").style.display = "none";
+  document.getElementById("beverageRecs").style.display = "none";
+  document.getElementById("lunchRecs").style.display = "none";
+  document.getElementById("soupRecs").style.display = "flex";
+  document.getElementById("saladRecs").style.display = "none";
+  document.getElementById("poultryRecs").style.display = "none";
+  document.getElementById("porkRecs").style.display = "none";
+  document.getElementById("seafodRecs").style.display = "none";
+  document.getElementById("vegetarianRecs").style.display = "none";
+  document.getElementById("vegtablesRecs").style.display = "none";
+  beverageRecs.forEach(rec => {
+    recCardTemplate(rec, "beverageRecs");
+  })
+}
+
 function showAllRecs() {
   console.log(document.getElementById("allRecs").style.display)
   if (document.getElementById("allRecs").style.display === "none") {
@@ -300,10 +380,40 @@ function getFirebaseRecs() {
       if (doc.data().category === "Appetizers" || doc.data().category === "Appetizer"){ 
         appRecs.push(doc.data())
       }
+      if (doc.data().category === "Beverage"){ 
+        beverageRecs.push(doc.data())
+      }
+      if (doc.data().category === "Lunch"){ 
+        lunchRecs.push(doc.data())
+      }
+      if (doc.data().category === "Soup"){ 
+        soupRecs.push(doc.data())
+      }
+      if (doc.data().category === "Salad"){ 
+        saladRecs.push(doc.data())
+      }
+      if (doc.data().category === "poultry" || doc.data().category === "Poultry" ||
+      doc.data().category === "chicken" || doc.data().category === "Chicken"){ 
+        poultryRecs.push(doc.data())
+      }
+      if (doc.data().category === "Pork"){ 
+        porkRecs.push(doc.data())
+      }
+      if (doc.data().category === "Seafood"){ 
+        saladRecs.push(doc.data())
+      }
+      if (doc.data().category === "Vegetarian"){ 
+        vegetarianRecs.push(doc.data())
+      }
+      if (doc.data().category === "Vegetables"){ 
+        vegtablesRecs.push(doc.data())
+      }
+      if (doc.data().category === "Rice"){ 
+        riceRecs.push(doc.data())
+      }
       
       allRecsFromFB.push(doc.data())
       recCardTemplate(doc.data(),  "allRecs")
-      // console.log(doc.id, " => ", doc.data());
     });
   });
 }
