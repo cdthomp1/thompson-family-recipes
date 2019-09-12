@@ -31,47 +31,47 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" onclick="showAllRecs()">Home</a>
+          <a class="nav-link click" id="all">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" onclick="showApps()">Appetizers</a>
+          <a class="nav-link click" id="app">Appetizers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" onclick="showBreak()">Breakfast</a>
+          <a class="nav-link click" id="Breakfast">Breakfast</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Beverages</a>
+          <a class="nav-link click" id="beverage">Beverages</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lunch</a>
+          <a class="nav-link click" id="lunch">Lunch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Soups</a>
+          <a class="nav-link click" id="soup">Soups</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Salads</a>
+          <a class="nav-link click" id="salad">Salads</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Main Dishes
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <button class="dropdown-item" onclick="showBeef()" href="#">Beef</button>
-            <a class="dropdown-item" href="#">Poultry</a>
-            <a class="dropdown-item" href="#">Pork</a>
-            <a class="dropdown-item" href="#">Seafood</a>
-            <a class="dropdown-item" href="#">Vegetarian</a>
+            <a class="dropdown-item click" id="beef">Beef</a>
+            <a class="dropdown-item click" id="poultry">Poultry</a>
+            <a class="dropdown-item click" id="pork">Pork</a>
+            <a class="dropdown-item click" id="seafood">Seafood</a>
+            <a class="dropdown-item click" id="vegetarian">Vegetarian</a>
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Side Dishes
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Vegetables</a>
-            <a class="dropdown-item" href="#">Rice</a>
+            <a class="dropdown-item click" id="vegtables">Vegetables</a>
+            <a class="dropdown-item click" id="rice">Rice</a>
           </div>
         </li>
       </ul>
@@ -288,51 +288,47 @@
     </div>
   </div>
 
-  <div class="recContainer">
+  <div class="recContainer" id="allRecsContainer">
     <div class="recHolder" id="allRecs">
     </div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden" id="beefRecsContainer">
     <div class="recHolder" id="beefRecs"></div>
   </div>
-
-  <div class="recContainer">
+  <div class="recContainer hidden" id="appRecsContainer">
     <div class="recHolder" id="appRecs"></div>
   </div>
-
-  <div class="recContainer">
+  <div class="recContainer hidden" id="breakfastRecsContainer">
     <div class="recHolder" id="breakfastRecs"></div>
   </div>
-
-  <div class="recContainer">
+  <div class="recContainer hidden" id="beverageRecsContainer">
     <div class="recHolder" id="beverageRecs"></div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden" id="lunchRecsContainer">
     <div class="recHolder" id="lunchRecs"></div>
   </div>
-
-  <div class="recContainer">
+  <div class="recContainer hidden" id="soupRecsContainer">
     <div class="recHolder" id="soupRecs"></div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden" id="saladRecsContainer">
     <div class="recHolder" id="saladRecs"></div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden" id="poultryRecsContainer">
     <div class="recHolder" id="poultryRecs"></div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden" id="porkRecsContainer">
     <div class="recHolder" id="porkRecs"></div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden" id="seafodRecsContainer">
     <div class="recHolder" id="seafodRecs"></div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden" id="vegetarianRecsContainer">
     <div class="recHolder" id="vegetarianRecs"></div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden" id="vegtablesRecsContainer">
     <div class="recHolder" id="vegtablesRecs"></div>
   </div>
-  <div class="recContainer">
+  <div class="recContainer hidden"  id="riceRecsContainer">
       <div class="recHolder" id="riceRecs"></div>
     </div>
   <!-- The core Firebase JS SDK is always required and must be listed first -->

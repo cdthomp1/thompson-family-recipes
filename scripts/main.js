@@ -178,88 +178,12 @@ function clearData() {
   document.getElementById("directions").innerHTML = "";
 }
 
-function showBeef() {
-  document.getElementById("allRecs").style.display = "none";
-  document.getElementById("beefRecs").style.display = "flex";
-  document.getElementById("riceRecs").style.display = "none";
-  document.getElementById("appRecs").style.display = "none";
-  document.getElementById("breakfastRecs").style.display = "none";
-  document.getElementById("beverageRecs").style.display = "none";
-  document.getElementById("lunchRecs").style.display = "none";
-  document.getElementById("soupRecs").style.display = "none";
-  document.getElementById("saladRecs").style.display = "none";
-  document.getElementById("poultryRecs").style.display = "none";
-  document.getElementById("porkRecs").style.display = "none";
-  document.getElementById("seafodRecs").style.display = "none";
-  document.getElementById("vegetarianRecs").style.display = "none";
-  document.getElementById("vegtablesRecs").style.display = "none";
-  beefRecs.forEach(rec => {
-    recCardTemplate(rec, "beefRecs");
-  })
-}
-
-function showApps() {
-  document.getElementById("allRecs").style.display = "none";
-  document.getElementById("beefRecs").style.display = "noe";
-  document.getElementById("riceRecs").style.display = "none";
-  document.getElementById("appRecs").style.display = "flex";
-  document.getElementById("breakfastRecs").style.display = "none";
-  document.getElementById("beverageRecs").style.display = "none";
-  document.getElementById("lunchRecs").style.display = "none";
-  document.getElementById("soupRecs").style.display = "none";
-  document.getElementById("saladRecs").style.display = "none";
-  document.getElementById("poultryRecs").style.display = "none";
-  document.getElementById("porkRecs").style.display = "none";
-  document.getElementById("seafodRecs").style.display = "none";
-  document.getElementById("vegetarianRecs").style.display = "none";
-  document.getElementById("vegtablesRecs").style.display = "none";
-  appRecs.forEach(rec => {
-    recCardTemplate(rec, "appRecs");
-  })
-}
-
-function showBreak() {
-  document.getElementById("allRecs").style.display = "none";
-  document.getElementById("beefRecs").style.display = "noe";
-  document.getElementById("riceRecs").style.display = "none";
-  document.getElementById("appRecs").style.display = "none";
-  document.getElementById("breakfastRecs").style.display = "flex";
-  document.getElementById("beverageRecs").style.display = "none";
-  document.getElementById("lunchRecs").style.display = "none";
-  document.getElementById("soupRecs").style.display = "none";
-  document.getElementById("saladRecs").style.display = "none";
-  document.getElementById("poultryRecs").style.display = "none";
-  document.getElementById("porkRecs").style.display = "none";
-  document.getElementById("seafodRecs").style.display = "none";
-  document.getElementById("vegetarianRecs").style.display = "none";
-  document.getElementById("vegtablesRecs").style.display = "none";
-  breakfastRecs.forEach(rec => {
-    recCardTemplate(rec, "breakfastRecs");
-  })
-}
-
-function showAllRecs() {
-  console.log(document.getElementById("allRecs").style.display)
-  if (document.getElementById("allRecs").style.display === "none") {
-    document.getElementById("allRecs").style.display = "flex";
-    document.getElementById("beefRecs").style.display = "none";
-    document.getElementById("riceRecs").style.display = "none";
-    document.getElementById("appRecs").style.display = "none";
-    document.getElementById("breakfastRecs").style.display = "none";
-    document.getElementById("beverageRecs").style.display = "none";
-    document.getElementById("lunchRecs").style.display = "none";
-    document.getElementById("soupRecs").style.display = "none";
-    document.getElementById("saladRecs").style.display = "none";
-    document.getElementById("poultryRecs").style.display = "none";
-    document.getElementById("porkRecs").style.display = "none";
-    document.getElementById("seafodRecs").style.display = "none";
-    document.getElementById("vegetarianRecs").style.display = "none";
-    document.getElementById("vegtablesRecs").style.display = "none";
-  }
-}
-
-
-
+$(".click").click((event) => {
+  var id = (event.target.getAttribute("id"));
+  console.log(id)
+  $(".recContainer").addClass("hidden");
+  $("#" + id + "Recs" + "Container").removeClass("hidden");
+});
 
 //TODO: Loop through all recipes with this to put in firebase
 function writeRec(recipesss) {
@@ -272,37 +196,50 @@ function writeRec(recipesss) {
     });
 }
 
-var allRecsFromFB = [];
-var beefRecs = [];
-var appRecs = [];
-var breakfastRecs = [];
-var beverageRecs = [];
-var lunchRecs = [];
-var soupRecs = [];
-var saladRecs = [];
-var poultryRecs = [];
-var porkRecs = [];
-var seafodRecs = [];
-var vegetarianRecs = [];
-var vegtablesRecs = [];
-var riceRecs = [];
-
 function getFirebaseRecs() {
   db.collection("thompsonRecs").get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
       // doc.data() is never undefined for query doc snapshots
+      recCardTemplate(doc.data(),  "allRecs")
       if (doc.data().category === "Beef") {
-        beefRecs.push(doc.data());
+        recCardTemplate(doc.data(), "beefRecs");
       }
-      if (doc.data().category === "Breakfast") {
-        breakfastRecs.push(doc.data());
+      if (doc.data().category === "Breakfast" || doc.data().category === "breakfast") {
+        recCardTemplate(doc.data(), "breakfastRecs");
       }
       if (doc.data().category === "Appetizers" || doc.data().category === "Appetizer"){ 
-        appRecs.push(doc.data())
+        recCardTemplate(doc.data(), "appRecs");
       }
-      
-      allRecsFromFB.push(doc.data())
-      recCardTemplate(doc.data(),  "allRecs")
+      if (doc.data().category === "Beverages") {
+        recCardTemplate(doc.data(), "beverageRecs");
+      }
+      if (doc.data().category === "Lunch") {
+        recCardTemplate(doc.data(), "lunchRecs");
+      }
+      if (doc.data().category === "Soups") {
+        recCardTemplate(doc.data(), "soupRecs");
+      }
+      if (doc.data().category === "Salads") {
+        recCardTemplate(doc.data(), "saladRecs");
+      }
+      if (doc.data().category === "Poultry" || doc.data().category === "poultry" || doc.data().category === "Chicken" || doc.data().category === "chicken") {
+        recCardTemplate(doc.data(), "poultryRecs");
+      }
+      if (doc.data().category === "Pork") {
+        recCardTemplate(doc.data(), "porkRecs");
+      }
+      if (doc.data().category === "Seafood") {
+        recCardTemplate(doc.data(), "seafoodRecs");
+      }
+      if (doc.data().category === "Vegetarian") {
+        recCardTemplate(doc.data(), "vegetarianRecs");
+      }
+      if (doc.data().category === "Vegetables") {
+        recCardTemplate(doc.data(), "vegetablesRecs");
+      }
+      if (doc.data().category === "Rice") {
+        recCardTemplate(doc.data(), "riceRecs");
+      }
       // console.log(doc.id, " => ", doc.data());
     });
   });

@@ -9,6 +9,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.hidden {
+  display: none;
+}
+
 .addRecContainer {
   width: 500px;
   margin: 0 auto;
@@ -18,60 +22,6 @@ html {
   color: white;
 }
 
-#beefRecs {
-  display: none;
-}
-
-#appRecs {
-  display: none;
-}
-
-#breakfastRecs {
-  display: none;
-}
-
-#beverageRecs {
-  display: none;
-}
-
-#lunchRecs {
-  display: none;
-}
-
-#soupRecs {
-  display: none;
-}
-
-#saladRecs {
-  display: none;
-}
-
-#poultryRecs {
-  display: none;
-}
-
-#porkRecs {
-  display: none;
-}
-
-#seafodRecs {
-  display: none;
-}
-
-#vegetarianRecs {
-  display: none;
-}
-
-#vegtablesRecs {
-  display: none;
-}
-#riceRecs {
-  display: none;
-}
-
-#recipeBook {
-  display: none;
-}
 
 .previewRec{
   display: flex;
