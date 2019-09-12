@@ -195,12 +195,13 @@ function writeRec(recipesss) {
       alert("Error writing recipe: " + error);
     });
 }
-
+var allRecsFromFB = [];
 function getFirebaseRecs() {
   db.collection("thompsonRecs").get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
       // doc.data() is never undefined for query doc snapshots
       recCardTemplate(doc.data(),  "allRecs")
+      allRecsFromFB.push(doc.data())
       if (doc.data().category === "Beef") {
         recCardTemplate(doc.data(), "beefRecs");
       }
