@@ -52,8 +52,8 @@
           <a class="nav-link click" id="salad">Salads</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             Main Dishes
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -65,8 +65,8 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             Side Dishes
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -134,21 +134,22 @@
 
               <h2 class="text-center">Login</h2>
               <br />
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Email">
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-              </div>
-              <br />
-              <div class="align-left">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUP"
-                  data-dismiss="modal" id="signup">Sign Up</button>
-              </div>
-              <div class="align-right">
-                <button class="btn btn-default" id="loginb" onclick="loginUser()" data-dismiss="modal">Login</button>
-              </div>
-
+              <form>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email" autocomplete="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password" autocomplete="current-password" placeholder="Password">
+                </div>
+                <br />
+                <div class="align-left">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUP"
+                    data-dismiss="modal" id="signup">Sign Up</button>
+                </div>
+                <div class="align-right">
+                  <button class="btn btn-default" id="loginb" onclick="loginUser()" data-dismiss="modal">Login</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -167,21 +168,21 @@
                   <h2 class="text-center">Sign Up</h2>
                   <br />
                   <div class="form-group">
-                    <input type="email" class="form-control" id="fname" placeholder="First Name">
+                    <input type="email" class="form-control" id="fname" autocomplete="given-name" placeholder="First Name">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="lname" placeholder="Last Name">
+                    <input type="email" class="form-control" id="lname" autocomplete="family-name" placeholder="Last Name">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="Semail" placeholder="Email">
+                    <input type="email" class="form-control" id="Semail" autocomplete="email" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" id="Spassword" placeholder="Password">
+                    <input type="password" class="form-control" id="Spassword" autocomplete="new-password" placeholder="Password">
                   </div>
                   <br />
                   <div class="align-right">
                     <button class="btn btn-default" data-toggle="modal" data-target="#login" data-dismiss="modal"
-                      id="loginb" onclick="createUser()">Sign Up</button>
+                      id="signinb" onclick="createUser()">Sign Up</button>
                   </div>
                 </form>
               </div>
@@ -328,9 +329,9 @@
   <div class="recContainer hidden" id="vegtablesRecsContainer">
     <div class="recHolder" id="vegtablesRecs"></div>
   </div>
-  <div class="recContainer hidden"  id="riceRecsContainer">
-      <div class="recHolder" id="riceRecs"></div>
-    </div>
+  <div class="recContainer hidden" id="riceRecsContainer">
+    <div class="recHolder" id="riceRecs"></div>
+  </div>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
@@ -359,6 +360,7 @@
 <script src="public/main.js"></script>
 <!-- <script src="scripts/main.js">getAllRecs()</script> -->
 <script src="scripts/main.js"></script>
+<script src="scripts/add-recipe.js"></script>
 
 <script>
 </script>
