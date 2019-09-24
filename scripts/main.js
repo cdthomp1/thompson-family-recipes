@@ -246,6 +246,9 @@ function getFirebaseRecs() {
       if (doc.data().category === "Rice") {
         recCardTemplate(doc.data(), "riceRecs");
       }
+      if (doc.data().category === "Pasta" || doc.data().category === "pasta"){
+        recCardTemplate(doc.data(), "pastaRecs");
+      }
       // console.log(doc.id, " => ", doc.data());
     });
   });
