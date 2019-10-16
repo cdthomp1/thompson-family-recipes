@@ -184,6 +184,11 @@ $(".click").click((event) => {
   $(".recContainer").addClass("hidden");
   $("#" + id + "Recs" + "Container").removeClass("hidden");
 });
+/* 
+$('#currentRec').on('hidden.bs.modal', function (e) {
+  // do something...
+  clearData();
+}) */
 
 //TODO: Loop through all recipes with this to put in firebase
 function writeRec(recipesss) {
@@ -241,6 +246,10 @@ function getFirebaseRecs() {
       if (doc.data().category === "Rice") {
         recCardTemplate(doc.data(), "riceRecs");
       }
+      if (doc.data().category === "Pasta" || doc.data().category === "pasta"){
+        recCardTemplate(doc.data(), "pastaRecs");
+      }
+      // console.log(doc.id, " => ", doc.data());
     });
   });
 }
