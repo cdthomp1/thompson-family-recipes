@@ -80,6 +80,8 @@ function addAuthor() {
   document.getElementById("author").innerHTML = `By: ${author}!`;
 }
 
+
+
 function addImage() {
   var img = document.getElementById("headerImage");
   var src = document.getElementById("image2").value;
