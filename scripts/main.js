@@ -1,3 +1,9 @@
+var database = firebase.database();
+var db = firebase.firestore();
+
+/**
+ * CODE FOR THE SEARCH BAR
+ */
 var searchBar = document.getElementById("searchBar");
 
 searchBar.addEventListener("keyup", function (event) {
@@ -12,7 +18,6 @@ var search = function search_recipe() {
   input = input.toLowerCase();
   let x = document.getElementsByClassName('card-title');
   let y = document.getElementsByClassName('card');
-  let z = document.getElementsByClassName('card-text');
 
   for (i = 0; i < x.length; i++) {
 
@@ -24,21 +29,63 @@ var search = function search_recipe() {
   }
 }
 
-var database = firebase.database();
-var db = firebase.firestore();
+/**
+ * CODE FOR THE BACK TO TOP BUTTON
+ */
+const backToTopButton = document.querySelector("#back-to-top-btn");
 
-window.onscroll = function () {
-  scrollFunction()
-};
+window.addEventListener("scroll", scrollFunction);
 
 function scrollFunction() {
-  if (document.body.scrollTop > 380 || document.documentElement.scrollTop > 380) {
-    document.getElementById("topbtn").style.display = "block";
-  } else {
-    document.getElementById("topbtn").style.display = "none";
+  if (window.pageYOffset > 300) { // Show backToTopButton
+    if (!backToTopButton.classList.contains("btnEntrance")) {
+      backToTopButton.classList.remove("btnExit");
+      backToTopButton.classList.add("btnEntrance");
+      backToTopButton.style.display = "block";
+    }
+  } else { // Hide backToTopButton
+    if (backToTopButton.classList.contains("btnEntrance")) {
+      backToTopButton.classList.remove("btnEntrance");
+      backToTopButton.classList.add("btnExit");
+      setTimeout(function () {
+        backToTopButton.style.display = "none";
+      }, 250);
+    }
   }
 }
 
+backToTopButton.addEventListener("click", smoothScrollBackToTop);
+
+function smoothScrollBackToTop() {
+  const targetPosition = 0;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  const duration = 750;
+  let start = null;
+
+  window.requestAnimationFrame(step);
+
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+    if (progress < duration) window.requestAnimationFrame(step);
+  }
+}
+
+function easeInOutCubic(t, b, c, d) {
+  t /= d / 2;
+  if (t < 1) return c / 2 * t * t * t + b;
+  t -= 2;
+  return c / 2 * (t * t * t + 2) + b;
+}; 
+
+/*******************************/
+/**
+ * This method fills out the recipe card. 
+ * @param {Recipe} recipe - Recipe Object
+ * @param {string} currentDiv 
+ */
 function recCardTemplate(recipe, currentDiv) {
 
   var card = document.createElement("div");
@@ -102,6 +149,10 @@ function recCardTemplate(recipe, currentDiv) {
   document.getElementById(currentDiv).appendChild(card)
 }
 
+/**
+ * This method gets the recipe from firebase. Used as an onclick function
+ * @param {Recipe} recipe - Recipe Object
+ */
 function getRec(recipe) {
   allRecsFromFB.forEach(rec => {
     if (rec.title === recipe) {
@@ -116,7 +167,11 @@ function getRec(recipe) {
   })
 }
 
-
+/**
+ * Adds ingredients and instructions to the recipe when the recipe is displayed.
+ * @param {string} item 
+ * @param {string} list 
+ */
 function addItems(item, list) {
   var ul = document.getElementById(list);
   var li = document.createElement("li");
@@ -125,54 +180,9 @@ function addItems(item, list) {
   ul.appendChild(li);
 }
 
-const backToTopButton = document.querySelector("#back-to-top-btn");
-
-window.addEventListener("scroll", scrollFunction);
-
-function scrollFunction() {
-  if (window.pageYOffset > 300) { // Show backToTopButton
-    if (!backToTopButton.classList.contains("btnEntrance")) {
-      backToTopButton.classList.remove("btnExit");
-      backToTopButton.classList.add("btnEntrance");
-      backToTopButton.style.display = "block";
-    }
-  } else { // Hide backToTopButton
-    if (backToTopButton.classList.contains("btnEntrance")) {
-      backToTopButton.classList.remove("btnEntrance");
-      backToTopButton.classList.add("btnExit");
-      setTimeout(function () {
-        backToTopButton.style.display = "none";
-      }, 250);
-    }
-  }
-}
-
-backToTopButton.addEventListener("click", smoothScrollBackToTop);
-
-function smoothScrollBackToTop() {
-  const targetPosition = 0;
-  const startPosition = window.pageYOffset;
-  const distance = targetPosition - startPosition;
-  const duration = 750;
-  let start = null;
-
-  window.requestAnimationFrame(step);
-
-  function step(timestamp) {
-    if (!start) start = timestamp;
-    const progress = timestamp - start;
-    window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
-    if (progress < duration) window.requestAnimationFrame(step);
-  }
-}
-
-function easeInOutCubic(t, b, c, d) {
-  t /= d / 2;
-  if (t < 1) return c / 2 * t * t * t + b;
-  t -= 2;
-  return c / 2 * (t * t * t + 2) + b;
-};
-
+/**
+ * This method clears the data out of the Recipe View Modal
+ */
 function clearData() {
   document.getElementById("ingredients").innerHTML = "";
   document.getElementById("directions").innerHTML = "";
@@ -185,11 +195,14 @@ $(".click").click((event) => {
   $("#" + id + "Recs" + "Container").removeClass("hidden");
 });
 
-//TODO: Loop through all recipes with this to put in firebase
-function writeRec(recipesss) {
-  db.collection("thompsonRecs").doc(recipesss.title).set(recipesss)
+/**
+ * 
+ * @param {Recipe} newRecipe - Recipe Object 
+ */
+function writeRec(newRecipe) {
+  db.collection("thompsonRecs").doc(newRecipe.title).set(newRecipe)
     .then(function () {
-      console.log("Document successfully written!");
+      console.log(newRecipe.title +  " successfully written!");
     })
     .catch(function (error) {
       alert("Error writing recipe: " + error);
