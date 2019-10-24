@@ -116,14 +116,9 @@ function recCardTemplate(recipe, currentDiv) {
   var cardAuthorName = document.createTextNode(recipe.author);
   cardAuthor.appendChild(cardAuthorName);
 
-  var makeIt = document.createElement("button");
-  makeIt.classList.add("btn");
-  makeIt.classList.add("btn-primary");
-  makeIt.setAttribute("onclick", "getRec(" + "\"" + recipe.title + "\"" + ")");
-  makeIt.dataset.toggle = "modal"
-  makeIt.dataset.target = "#currentRec";
-  var makeItName = document.createTextNode("Make It!");
-  makeIt.appendChild(makeItName);
+  card.setAttribute("onclick", "getRec(" + "\"" + recipe.title + "\"" + ")");
+  card.dataset.toggle = "modal"
+  card.dataset.target = "#currentRec";
 
   /* BELOW IS SOME CODE FOR THE RECIPE BOOK OPTION */
   /*   var additSpan = document.createElement("span");
@@ -140,7 +135,6 @@ function recCardTemplate(recipe, currentDiv) {
   card.appendChild(img);
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardAuthor);
-  cardBody.appendChild(makeIt);
 
   //BELOW IS SOME CODE FOR the RECIPE BOOK OPTION
   //cardBody.appendChild(additSpan);
