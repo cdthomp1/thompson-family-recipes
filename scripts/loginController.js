@@ -87,3 +87,11 @@ function loginUser() {
 
 }
 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      apple();
+    } else {
+      // No user is signed in.
+    }
+  });
