@@ -2,6 +2,7 @@
   --primary: #fff;
   --dark: #004f99;
   --light: #ddd;
+  --close: #ff3d3d;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -14,10 +15,10 @@ html {
   display: none;
 }
 
-#currentRec{
-  width: 100%;
+#btnCancel {
+  background-color: var(--close);
+  border-color: var(--close);
 }
-
 .bg-dark{
   background-color: var(--dark) !important;
 }

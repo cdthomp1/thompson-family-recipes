@@ -188,11 +188,12 @@ $(".click").click((event) => {
   $(".recContainer").addClass("hidden");
   $("#" + id + "Recs" + "Container").removeClass("hidden");
 });
-/* 
+
 $('#currentRec').on('hidden.bs.modal', function (e) {
   // do something...
+  console.log("CLOSE")
   clearData();
-}) */
+}) 
 
 /**
  * 
