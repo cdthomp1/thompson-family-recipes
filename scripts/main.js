@@ -230,6 +230,9 @@ function getFirebaseRecs() {
       if (doc.data().category === "Lunch") {
         recCardTemplate(doc.data(), "lunchRecs");
       }
+      if (doc.data().category === "Deserts") {
+        recCardTemplate(doc.data(), "desertsRecs");
+      }
       if (doc.data().category === "Soups") {
         recCardTemplate(doc.data(), "soupRecs");
       }
