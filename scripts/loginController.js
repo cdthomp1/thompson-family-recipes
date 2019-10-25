@@ -1,6 +1,18 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyDW0cOSK0scpvqGQYbUcDm9b3dgB50iISM",
+    authDomain: "thompson-recipes-246300.firebaseapp.com",
+    databaseURL: "https://thompson-recipes-246300.firebaseio.com",
+    projectId: "thompson-recipes-246300",
+    storageBucket: "thompson-recipes-246300.appspot.com",
+    messagingSenderId: "556667094869",
+    appId: "1:556667094869:web:1837fc0766c6286a"
+};
+firebase.initializeApp(firebaseConfig);
+
 const loginBtn = document.getElementById("btnlogin");
-//var database = firebase.database();
-//var db = firebase.firestore();
+
+var database = firebase.database();
+var db = firebase.firestore();
 
 
 function createUser() {
@@ -37,15 +49,17 @@ function apple() {
     document.getElementById('user').style.display = "block";
     //var adds = document.getElementsByClassName('add');
     document.getElementById('username').innerHTML = " " + username;
+    document.getElementById('email').value = "";
+    document.getElementById('password').value = "";
 
-   /*  for (var i = 0; i < adds.length; i++) {
-        adds[i].style.display = "inline";
-        //console.log("HEY")
-    } */
+    /*  for (var i = 0; i < adds.length; i++) {
+         adds[i].style.display = "inline";
+         //console.log("HEY")
+     } */
     var user = firebase.auth().currentUser;
 
     document.getElementById('username').innerHTML = " " + user.displayName;
-    if (user.displayName === "Cameron Thompson" || user.displayName === "Sariah Thompson"){
+    if (user.displayName === "Cameron Thompson" || user.displayName === "Sariah Thompson") {
         document.getElementById("addRecBtn").style.display = "block";
     }
 
@@ -87,11 +101,29 @@ function loginUser() {
 
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
+function android() {
+    document.getElementById('user').style.display = "none";
+    document.getElementById('masterLogIn').style.display = "block";
+    document.getElementById("addRecBtn").style.display = "none";
+
+
+}
+
+function logOut() {
+    firebase.auth().signOut().then(function() {
+        
+        android();
+      }).catch(function(error) {
+        // An error happened.
+      });
+}
+
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      // User is signed in.
-      apple();
+        // User is signed in.
+        console.log(user)
+        apple();
     } else {
-      // No user is signed in.
+        // No user is signed in.
     }
-  });
+});

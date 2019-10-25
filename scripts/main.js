@@ -200,66 +200,23 @@ $('#currentRec').on('hidden.bs.modal', function (e) {
  * @param {Recipe} newRecipe - Recipe Object 
  */
 function writeRec(newRecipe) {
+  allRecsFromFB.push(newRecipe);
   db.collection("thompsonRecs").doc(newRecipe.title).set(newRecipe)
     .then(function () {
       console.log(newRecipe.title +  " successfully written!");
+      addToSite(newRecipe);
     })
     .catch(function (error) {
       alert("Error writing recipe: " + error);
     });
 }
+
 var allRecsFromFB = [];
 function getFirebaseRecs() {
   db.collection("thompsonRecs").get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
       // doc.data() is never undefined for query doc snapshots
-      recCardTemplate(doc.data(),  "allRecs")
-      allRecsFromFB.push(doc.data())
-      if (doc.data().category === "Beef") {
-        recCardTemplate(doc.data(), "beefRecs");
-      }
-      if (doc.data().category === "Breakfast" || doc.data().category === "breakfast") {
-        recCardTemplate(doc.data(), "breakfastRecs");
-      }
-      if (doc.data().category === "Appetizers" || doc.data().category === "Appetizer"){ 
-        recCardTemplate(doc.data(), "appRecs");
-      }
-      if (doc.data().category === "Beverages") {
-        recCardTemplate(doc.data(), "beverageRecs");
-      }
-      if (doc.data().category === "Lunch") {
-        recCardTemplate(doc.data(), "lunchRecs");
-      }
-      if (doc.data().category === "Deserts") {
-        recCardTemplate(doc.data(), "desertsRecs");
-      }
-      if (doc.data().category === "Soups") {
-        recCardTemplate(doc.data(), "soupRecs");
-      }
-      if (doc.data().category === "Salads") {
-        recCardTemplate(doc.data(), "saladRecs");
-      }
-      if (doc.data().category === "Poultry" || doc.data().category === "poultry" || doc.data().category === "Chicken" || doc.data().category === "chicken") {
-        recCardTemplate(doc.data(), "poultryRecs");
-      }
-      if (doc.data().category === "Pork") {
-        recCardTemplate(doc.data(), "porkRecs");
-      }
-      if (doc.data().category === "Seafood") {
-        recCardTemplate(doc.data(), "seafoodRecs");
-      }
-      if (doc.data().category === "Vegetarian") {
-        recCardTemplate(doc.data(), "vegetarianRecs");
-      }
-      if (doc.data().category === "Vegetables") {
-        recCardTemplate(doc.data(), "vegetablesRecs");
-      }
-      if (doc.data().category === "Rice") {
-        recCardTemplate(doc.data(), "riceRecs");
-      }
-      if (doc.data().category === "Pasta" || doc.data().category === "pasta"){
-        recCardTemplate(doc.data(), "pastaRecs");
-      }
+      addToSite(doc);
       // console.log(doc.id, " => ", doc.data());
     });
   });
@@ -269,3 +226,53 @@ function getFirebaseRecs() {
 document.addEventListener('DOMContentLoaded', function () {
   getFirebaseRecs()
 }, false);
+
+function addToSite(doc) {
+  recCardTemplate(doc.data(), "allRecs");
+  allRecsFromFB.push(doc.data());
+  if (doc.data().category === "Beef") {
+    recCardTemplate(doc.data(), "beefRecs");
+  }
+  if (doc.data().category === "Breakfast" || doc.data().category === "breakfast") {
+    recCardTemplate(doc.data(), "breakfastRecs");
+  }
+  if (doc.data().category === "Appetizers" || doc.data().category === "Appetizer") {
+    recCardTemplate(doc.data(), "appRecs");
+  }
+  if (doc.data().category === "Beverages") {
+    recCardTemplate(doc.data(), "beverageRecs");
+  }
+  if (doc.data().category === "Lunch") {
+    recCardTemplate(doc.data(), "lunchRecs");
+  }
+  if (doc.data().category === "Deserts") {
+    recCardTemplate(doc.data(), "desertsRecs");
+  }
+  if (doc.data().category === "Soups") {
+    recCardTemplate(doc.data(), "soupRecs");
+  }
+  if (doc.data().category === "Salads") {
+    recCardTemplate(doc.data(), "saladRecs");
+  }
+  if (doc.data().category === "Poultry" || doc.data().category === "poultry" || doc.data().category === "Chicken" || doc.data().category === "chicken") {
+    recCardTemplate(doc.data(), "poultryRecs");
+  }
+  if (doc.data().category === "Pork") {
+    recCardTemplate(doc.data(), "porkRecs");
+  }
+  if (doc.data().category === "Seafood") {
+    recCardTemplate(doc.data(), "seafoodRecs");
+  }
+  if (doc.data().category === "Vegetarian") {
+    recCardTemplate(doc.data(), "vegetarianRecs");
+  }
+  if (doc.data().category === "Vegetables") {
+    recCardTemplate(doc.data(), "vegetablesRecs");
+  }
+  if (doc.data().category === "Rice") {
+    recCardTemplate(doc.data(), "riceRecs");
+  }
+  if (doc.data().category === "Pasta" || doc.data().category === "pasta") {
+    recCardTemplate(doc.data(), "pastaRecs");
+  }
+}

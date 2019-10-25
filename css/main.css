@@ -2,7 +2,7 @@
   --primary: #fff;
   --dark: #004f99;
   --light: #ddd;
-  --close: #ff3d3d;
+  --close: #D62246;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -15,9 +15,10 @@ html {
   display: none;
 }
 
-#btnCancel {
+#logOut {
   background-color: var(--close);
   border-color: var(--close);
+  color: var(--primary);
 }
 .bg-dark{
   background-color: var(--dark) !important;
@@ -25,6 +26,7 @@ html {
 
 .card {
   width: 18rem;
+  cursor: pointer;
 }
 
 .addRecContainer {
@@ -178,6 +180,8 @@ html {
 #btnCancel {
   margin-right: 14px;
   margin-top: 10px;
+  background-color: var(--close);
+  border-color: var(--close);
 }
 
 .add {

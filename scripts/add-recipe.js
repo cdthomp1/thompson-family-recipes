@@ -123,15 +123,10 @@ function confirmRec() {
   recObj.tags = addTag();
   recObj.ingredients = recIngredients;
   recObj.directions = recDirections;
-
   var e = document.getElementById("category");
   var category = e.options[e.selectedIndex].value;
-
   recObj.category = category;
-
   var title = recObj.title.replace(/\s+/g, '-').toLowerCase()
-
-
   var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(recObj));
   return recObj;
   //$('<a id="save" href="data:' + data + '" download="' + title + "-r" + '.json' + '">Save Recipe</a>').appendTo('#confirm');
