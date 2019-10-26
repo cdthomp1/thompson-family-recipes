@@ -1,6 +1,22 @@
 var database = firebase.database();
 var db = firebase.firestore();
 
+function tester() {
+  console.log("I RAN FROM ANOTHER SCRIPT PAGE")
+}
+
+function blocker() {
+  document.getElementById("searchBar").style.display = "none";
+  document.getElementsByClassName("navbar")[0].style.display = "none"
+  document.getElementsByClassName("recContainer")[0].style.display = "none"
+}
+
+function unBlocker() {
+  document.getElementById("searchBar").style.display = "block";
+  document.getElementsByClassName("navbar")[0].style.display = "flex"
+  document.getElementsByClassName("recContainer")[0].style.display = "block"
+}
+
 /**
  * CODE FOR THE SEARCH BAR
  */
@@ -276,3 +292,4 @@ function addToSite(doc) {
     recCardTemplate(doc.data(), "pastaRecs");
   }
 }
+

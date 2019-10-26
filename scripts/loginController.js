@@ -41,8 +41,6 @@ function createUser() {
     });
 }
 
-
-
 function apple() {
 
     document.getElementById('masterLogIn').style.display = "none";
@@ -105,16 +103,24 @@ function android() {
     document.getElementById('user').style.display = "none";
     document.getElementById('masterLogIn').style.display = "block";
     document.getElementById("addRecBtn").style.display = "none";
-
-
 }
 
 function logOut() {
     firebase.auth().signOut().then(function() {
-        
         android();
       }).catch(function(error) {
         // An error happened.
+      });
+}
+
+function signinasguest() {
+    firebase.auth().signInAnonymously().catch(function(error) {
+        // Handle Errors here.
+        unBlocker();
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        console.error(errorCode + " " + errorMessage);
       });
 }
 
@@ -123,7 +129,13 @@ firebase.auth().onAuthStateChanged(function (user) {
         // User is signed in.
         console.log(user)
         apple();
+        unBlocker();
     } else {
         // No user is signed in.
+        blocker();
+        $(window).on('load',function(){
+            $('#login').modal('show');
+          });
+        $('#login').modal({backdrop: 'static', keyboard: false})  
     }
 });

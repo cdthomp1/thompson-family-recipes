@@ -6,9 +6,18 @@
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
+.navbar, #searchBar, .recContainer {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#loginb{
+  background-color: #4CB944;
+  color: white;
 }
 
 .hidden {
@@ -38,7 +47,10 @@ html {
   color: white !important;
 }
 
-
+.loginButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
 .previewRec{
   display: flex;
   justify-content: center; 
@@ -93,7 +105,7 @@ html {
   bottom: 0;
   left: 0;
   width: 320px;
-  height: 280px;
+  height: 320px;
 }
 
 .profile {
@@ -243,8 +255,17 @@ h6 {
   padding: 5px;
 }
 
+@media (max-width: 1000px) {
+  #addRecBtn{
+    margin-bottom: 4px;
+  }
+}
+
 @media (max-width: 700px) {
 
+  #addRecBtn{
+    margin-bottom: 4px;
+  }
 
   form {
     padding-left: 5px;
@@ -254,6 +275,10 @@ h6 {
 }
 
 @media (max-width: 500px) {
+
+  #addRecBtn{
+    margin-bottom: 4px;
+  }
 
   .card {
     display: flex;
