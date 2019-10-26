@@ -6,10 +6,6 @@
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
-.navbar, #searchBar, .recContainer {
-  display: none;
-}
-
 html {
   scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;

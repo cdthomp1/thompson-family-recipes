@@ -1,3 +1,6 @@
+/**
+ * Configure Firebase
+ */
 var firebaseConfig = {
     apiKey: "AIzaSyDW0cOSK0scpvqGQYbUcDm9b3dgB50iISM",
     authDomain: "thompson-recipes-246300.firebaseapp.com",
@@ -14,7 +17,9 @@ const loginBtn = document.getElementById("btnlogin");
 var database = firebase.database();
 var db = firebase.firestore();
 
-
+/**
+ * Create a user when they sign up
+ */
 function createUser() {
     var email = document.getElementById('Semail').value;
     var fname = document.getElementById('fname').value;
@@ -41,8 +46,10 @@ function createUser() {
     });
 }
 
+/**
+ * When a user signs in, this will provide them access to the user features
+ */
 function apple() {
-
     document.getElementById('masterLogIn').style.display = "none";
     document.getElementById('user').style.display = "block";
     //var adds = document.getElementsByClassName('add');
@@ -54,20 +61,20 @@ function apple() {
          adds[i].style.display = "inline";
          //console.log("HEY")
      } */
-    var user = firebase.auth().currentUser;
 
+     //This is for testing, only these two users can add Reciepes for now
+    var user = firebase.auth().currentUser;
     document.getElementById('username').innerHTML = " " + user.displayName;
     if (user.displayName === "Cameron Thompson" || user.displayName === "Sariah Thompson") {
         document.getElementById("addRecBtn").style.display = "block";
     }
-
-
 }
 
+/**
+ * Login the user
+ */
 function loginUser() {
-    console.log("LOG IN BUTTON CLICK")
     var email = document.getElementById('email').value;
-    console.log(email + " FROM LOGIN FORM")
     var password = document.getElementById('password').value;
 
     // Existing and future Auth states are now persisted in the current
@@ -95,16 +102,20 @@ function loginUser() {
             var errorCode = error.code;
             var errorMessage = error.message;
         });
-
-
 }
 
+/**
+ * When a user logs out this will hide member information
+ */
 function android() {
     document.getElementById('user').style.display = "none";
     document.getElementById('masterLogIn').style.display = "block";
     document.getElementById("addRecBtn").style.display = "none";
 }
 
+/**
+ * The Log out function
+ */
 function logOut() {
     firebase.auth().signOut().then(function() {
         android();
@@ -113,10 +124,14 @@ function logOut() {
       });
 }
 
+/**
+ * Sign in as a gues function
+ */
 function signinasguest() {
     firebase.auth().signInAnonymously().catch(function(error) {
         // Handle Errors here.
         unBlocker();
+        getFirebaseRecs()
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
@@ -124,14 +139,15 @@ function signinasguest() {
       });
 }
 
+/**
+ * This will monitor authentication changes
+ */
 firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-        // User is signed in.
-        console.log(user)
+    if (user) { // User is signed in.
         apple();
         unBlocker();
-    } else {
-        // No user is signed in.
+        getFirebaseRecs()
+    } else {  // No user is signed in.
         blocker();
         $(window).on('load',function(){
             $('#login').modal('show');

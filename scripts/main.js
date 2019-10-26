@@ -1,20 +1,19 @@
-var database = firebase.database();
-var db = firebase.firestore();
-
-function tester() {
-  console.log("I RAN FROM ANOTHER SCRIPT PAGE")
-}
-
+/**
+ * This function blocks content from the user
+ */
 function blocker() {
-  document.getElementById("searchBar").style.display = "none";
-  document.getElementsByClassName("navbar")[0].style.display = "none"
-  document.getElementsByClassName("recContainer")[0].style.display = "none"
+  document.getElementById("searchBar").classList.add("hidden");
+  document.getElementsByClassName("navbar")[0].classList.add("hidden");
+  document.getElementsByClassName("recContainer")[0].classList.add("hidden");
 }
 
+/**
+ * This function unblocks content from the user
+ */
 function unBlocker() {
-  document.getElementById("searchBar").style.display = "block";
-  document.getElementsByClassName("navbar")[0].style.display = "flex"
-  document.getElementsByClassName("recContainer")[0].style.display = "block"
+  document.getElementById("searchBar").classList.remove("hidden");
+  document.getElementsByClassName("navbar")[0].classList.remove("hidden");
+  document.getElementsByClassName("recContainer")[0].classList.remove("hidden");
 }
 
 /**
@@ -36,7 +35,6 @@ var search = function search_recipe() {
   let y = document.getElementsByClassName('card');
 
   for (i = 0; i < x.length; i++) {
-
     if (!x[i].innerHTML.toLowerCase().includes(input)) {
       y[i].style.display = "none";
     } else {
@@ -96,7 +94,7 @@ function easeInOutCubic(t, b, c, d) {
   return c / 2 * (t * t * t + 2) + b;
 }; 
 
-/*******************************/
+
 /**
  * This method fills out the recipe card. 
  * @param {Recipe} recipe - Recipe Object
@@ -108,7 +106,6 @@ function recCardTemplate(recipe, currentDiv) {
   card.classList.add("card")
 
   var img = document.createElement("IMG");
-  //console.log(recipe);
   if (recipe.image === "") {
     img.setAttribute("src", "https://media.istockphoto.com/photos/health-food-for-fitness-picture-id855098134?k=6&m=855098134&s=612x612&w=0&h=eIWWpYWKTz_z2ryYAo0Dd97igUZVExzl4AKRIhUrFj4=");
   } else {
@@ -206,8 +203,6 @@ $(".click").click((event) => {
 });
 
 $('#currentRec').on('hidden.bs.modal', function (e) {
-  // do something...
-  console.log("CLOSE")
   clearData();
 }) 
 
@@ -229,19 +224,13 @@ function writeRec(newRecipe) {
 
 var allRecsFromFB = [];
 function getFirebaseRecs() {
+  console.log("GETTING RECS FROM FIREBASE")
   db.collection("thompsonRecs").get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
-      // doc.data() is never undefined for query doc snapshots
       addToSite(doc);
-      // console.log(doc.id, " => ", doc.data());
     });
   });
 }
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  getFirebaseRecs()
-}, false);
 
 function addToSite(doc) {
   recCardTemplate(doc.data(), "allRecs");
