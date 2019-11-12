@@ -267,7 +267,7 @@
               <span>If no image of food, enter "none" all lower case.</span><br>
               <input id="image2" placeholder="Link to an Image" onchange="addImage()"><br>
               <!-- FIGURE OUT HOW TO ADD PICTURES TO FIREBASE -->
-              <!--<input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)">-->
+             <!--  <input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)"> -->
               Add an Ingredient!<br>
               <div id="ingredientInput">
                 <input id="quantity" placeholder="Quantity"><input id="name" placeholder="Name"><br>
@@ -288,7 +288,6 @@
                 <button onclick="addToFirebase()">Confirm Recipe</button>
               </div>
               <button value="Refresh Page" onClick="window.location.reload();">Restart</button>
-
             </div>
           </div>
         </div>
@@ -350,6 +349,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-storage.js"></script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

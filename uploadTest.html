@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+        <input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)">
+        
+</body>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+</body>
+
+<script src="scripts/firebaseController.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/add-recipe.js"></script>
+
+<script>
+
+    
+// Create a root reference
+// File or Blob named mountains.jpg
+
+function readURL(input) {
+  console.log(input.files)
+}
+
+/* // Create the file metadata
+var metadata = {
+  contentType: 'image/jpeg'
+};
+
+// Upload file and metadata to the object 'images/mountains.jpg'
+var uploadTask = storageRef.child('recipeImages/' + file.name).put(file, metadata);
+
+// Listen for state changes, errors, and completion of the upload.
+uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+  function(snapshot) {
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case firebase.storage.TaskState.PAUSED: // or 'paused'
+        console.log('Upload is paused');
+        break;
+      case firebase.storage.TaskState.RUNNING: // or 'running'
+        console.log('Upload is running');
+        break;
+    }
+  }, function(error) {
+
+  // A full list of error codes is available at
+  // https://firebase.google.com/docs/storage/web/handle-errors
+  switch (error.code) {
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+      break;
+
+    case 'storage/canceled':
+      // User canceled the upload
+      break;
+
+    ...
+
+    case 'storage/unknown':
+      // Unknown error occurred, inspect error.serverResponse
+      break;
+  }
+}, function() {
+  // Upload completed successfully, now we can get the download URL
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    console.log('File available at', downloadURL);
+  });
+}); */
+</script>
+
+</html>

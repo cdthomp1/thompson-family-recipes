@@ -96,9 +96,10 @@ function addImage() {
   img.classList.add("card-img-top");
   img.setAttribute("alt", "Header Image");
 }
-
+var fileFromUser;
 function readURL(input) {
-  // console.log(input.files)
+  console.log(input.files)
+  fileFromUser = input.files;
   if (input.files && input.files[0]) {
     var reader = new FileReader();
 
@@ -112,6 +113,7 @@ function readURL(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
+
 
 function addTag() {
   var title = recObj.title.replace(/\s+/g, ',').toLowerCase()
