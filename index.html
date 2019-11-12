@@ -113,6 +113,7 @@
               <button class="btn btn-primary align-right" id="btnCancel" value="" onclick="clearData()"
                 data-dismiss="modal">
                 X</button>
+                <button onclick="editTest()">EDIT</button>
               <div id="wholeRec">
                 <h2 id="recipe-name"></h2>
 
@@ -122,6 +123,9 @@
                 <p>Directions</p>
                 <ol id="directions"></ol>
               </div>
+
+              <p id="test">TEST</p>
+        
             </div>
           </div>
         </div>
@@ -367,6 +371,32 @@
 <script src="scripts/firebaseController.js"></script>
 <script src="scripts/main.js"></script>
 <script src="scripts/add-recipe.js"></script>
+
+<script>
+  function editTest() {
+    var test = document.getElementById("test")
+    var input = document.createElement("input");
+    input.setAttribute('id', 'testInput')
+    input.value = test.innerHTML;
+    test.innerHTML = '';
+    document.getElementById("test").appendChild(input)
+    var button = document.createElement('button');
+    button.setAttribute('onClick', 'saveText()')
+    button.setAttribute('id', 'saveButton')
+    button.innerHTML = "SAVE";
+    test.appendChild(button)
+
+  }
+
+  function saveText() {
+    var newText = document.getElementById('testInput')
+    var savedText = newText.value
+    newText.style.display = 'none';
+    document.getElementById('saveButton').style.display = "none";
+    document.getElementById("test").innerHTML = savedText;
+  }
+
+</script>
 
 
 <script>
