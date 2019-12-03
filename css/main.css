@@ -29,6 +29,10 @@ html {
   background-color: var(--dark) !important;
 }
 
+.nav-item:hover {
+  cursor: pointer;
+}
+
 .card {
   width: 18rem;
   cursor: pointer;

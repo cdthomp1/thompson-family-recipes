@@ -184,6 +184,7 @@ function addItems(item, list) {
   var li = document.createElement("li");
   li.setAttribute('id', item);
   li.appendChild(document.createTextNode(item));
+  li.setAttribute("class", list)
   ul.appendChild(li);
 }
 
@@ -282,3 +283,52 @@ function addToSite(doc) {
   }
 }
 
+
+
+
+function editTest() {
+  var ingredients = document.getElementsByClassName("ingredients")
+  var directions = document.getElementsByClassName("directions")
+  
+  editFielder(ingredients);
+  editFielder(directions);
+  var button = document.createElement('button');
+  button.setAttribute('onClick', 'saveText()')
+  button.setAttribute('id', 'saveButton')
+  button.innerHTML = "SAVE";
+  document.getElementById("save").appendChild(button)
+
+}
+
+function editFielder(fields) {
+  console.log(fields[0].classList[0])
+  if (fields[0].classList[0] === "ingredients"){
+    for (var i = 0; i < fields.length; i++) {
+      var preloadedText = fields[i].innerHTML;
+      var idOfField = fields[i].id;
+      var input = document.createElement("input");
+      input.setAttribute('class', 'edit');
+      input.value = preloadedText;
+      fields[i].innerHTML = '';
+      document.getElementById(idOfField).appendChild(input);
+    }
+  } else {
+    for (var i = 0; i < fields.length; i++) {
+      var preloadedText = fields[i].innerHTML;
+      var idOfField = fields[i].id;
+      var textArea = document.createElement("textarea");
+      textArea.setAttribute('class', 'edit');
+      textArea.value = preloadedText;
+      fields[i].innerHTML = '';
+      document.getElementById(idOfField).appendChild(textArea);
+    }
+  }
+}
+
+function saveText() {
+  var newText = document.getElementById('testInput')
+  var savedText = newText.value
+  newText.style.display = 'none';
+  document.getElementById('saveButton').style.display = "none";
+  document.getElementById("test").innerHTML = savedText;
+}
