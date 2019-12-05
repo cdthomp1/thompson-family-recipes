@@ -29,6 +29,10 @@ html {
   background-color: var(--dark) !important;
 }
 
+.nav-item:hover {
+  cursor: pointer;
+}
+
 .card {
   width: 18rem;
   cursor: pointer;
@@ -250,6 +254,47 @@ hr {
 h6 {
   padding: 5px;
 }
+
+#editRec {
+  
+  display: none;
+  flex-direction: column;
+  text-align: center;
+}
+#ingredientEditContainer, #directionEditContainer{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+#ingredientAmount, #ingredientsIng, #directionNumber, #directionStep{
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+.editAmount {
+  width: 100px;
+  margin: 3px;
+}
+
+.editIngredient{
+  width: 200px;
+  margin: 3px;
+}
+
+#directionNumber {
+  justify-content: space-around;
+}
+
+.editStep{
+  margin: 3px;
+}
+
+.editNumber {
+  width: 60px;
+  text-align: end;
+}
+
 
 @media (max-width: 1000px) {
   #addRecBtn{

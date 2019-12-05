@@ -113,19 +113,33 @@
               <button class="btn btn-primary align-right" id="btnCancel" value="" onclick="clearData()"
                 data-dismiss="modal">
                 X</button>
-                <button onclick="editTest()">EDIT</button>
+
               <div id="wholeRec">
                 <h2 id="recipe-name"></h2>
+                <div id="recipe">
+                  <p>Ingredients</p>
+                  <ul id="ingredients"></ul>
 
-                <p>Ingredients</p>
-                <ul id="ingredients"></ul>
+                  <p>Directions</p>
+                  <ol id="directions"></ol>
+                </div>
+                <div id="editRec">
+                  <div id="ingredientEditContainer">
+                    <div id="ingredientAmount"></div>
+                    <div id="ingredientsIng"></div>
+                  </div>
+                  <div id="directionEditContainer">
+                    <div id="directionNumber"></div>
+                    <div id="directionStep"></div>
+                  </div>
+                </div>
+                <div id="editOption"></div>
+                <div id="saveOption"></div>
 
-                <p>Directions</p>
-                <ol id="directions"></ol>
               </div>
 
-              <p id="test">TEST</p>
-        
+
+
             </div>
           </div>
         </div>
@@ -147,14 +161,15 @@
                   <input type="email" class="form-control" id="email" autocomplete="email" placeholder="Email">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" id="password" autocomplete="current-password" placeholder="Password">
+                  <input type="password" class="form-control" id="password" autocomplete="current-password"
+                    placeholder="Password">
                 </div>
                 <br />
                 <div class="loginButtons">
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUP"
                     data-dismiss="modal" id="signup">Sign Up</button>
-                    <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal" onclick="signinasguest()" id="guestb">Use as Guest</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="signinasguest()"
+                    id="guestb">Use as Guest</button>
                   <button class="btn btn-default" id="loginb" onclick="loginUser()" data-dismiss="modal">Login</button>
                 </div>
               </form>
@@ -176,16 +191,19 @@
                   <h2 class="text-center">Sign Up</h2>
                   <br />
                   <div class="form-group">
-                    <input type="email" class="form-control" id="fname" autocomplete="given-name" placeholder="First Name">
+                    <input type="email" class="form-control" id="fname" autocomplete="given-name"
+                      placeholder="First Name">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="lname" autocomplete="family-name" placeholder="Last Name">
+                    <input type="email" class="form-control" id="lname" autocomplete="family-name"
+                      placeholder="Last Name">
                   </div>
                   <div class="form-group">
                     <input type="email" class="form-control" id="Semail" autocomplete="email" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" id="Spassword" autocomplete="new-password" placeholder="Password">
+                    <input type="password" class="form-control" id="Spassword" autocomplete="new-password"
+                      placeholder="Password">
                   </div>
                   <br />
                   <div class="align-right">
@@ -241,6 +259,8 @@
       </div>
     </div> -->
 
+
+
   <div class="modal fade" id="addRec" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -271,7 +291,7 @@
               <span>If no image of food, enter "none" all lower case.</span><br>
               <input id="image2" placeholder="Link to an Image" onchange="addImage()"><br>
               <!-- FIGURE OUT HOW TO ADD PICTURES TO FIREBASE -->
-             <!--  <input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)"> -->
+              <!--  <input type="file" name="pic" id="image" accept="image/*" onchange="readURL(this)"> -->
               Add an Ingredient!<br>
               <div id="ingredientInput">
                 <input id="quantity" placeholder="Quantity"><input id="name" placeholder="Name"><br>
@@ -359,13 +379,13 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+  </script>
 </body>
 
 <script src="scripts/firebaseController.js"></script>
@@ -373,28 +393,6 @@
 <script src="scripts/add-recipe.js"></script>
 
 <script>
-  function editTest() {
-    var test = document.getElementById("test")
-    var input = document.createElement("input");
-    input.setAttribute('id', 'testInput')
-    input.value = test.innerHTML;
-    test.innerHTML = '';
-    document.getElementById("test").appendChild(input)
-    var button = document.createElement('button');
-    button.setAttribute('onClick', 'saveText()')
-    button.setAttribute('id', 'saveButton')
-    button.innerHTML = "SAVE";
-    test.appendChild(button)
-
-  }
-
-  function saveText() {
-    var newText = document.getElementById('testInput')
-    var savedText = newText.value
-    newText.style.display = 'none';
-    document.getElementById('saveButton').style.display = "none";
-    document.getElementById("test").innerHTML = savedText;
-  }
 
 </script>
 

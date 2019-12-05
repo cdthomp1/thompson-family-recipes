@@ -92,7 +92,7 @@ function easeInOutCubic(t, b, c, d) {
   if (t < 1) return c / 2 * t * t * t + b;
   t -= 2;
   return c / 2 * (t * t * t + 2) + b;
-}; 
+};
 
 
 /**
@@ -170,6 +170,13 @@ function getRec(recipe) {
       rec.directions.forEach(direction => {
         addItems(direction.process, 'directions')
       })
+      var cardBody = document.getElementById("editOption")
+      var editButton = document.createElement("button")
+      var buttonText = document.createTextNode("Edit")
+      editButton.setAttribute('onClick', 'editRec(this.id)')
+      editButton.setAttribute('id', `${rec.title}`)
+      editButton.appendChild(buttonText);
+      cardBody.appendChild(editButton)
     }
   })
 }
@@ -184,6 +191,7 @@ function addItems(item, list) {
   var li = document.createElement("li");
   li.setAttribute('id', item);
   li.appendChild(document.createTextNode(item));
+  li.setAttribute("class", list)
   ul.appendChild(li);
 }
 
@@ -193,6 +201,11 @@ function addItems(item, list) {
 function clearData() {
   document.getElementById("ingredients").innerHTML = "";
   document.getElementById("directions").innerHTML = "";
+  document.getElementById("editOption").innerHTML = "";
+  document.getElementById("ingredientAmount").innerHTML = "";
+  document.getElementById("ingredientsIng").innerHTML = "";
+  document.getElementById("directionNumber").innerHTML = "";
+  document.getElementById("directionStep").innerHTML = "";
 }
 
 $(".click").click((event) => {
@@ -204,7 +217,7 @@ $(".click").click((event) => {
 
 $('#currentRec').on('hidden.bs.modal', function (e) {
   clearData();
-}) 
+})
 
 /**
  * 
@@ -214,7 +227,7 @@ function writeRec(newRecipe) {
   allRecsFromFB.push(newRecipe);
   db.collection("thompsonRecs").doc(newRecipe.title).set(newRecipe)
     .then(function () {
-      console.log(newRecipe.title +  " successfully written!");
+      console.log(newRecipe.title + " successfully written!");
       addToSite(newRecipe);
     })
     .catch(function (error) {
@@ -282,3 +295,89 @@ function addToSite(doc) {
   }
 }
 
+
+
+
+function editRec(recipe) {
+  document.getElementById("recipe").style.display = "none"
+  document.getElementById("editRec").style.display = "flex"
+  document.getElementById("editOption").style.display = "none"
+  document.getElementById("btnCancel").style.display = "none"
+  allRecsFromFB.forEach(rec => {
+    if (rec.title === recipe) {
+      rec.ingredients.forEach(ingredient => {
+        editFielder(ingredient.ingredient, ingredient.amount, "ingredients")
+      })
+      rec.directions.forEach(direction => {
+        editFielder(direction.process, direction.step, "directions")
+      })
+    }
+  })
+
+  var button = document.createElement('button');
+  button.setAttribute('onClick', 'saveRec()')
+  button.setAttribute('id', 'saveButton')
+  button.setAttribute('class', 'btn btn-success')
+  button.innerHTML = "Save";
+  document.getElementById("saveOption").appendChild(button)
+
+}
+
+function saveRec() {
+  document.getElementById("recipe").style.display = "block"
+  document.getElementById("editRec").style.display = "none"
+  document.getElementById("ingredientAmount").innerHTML = "";
+  document.getElementById("ingredientsIng").innerHTML = "";
+  document.getElementById("directionNumber").innerHTML = "";
+  document.getElementById("directionStep").innerHTML = "";
+  document.getElementById("saveButton").remove();
+  document.getElementById("editOption").style.display = "block"
+  document.getElementById("btnCancel").style.display = "inline-block"
+
+}
+
+function editFielder(fields, numbers, type) {
+  if (type === "ingredients") {
+    console.log(numbers);
+    var ingredientEditContainer = document.getElementById("ingredientEditContainer");
+    var ingredientAmount = document.getElementById("ingredientAmount");
+    var amountEditField = document.createElement("input");
+    amountEditField.setAttribute("class", "editAmount form-control");
+    amountEditField.value = numbers;
+
+    var ingredientsIng = document.getElementById("ingredientsIng");
+    var ingredientEditField = document.createElement("input");
+    ingredientEditField.setAttribute("class", "editIngredient form-control");
+    ingredientEditField.value = fields;
+
+    ingredientAmount.appendChild(amountEditField)
+    ingredientsIng.appendChild(ingredientEditField)
+    ingredientEditContainer.appendChild(ingredientAmount)
+  } else if (type === "directions") {
+    console.log(numbers + fields)
+    var directionEditContainer = document.getElementById("directionEditContainer");
+    var directionNumber = document.getElementById("directionNumber");
+    var numberEditField = document.createElement("input");
+    numberEditField.setAttribute("class", "editNumber form-control");
+    numberEditField.value = numbers;
+
+    var directionStep = document.getElementById("directionStep");
+    var stepEditField = document.createElement("textarea");
+    stepEditField.setAttribute("class", "editStep form-control");
+    stepEditField.value = fields;
+
+    directionNumber.appendChild(numberEditField)
+    directionStep.appendChild(stepEditField)
+    directionEditContainer.appendChild(directionNumber)
+
+  }
+
+}
+
+/* function saveText() {
+  var newText = document.getElementById('testInput')
+  var savedText = newText.value
+  newText.style.display = 'none';
+  document.getElementById('saveButton').style.display = "none";
+  document.getElementById("test").innerHTML = savedText;
+} */
