@@ -113,18 +113,32 @@
               <button class="btn btn-primary align-right" id="btnCancel" value="" onclick="clearData()"
                 data-dismiss="modal">
                 X</button>
-              <button onclick="editTest()">EDIT</button>
+
               <div id="wholeRec">
                 <h2 id="recipe-name"></h2>
+                <div id="recipe">
+                  <p>Ingredients</p>
+                  <ul id="ingredients"></ul>
 
-                <p>Ingredients</p>
-                <ul id="ingredients"></ul>
+                  <p>Directions</p>
+                  <ol id="directions"></ol>
+                </div>
+                <div id="editRec">
+                  <div id="ingredientEditContainer">
+                    <div id="ingredientAmount"></div>
+                    <div id="ingredientsIng"></div>
+                  </div>
+                  <div id="directionEditContainer">
+                    <div id="directionNumber"></div>
+                    <div id="directionStep"></div>
+                  </div>
+                </div>
+                <div id="editOption"></div>
+                <div id="saveOption"></div>
 
-                <p>Directions</p>
-                <ol id="directions"></ol>
               </div>
 
-              <p id="save"></p>
+
 
             </div>
           </div>
@@ -244,6 +258,8 @@
         </div>
       </div>
     </div> -->
+
+
 
   <div class="modal fade" id="addRec" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
@@ -377,7 +393,7 @@
 <script src="scripts/add-recipe.js"></script>
 
 <script>
-  
+
 </script>
 
 
