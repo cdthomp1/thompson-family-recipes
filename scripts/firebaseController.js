@@ -68,6 +68,7 @@ function apple() {
     document.getElementById('username').innerHTML = " " + user.displayName;
     if (user.displayName === "Cameron Thompson" || user.displayName === "Sariah Thompson") {
         document.getElementById("addRecBtn").style.display = "block";
+        document.getElementById("editOption").style.display = "block";
     }
 }
 
