@@ -86,6 +86,9 @@ html {
 #wholeRec {
   padding: 5%;
 }
+#editOption {
+  display: none;
+}
 
 .recipeContent {
   background-color: #eee;

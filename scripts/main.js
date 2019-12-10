@@ -172,6 +172,8 @@ function getRec(recipe) {
       })
       var cardBody = document.getElementById("editOption")
       var editButton = document.createElement("button")
+      editButton.classList.add("btn");
+      editButton.classList.add("btn-secondary")
       var buttonText = document.createTextNode("Edit")
       editButton.setAttribute('onClick', 'editRec(this.id)')
       editButton.setAttribute('id', `${rec.title}`)
@@ -220,19 +222,19 @@ $('#currentRec').on('hidden.bs.modal', function (e) {
 })
 
 /**
- * 
+ * ***********FIX TO HAVE ERROR HANDELING!!******************
  * @param {Recipe} newRecipe - Recipe Object 
  */
-function writeRec(newRecipe) {
+async function writeRec(newRecipe) {
+  console.log(newRecipe)
   allRecsFromFB.push(newRecipe);
-  db.collection("thompsonRecs").doc(newRecipe.title).set(newRecipe)
+  await db.collection("thompsonRecs").doc(newRecipe.title).set(newRecipe)
     .then(function () {
       console.log(newRecipe.title + " successfully written!");
-      addToSite(newRecipe);
+      //addToSite(newRecipe);
+    }).catch(function (e) {
+      console.error(e)
     })
-    .catch(function (error) {
-      alert("Error writing recipe: " + error);
-    });
 }
 
 var allRecsFromFB = [];
@@ -315,7 +317,7 @@ function editRec(recipe) {
   })
 
   var button = document.createElement('button');
-  button.setAttribute('onClick', 'saveRec()')
+  button.setAttribute('onClick', `saveRec("${recipe}")`)
   button.setAttribute('id', 'saveButton')
   button.setAttribute('class', 'btn btn-success')
   button.innerHTML = "Save";
@@ -323,17 +325,103 @@ function editRec(recipe) {
 
 }
 
-function saveRec() {
-  document.getElementById("recipe").style.display = "block"
-  document.getElementById("editRec").style.display = "none"
-  document.getElementById("ingredientAmount").innerHTML = "";
-  document.getElementById("ingredientsIng").innerHTML = "";
-  document.getElementById("directionNumber").innerHTML = "";
-  document.getElementById("directionStep").innerHTML = "";
-  document.getElementById("saveButton").remove();
-  document.getElementById("editOption").style.display = "block"
-  document.getElementById("btnCancel").style.display = "inline-block"
 
+function saveRec(recipe) {
+
+
+  var recObj = {
+    "title": "",
+    "author": "",
+    "image": "",
+    "category": "",
+    "tags": [],
+    "ingredients": [{
+      "type": "",
+      "amount": "",
+      "ingredient": ""
+    }],
+    "directions": [{
+      "step": "",
+      "direction": ""
+    }]
+  }
+
+  var ingArr = [];
+  var directionArr = [];
+
+
+  var ingAmount = document.getElementsByClassName("editAmount");
+  var ingIng = document.getElementsByClassName("editIngredient");
+  var number = document.getElementsByClassName("editNumber");
+  var step = document.getElementsByClassName("editStep");
+  //console.log(ingIng)
+
+  for (var i = 0; i < ingIng.length; i++) {
+    var ingredientObj = {
+      "type": "",
+      "amount": "",
+      "ingredient": ""
+    };
+    ingredientObj.amount = ingAmount[i].value
+    ingredientObj.ingredient = ingIng[i].value
+    ingArr.push(ingredientObj);
+  }
+
+
+
+  for (var i = 0; i < step.length; i++) {
+    var directionObj = {
+      "step": "",
+      "process": ""
+    }
+    directionObj.step = number[i].value
+    directionObj.process = step[i].value
+    directionArr.push(directionObj);
+  }
+
+  console.log("DIRECTIONS ARRAY")
+  console.log(directionArr);
+
+  recObj.title = document.getElementById("recipe-name").innerText;
+  recObj.ingredients = ingArr;
+  recObj.directions = directionArr;
+  allRecsFromFB.forEach(rec => {
+    if (rec.title === recipe) {
+      recObj.image = rec.image;
+      recObj.author = rec.author;
+    }
+  })
+
+  console.log(recObj)
+
+  /*   var rec = confirmRec(recObj);
+    console.log(rec) */
+  writeRec(recObj).then(() => {
+    document.getElementById("recipe").style.display = "block"
+    document.getElementById("editRec").style.display = "none"
+    elementRemover(document.getElementById("ingredientAmount"))
+    elementRemover(document.getElementById("ingredientsIng"))
+    elementRemover(document.getElementById("directionNumber"))
+    elementRemover(document.getElementById("directionStep"))
+    console.log(document.getElementById("directionStep"));
+    document.getElementById("saveButton").remove();
+    document.getElementById("editOption").style.display = "block"
+    document.getElementById("btnCancel").style.display = "inline-block"
+  }).then(() => {
+    location.reload();
+  }) 
+
+
+
+}
+
+function elementRemover(ele) {
+
+  while (ele.firstChild) {
+    console.log("REMOVING...")
+    console.log(ele.firstChild)
+    ele.removeChild(ele.firstChild)
+  }
 }
 
 function editFielder(fields, numbers, type) {
