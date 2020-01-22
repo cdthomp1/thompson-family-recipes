@@ -1,4 +1,13 @@
 /**
+ * TO DO!
+ * - Make adding a recipe easier
+ * - Make editing a recipe easier
+ * - Add the ability to add a picture
+ * - Personal Recipe book
+ */
+
+
+/**
  * This function blocks content from the user
  */
 function blocker() {
