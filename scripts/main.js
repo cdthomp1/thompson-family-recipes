@@ -383,7 +383,7 @@ function saveRec(recipe) {
       "step": "",
       "process": ""
     }
-    directionObj.step = number[i].value
+    directionObj.step = i + 1;
     directionObj.process = step[i].value
     directionArr.push(directionObj);
   }
@@ -454,18 +454,20 @@ function editFielder(fields, numbers, type) {
     console.log(numbers + fields)
     var directionEditContainer = document.getElementById("directionEditContainer");
     var directionNumber = document.getElementById("directionNumber");
-    var numberEditField = document.createElement("input");
-    numberEditField.setAttribute("class", "editNumber form-control");
-    numberEditField.value = numbers;
+    var numberEditField = document.createElement("p");
+    numberEditField.setAttribute("class", "editNumber");
+    var stepNum = document.createTextNode(numbers);
+    numberEditField.appendChild(stepNum);
+    directionNumber.appendChild(numberEditField);
 
     var directionStep = document.getElementById("directionStep");
     var stepEditField = document.createElement("textarea");
     stepEditField.setAttribute("class", "editStep form-control");
     stepEditField.value = fields;
 
-    directionNumber.appendChild(numberEditField)
-    directionStep.appendChild(stepEditField)
+    //directionNumber.appendChild(numberEditField)
     directionEditContainer.appendChild(directionNumber)
+    directionStep.appendChild(stepEditField)
 
   }
 
